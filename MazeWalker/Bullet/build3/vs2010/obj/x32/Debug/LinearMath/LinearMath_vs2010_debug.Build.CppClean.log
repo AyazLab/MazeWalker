@@ -1,17 +1,25 @@
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btconvexhullcomputer.obj
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btvector3.obj
 d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btalignedallocator.obj
 d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btpolardecomposition.obj
+d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btvector3.obj
 d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btgeometryutil.obj
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btquickprof.obj
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btconvexhull.obj
 d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btserializer.obj
+d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btconvexhull.obj
+d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btconvexhullcomputer.obj
+d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btquickprof.obj
 d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\lib\linearmath_vs2010_debug.pdb
 d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\lib\linearmath_vs2010_debug.lib
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\..\..\lib\linearmath_vs2010_debug.lib
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\cl.command.1.tlog
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\cl.read.1.tlog
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\cl.write.1.tlog
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\lib-link.read.1.tlog
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\lib-link.write.1.tlog
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\lib.command.1.tlog
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btalignedallocator.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btconvexhull.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btconvexhullcomputer.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btgeometryutil.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btpolardecomposition.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btquickprof.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btserializer.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\btvector3.obj
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\..\..\lib\linearmath_vs2010_debug.lib
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\cl.command.1.tlog
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\cl.read.1.tlog
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\cl.write.1.tlog
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\lib-link.read.1.tlog
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\lib-link.write.1.tlog
+d:\github\mazewalker\mazewalker\bullet\build3\vs2010\obj\x32\debug\linearmath\linearmath.tlog\lib.command.1.tlog
