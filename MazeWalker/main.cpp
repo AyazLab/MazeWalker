@@ -54,6 +54,8 @@ bool oculusEnabled = false;
 #define LINEBUFFERLIMIT	600
 #define TXTBUFFERLIMIT	800
 
+#define MC_CHOICES 10 // max number of dialog multiple choice boxes
+
 HDC			hDC=NULL;		// Private GDI Device Context
 HGLRC		hRC=NULL;		// Permanent Rendering Context
 HWND		hWnd=NULL;		// Holds Our Window Handle
@@ -6469,8 +6471,8 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	
 
 	int MultipleChoice = 0;
-	int MC[5];
-	int MClen[5];
+	int MC[MC_CHOICES];
+	int MClen[MC_CHOICES];
 
 	std::list<OptionBox> boxList;
 	boxList.clear();
@@ -6487,7 +6489,7 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	{
 		
 
-		if (MultipleChoice == 5||strlen(displayText)==0)
+		if (MultipleChoice == MC_CHOICES ||strlen(displayText)==0)
 			break;
 		else if (MultipleChoice > 0)
 		{

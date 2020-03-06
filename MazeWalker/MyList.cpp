@@ -1,8 +1,11 @@
 #include ".\mylist.h"
 #include "Tools.h"
 #include <ctype.h>
+#include <cmath>
 
 #define TXTBUFFERLIMIT	800
+#define MAXMSGTXTLIMIT	5000
+
 
 MyList::MyList(void)
 {
@@ -148,8 +151,19 @@ int MyList::ReadFile(char *filename)
 int MyList::ReadMazeListFile(char *filename)
 {
 	char iDir[TXTBUFFERLIMIT],temp[TXTBUFFERLIMIT],temp2[TXTBUFFERLIMIT];
+	char melType[TXTBUFFERLIMIT];
+	char dlgType[TXTBUFFERLIMIT];
+	char imgID[TXTBUFFERLIMIT];
+	char curTxt[TXTBUFFERLIMIT];
+
+	char msgTemp[MAXMSGTXTLIMIT];
+
 	float inp1;
 	int res,type;
+	int msgLen = 0;
+	int multiMsgNum = 0;
+	bool ret=false;
+	
 	//maze list file...
 	if(!CheckFile(filename))
 	{
@@ -170,89 +184,85 @@ int MyList::ReadMazeListFile(char *filename)
 			iDir[res]=filename[res];
 		iDir[type+1]=NULL;
 
-		GetUntilTab(fp,temp,TXTBUFFERLIMIT);
+		GetUntilTab(fp,temp,TXTBUFFERLIMIT); // Get text Type
 		if(sscanf_s(temp,"Maze List File %f",&inp1)!=1)
 			return -2;
 
-		while(GetUntilTab(fp,temp,TXTBUFFERLIMIT))
+		while(GetUntilTab(fp, melType,TXTBUFFERLIMIT))
 		{
-			if(strcmp(temp,"Maze")==0)
+			if(strcmp(melType,"Maze")==0)
 			{
-				strcpy_s(temp,iDir);
+				strcpy_s(temp,iDir); //copy mel file directory first
 
 				for (res = strlen(temp); res < TXTBUFFERLIMIT; res++)
 				{
-					temp[res] = 0;
+					temp[res] = 0; 
 				}
 				
 				
 				//strcat(temp,"\\");
 				//i++;
-				GetUntilTab(fp,&(temp[strlen(temp)]),TXTBUFFERLIMIT-strlen(temp));
+				GetUntilTab(fp,&(temp[strlen(temp)]),TXTBUFFERLIMIT-strlen(temp)); //append mazefile to string
 
 				
 				
 				this->AddMaze(temp);
 
 			}
-			else if (strcmp(temp, "Text") == 0 || strcmp(temp, "MultipleChoice") == 0)
+			else if (strcmpi(melType, "Text") == 0 || 
+				strcmpi(melType, "MultipleChoice") == 0 ||
+				strcmpi(melType, "Image") == 0) // All of these really are the same anyways
 			{
-				GetUntilTab(fp,temp,TXTBUFFERLIMIT);
-				GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				res=TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
-				if(strcmp(temp2,"OnDialog")==0 || strcmp(temp2,"OnFramedDialog")==0)
+				do
+				{				
+					ret=GetUntilTab(fp, msgTemp, MAXMSGTXTLIMIT);
+					
+				} while (ret == false && strlen(msgTemp)>10); // get extra long messages
+
+				if (!ret)
+					sprintf(msgTemp, "Message too Long");
+				
+
+				msgLen = strlen(msgTemp);
+
+				multiMsgNum = floor(msgLen*1.0f / ((TXTBUFFERLIMIT-1)*1.0f))+1;
+
+				GetUntilTab(fp, dlgType, TXTBUFFERLIMIT);
+				res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
+				if (strcmp(dlgType, "OnDialog") == 0 || strcmp(dlgType, "OnFramedDialog") == 0)
 				{
-					res=TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
+					res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
 				}
 				else
 				{
-					res=TEXTBOXSTYLE_ONSCREEN_CLEAR_BK;
+					res = TEXTBOXSTYLE_ONSCREEN_CLEAR_BK;
 				}
-				GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				long lf = atol(temp2);
-				GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				bool ret= GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				
-				this->AddText(temp,lf,res);
+				GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
+				long lf = atol(temp2); //Time shown
+				GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
+				bool hasImg = GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
 
-				if(ret)
-				{				
+				if (hasImg)
+				{
 					//since previous return value is not false, end of line is not reached.
 					//get the next cell (background image)
-					GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-					if(strlen(temp2)>2);
-						this->AddBG(temp2);
+					GetUntilTab(fp, imgID, TXTBUFFERLIMIT);
 				}
-			}
-			else if(strcmp(temp,"Image")==0)
-			{
-				GetUntilTab(fp,temp,TXTBUFFERLIMIT);
-				GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				res=TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
-				if(strcmp(temp2,"OnDialog")==0 || strcmp(temp2,"OnFramedDialog")==0)
-				{
-					res=TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
-				}
-				else
-				{
-					res=TEXTBOXSTYLE_ONSCREEN_CLEAR_BK;
-				}
-				GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				long lf = atol(temp2);
-				GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				bool ret= GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-				
-				this->AddText(temp,lf,res);
 
-				if(ret)
-				{				
-					//since previous return value is not false, end of line is not reached.
-					//get the next cell (background image)
-					GetUntilTab(fp,temp2,TXTBUFFERLIMIT);
-					if(strlen(temp2)>2);
-						this->AddBG(temp2);
+				for (int i=0;i<multiMsgNum;i++)
+				{
+					memcpy(curTxt,&msgTemp[(i)*(TXTBUFFERLIMIT - 1)], TXTBUFFERLIMIT-1);
+					curTxt[TXTBUFFERLIMIT - 1] = 0;
+					this->AddText(curTxt,lf,res);
+					if (hasImg)
+					{
+						if (strlen(imgID) > 2)
+							this->AddBG(imgID);
+					}
+
 				}
 			}
+
 			//sprintf(cMazeList[iMazeList],"%s\\%s",iDir,temp);
 			//iMazeList++;
 		}
