@@ -138,7 +138,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)Libs\freetype\include;$(ProjectDir)zlib;$(ProjectDir)libpng;$(ProjectDir)Bullet\src;$(ProjectDIR)Libs\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalOptions>opengl32.lib glu32.lib Winmm.lib  Ws2_32.lib Version.lib fmod\\fmodex_vc.lib OculusSDK\\LibOVR\\Lib\\Win32\\VS2013\\libovr.lib  Libs/inpout32/inpout32.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>opengl32.lib glu32.lib Winmm.lib  Ws2_32.lib Version.lib fmod\\fmodex_vc.lib Libs/inpout32/inpout32.lib %(AdditionalOptions)</AdditionalOptions>
       <OutputFile>$(OutDir)MazeWalker.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

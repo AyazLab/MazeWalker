@@ -7,7 +7,7 @@
   btQuickprof.cpp
   btSerializer.cpp
   btVector3.cpp
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\src\linearmath\btquickprof.cpp(221): warning C4244: '*=': conversion from 'double' to 'LONGLONG', possible loss of data
-d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\src\linearmath\btquickprof.cpp(290): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\linearmath\btquickprof.cpp(221): warning C4244: '*=': conversion from 'double' to 'LONGLONG', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\linearmath\btquickprof.cpp(290): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
 btVector3.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  LinearMath.vcxproj -> D:\VSStudio\Visual Studio 2013\Projects\MazeWalker\Bullet\build3\vs2010\..\..\lib\LinearMath_vs2010.lib
+  LinearMath.vcxproj -> D:\GitHub\MazeWalker\MazeWalker\Bullet\build3\vs2010\..\..\lib\LinearMath_vs2010.lib
