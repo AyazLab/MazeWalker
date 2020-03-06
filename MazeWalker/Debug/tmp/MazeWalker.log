@@ -1,0 +1,361 @@
+﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  main.cpp
+c:\program files (x86)\microsoft sdks\windows\v7.1a\include\shlobj.h(1151): warning C4091: 'typedef ': ignored on left of 'tagGPFIDL_FLAGS' when no variable is declared
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(818): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(825): warning C4473: 'sprintf' : not enough arguments passed for format string
+  d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(825): note: placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+  d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(825): note: the missing variadic argument 1 is required by format string '%.1f'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(857): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(866): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(870): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(874): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(878): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(893): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(897): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(901): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(905): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(925): warning C4244: '=': conversion from 'double' to 'DWORD', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(940): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(964): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(968): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(991): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(999): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1033): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1040): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1044): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1308): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1312): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1316): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1341): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1346): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1351): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1357): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1363): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1417): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1421): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1425): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1450): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1455): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1460): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1466): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1472): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1505): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1510): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1515): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1520): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1525): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1530): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1559): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1560): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1564): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1565): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1569): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1570): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1698): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1702): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1706): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1724): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1740): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1746): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1752): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1758): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1764): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1776): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1782): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1807): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1811): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1815): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1884): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1888): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1892): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1896): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1964): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1970): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1977): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2002): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2098): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2103): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2112): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2161): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2167): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2173): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2195): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2348): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2432): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2436): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2460): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2464): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2468): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2476): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2480): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2484): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2488): warning C4244: '*=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2547): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2620): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2626): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2632): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2644): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2648): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2653): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2654): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2660): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2661): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2722): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2728): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2734): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2740): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2746): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2752): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2846): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2852): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2858): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2864): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2870): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2876): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(2985): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3041): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3051): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3055): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3075): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3079): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3083): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3100): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3122): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3126): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3130): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3135): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3153): warning C4473: 'sprintf' : not enough arguments passed for format string
+  d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3153): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3153): note: the missing variadic argument 2 is required by format string '%s'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3191): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1551): warning C4101: 'z': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1552): warning C4101: 'texX': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1551): warning C4101: 'y': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1551): warning C4101: 'x': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(1552): warning C4101: 'texY': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3227): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3248): warning C4552: '!=': result of expression not used
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3352): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3353): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3399): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3470): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3535): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3544): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3545): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3552): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3556): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3565): warning C4473: 'sscanf_s' : not enough arguments passed for format string
+  d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3565): note: placeholders and their parameters expect 4 variadic arguments, but 1 were provided
+  d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3565): note: the missing variadic argument 2 is required by format string '%f'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3568): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3667): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3668): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3678): warning C4244: '=': conversion from 'float' to 'DWORD', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(3755): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4069): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4282): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4284): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4368): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4439): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4440): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4450): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4452): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4461): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4468): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4470): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4530): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4532): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4543): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4582): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4622): warning C4553: '==': result of expression not used; did you intend '='?
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4640): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4757): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4783): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4958): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5437): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5574): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5785): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5966): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5967): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5968): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5969): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5973): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5974): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5975): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5976): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5980): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5981): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5982): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5983): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5989): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5990): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5991): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5992): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5996): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5997): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5998): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(5999): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6003): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6004): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6005): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6006): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6015): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6016): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6017): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6018): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6021): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6022): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6023): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6024): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6237): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6256): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6257): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6330): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6331): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6465): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6485): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6605): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6611): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6618): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6664): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6689): warning C4018: '>': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6775): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6776): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6777): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6826): warning C4018: '>=': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6931): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6932): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6967): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6971): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(6995): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7001): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7040): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7042): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7049): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7069): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7073): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7077): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7083): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7096): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7117): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7124): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7203): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7336): warning C4018: '>': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7429): warning C4305: '*=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7481): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7486): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7490): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7495): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7547): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7559): warning C4244: '=': conversion from 'volatile int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7659): warning C4244: 'argument': conversion from 'const btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7665): warning C4244: '=': conversion from 'const btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7666): warning C4244: '=': conversion from 'const btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7667): warning C4244: '=': conversion from 'const btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7686): warning C4305: '=': truncation from 'double' to 'GLfloat'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7801): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7807): warning C4305: '+=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7809): warning C4305: '-=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7819): warning C4305: '+=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7821): warning C4305: '-=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7840): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7842): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7887): warning C4305: '-=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7919): warning C4305: '=': truncation from 'double' to 'GLfloat'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(8603): warning C4101: 'inp1': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11164): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11165): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11177): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11178): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11180): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11181): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11218): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11236): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11240): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11245): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11840): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11880): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11885): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11893): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11898): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11932): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11948): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11957): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11962): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11978): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11987): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(11992): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12008): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12017): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12096): warning C4305: '-=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12103): warning C4305: '+=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12234): warning C4305: '/=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12245): warning C4305: '-=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12253): warning C4305: '+=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12387): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12396): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12401): warning C4305: '=': truncation from 'double' to 'float'
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12403): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12587): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12604): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12690): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(12731): warning C4018: '<': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13173): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13175): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13246): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13819): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13820): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13821): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13869): warning C4018: '>=': signed/unsigned mismatch
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(13519): warning C4101: 'nextChar': unreferenced local variable
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14184): warning C4244: 'initializing': conversion from 'float' to 'DWORD', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14460): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14462): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14464): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14472): warning C4244: '=': conversion from 'double' to 'volatile float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14482): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14492): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14501): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14511): warning C4244: '=': conversion from 'double' to 'volatile float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14530): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14532): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14534): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14555): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14557): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14559): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14561): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14625): warning C4244: '=': conversion from 'int' to 'volatile float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14635): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14796): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14798): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14800): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14802): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14806): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14810): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14814): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(14818): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15013): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15083): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15084): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15087): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15088): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15123): warning C4244: '=': conversion from 'GLdouble' to 'LONG', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15124): warning C4244: '=': conversion from 'GLdouble' to 'LONG', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15183): warning C4244: 'initializing': conversion from 'btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15184): warning C4244: 'initializing': conversion from 'btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15185): warning C4244: 'initializing': conversion from 'btScalar' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(15231): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4701): warning C4172: returning address of local variable or temporary: fname
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4766): warning C4172: returning address of local variable or temporary: f
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4776): warning C4172: returning address of local variable or temporary: next
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(4790): warning C4172: returning address of local variable or temporary: ret
+d:\vsstudio\visual studio 2013\projects\mazewalker\main.cpp(7287): warning C4172: returning address of local variable or temporary: ret
+D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+  MazeWalker.vcxproj -> D:\VSStudio\Visual Studio 2013\Projects\MazeWalker\Debug\MazeWalker.exe

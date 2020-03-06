@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="btgui">
+      <UniqueIdentifier>{95F12A06-C099-BE4D-AC97-C9145E03E815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen">
+      <UniqueIdentifier>{80D89DCD-D6BE-CE4E-B0A7-89D21AF89869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Controls">
+      <UniqueIdentifier>{D4DB1CB7-EC61-E54D-BB29-E5F4CC4DA0CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Controls\Dialog">
+      <UniqueIdentifier>{A5CFE772-0054-D549-95CA-E01AE36B1D33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Platforms">
+      <UniqueIdentifier>{089F3F31-D964-CD40-A6E3-18902E6C6D14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Controls\Dialogs">
+      <UniqueIdentifier>{28BB44D1-9043-774B-B008-2717EC79AA1A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Controls\Layout">
+      <UniqueIdentifier>{85F4828F-0682-C54C-B55A-70E8C7AC6A66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Controls\Property">
+      <UniqueIdentifier>{B180E709-C7D2-5646-947E-B1F82CD7AF62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Input">
+      <UniqueIdentifier>{0311067E-1ADB-1244-9C2D-8DE79D8B34CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Renderers">
+      <UniqueIdentifier>{8484876A-85A8-3E43-A6D3-F0AAACAED53D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\Skins">
+      <UniqueIdentifier>{72F0CCD6-B9FC-9C48-8150-D952840AAF1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Gwen\UnitTest">
+      <UniqueIdentifier>{B3117FD4-760A-664C-B476-CF3861243BB4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\btgui\Gwen\Align.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Anim.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\BaseRender.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Config.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\DragAndDrop.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Events.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Exports.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Font.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Gwen.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Hook.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\InputHandler.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Macros.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Platform.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Skin.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Structures.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\TextObject.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Texture.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\ToolTip.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Utility.h">
+      <Filter>btgui\Gwen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Base.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Button.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Canvas.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\CheckBox.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ColorControls.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ColorPicker.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ComboBox.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\CrossSplitter.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\DockBase.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\DockedTabControl.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Dragger.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\GroupBox.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Highlight.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\HorizontalScrollBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\HorizontalSlider.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\HSVColorPicker.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ImagePanel.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Label.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\LabelClickable.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ListBox.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Menu.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\MenuItem.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\MenuStrip.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Modal.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\NumericUpDown.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\PanelListPanel.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ProgressBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Properties.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\PropertyTree.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\RadioButton.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\RadioButtonController.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ResizableControl.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Resizer.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\RichLabel.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ScrollBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ScrollBarBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ScrollBarButton.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ScrollControl.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Slider.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\SplitterBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\StatusBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Symbol.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TabButton.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TabControl.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TabStrip.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TabTitleBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Text.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TextBox.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\ToolBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TreeControl.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\TreeNode.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\VerticalScrollBar.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\VerticalSlider.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\WindowControl.h">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Dialogs\FileOpen.h">
+      <Filter>btgui\Gwen\Controls\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Dialogs\FileSave.h">
+      <Filter>btgui\Gwen\Controls\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Dialogs\Query.h">
+      <Filter>btgui\Gwen\Controls\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Layout\Splitter (2).h">
+      <Filter>btgui\Gwen\Controls\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Layout\Splitter - Copy.h">
+      <Filter>btgui\Gwen\Controls\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Layout\Splitter.h">
+      <Filter>btgui\Gwen\Controls\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Layout\Table (2).h">
+      <Filter>btgui\Gwen\Controls\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Layout\Table - Copy.h">
+      <Filter>btgui\Gwen\Controls\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Layout\Table.h">
+      <Filter>btgui\Gwen\Controls\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Property\BaseProperty.h">
+      <Filter>btgui\Gwen\Controls\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Property\ColorSelector.h">
+      <Filter>btgui\Gwen\Controls\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Controls\Property\Text.h">
+      <Filter>btgui\Gwen\Controls\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Input\SDL13.h">
+      <Filter>btgui\Gwen\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Input\SFML.h">
+      <Filter>btgui\Gwen\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Input\Windows.h">
+      <Filter>btgui\Gwen\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Renderers\DirectX9.h">
+      <Filter>btgui\Gwen\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Renderers\FontData.h">
+      <Filter>btgui\Gwen\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Renderers\GDIPlus.h">
+      <Filter>btgui\Gwen\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Renderers\OpenGL.h">
+      <Filter>btgui\Gwen\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Renderers\OpenGL_DebugFont.h">
+      <Filter>btgui\Gwen\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Renderers\SFML.h">
+      <Filter>btgui\Gwen\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Skins\Simple.h">
+      <Filter>btgui\Gwen\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Skins\TexturedBase.h">
+      <Filter>btgui\Gwen\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\Skins\Texturing.h">
+      <Filter>btgui\Gwen\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Gwen\UnitTest\UnitTest.h">
+      <Filter>btgui\Gwen\UnitTest</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\btgui\Gwen\Anim.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\BaseRender.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\DragAndDrop.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\events.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Gwen.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Hook.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\inputhandler.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Skin.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\ToolTip.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Utility.cpp">
+      <Filter>btgui\Gwen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Base.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Button.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Canvas.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\CheckBox.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ColorControls.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ColorPicker.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ComboBox.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\CrossSplitter.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\DockBase.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\DockedTabControl.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Dragger.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\GroupBox.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\HorizontalScrollBar.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\HorizontalSlider.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\HSVColorPicker.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ImagePanel.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Label.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\LabelClickable.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ListBox.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Menu.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\MenuItem.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\MenuStrip.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\NumericUpDown.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\PanelListPanel.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ProgressBar.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Properties.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\RadioButton.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\RadioButtonController.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ResizableControl.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Resizer.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\RichLabel.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ScrollBar.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ScrollBarBar.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ScrollBarButton.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\ScrollControl.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Slider.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\SplitterBar.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TabButton.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TabControl.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TabStrip.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Text.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TextBox.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TextBoxNumeric.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TreeControl.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\TreeNode.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\VerticalScrollBar.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\VerticalSlider.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\WindowControl.cpp">
+      <Filter>btgui\Gwen\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Dialog\FileOpen.cpp">
+      <Filter>btgui\Gwen\Controls\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Dialog\FileSave.cpp">
+      <Filter>btgui\Gwen\Controls\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Controls\Dialog\Query.cpp">
+      <Filter>btgui\Gwen\Controls\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Platforms\Null.cpp">
+      <Filter>btgui\Gwen\Platforms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Gwen\Platforms\Windows.cpp">
+      <Filter>btgui\Gwen\Platforms</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

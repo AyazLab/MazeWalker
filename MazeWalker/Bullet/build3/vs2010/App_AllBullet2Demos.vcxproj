@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{69C187BC-424B-D543-AEEF-06138682302F}</ProjectGuid>
+    <RootNamespace>App_AllBullet2Demos</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\x32\Release\App_AllBullet2Demos\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_AllBullet2Demos_vs2010</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">obj\x64\Release\App_AllBullet2Demos\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">App_AllBullet2Demos_vs2010_x64_release</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\x32\Debug\App_AllBullet2Demos\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_AllBullet2Demos_vs2010_debug</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">obj\x64\Debug\App_AllBullet2Demos\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">App_AllBullet2Demos_vs2010_x64_debug</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\lib\gwen_vs2010.lib;..\..\bin\OpenGL_Window_vs2010.lib;..\..\bin\OpenGL_TrueTypeFont_vs2010.lib;..\..\lib\BulletSoftBody_vs2010.lib;..\..\lib\BulletDynamics_vs2010.lib;..\..\lib\BulletCollision_vs2010.lib;..\..\lib\LinearMath_vs2010.lib;..\..\lib\lua-5.2.3_vs2010.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)App_AllBullet2Demos_vs2010.exe</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\lib\gwen_vs2010_x64_release.lib;..\..\bin\OpenGL_Window_vs2010_x64_release.lib;..\..\bin\OpenGL_TrueTypeFont_vs2010_x64_release.lib;..\..\lib\BulletSoftBody_vs2010_x64_release.lib;..\..\lib\BulletDynamics_vs2010_x64_release.lib;..\..\lib\BulletCollision_vs2010_x64_release.lib;..\..\lib\LinearMath_vs2010_x64_release.lib;..\..\lib\lua-5.2.3_vs2010_x64_release.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)App_AllBullet2Demos_vs2010_x64_release.exe</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)App_AllBullet2Demos_vs2010_debug.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\lib\gwen_vs2010_debug.lib;..\..\bin\OpenGL_Window_vs2010_debug.lib;..\..\bin\OpenGL_TrueTypeFont_vs2010_debug.lib;..\..\lib\BulletSoftBody_vs2010_debug.lib;..\..\lib\BulletDynamics_vs2010_debug.lib;..\..\lib\BulletCollision_vs2010_debug.lib;..\..\lib\LinearMath_vs2010_debug.lib;..\..\lib\lua-5.2.3_vs2010_debug.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)App_AllBullet2Demos_vs2010_debug.exe</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)App_AllBullet2Demos_vs2010_x64_debug.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Demos3\AllBullet2Demos;..\..\src;..\..\btgui;..\..\btgui\lua-5.2.3\src;..\..\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\lib\gwen_vs2010_x64_debug.lib;..\..\bin\OpenGL_Window_vs2010_x64_debug.lib;..\..\bin\OpenGL_TrueTypeFont_vs2010_x64_debug.lib;..\..\lib\BulletSoftBody_vs2010_x64_debug.lib;..\..\lib\BulletDynamics_vs2010_x64_debug.lib;..\..\lib\BulletCollision_vs2010_x64_debug.lib;..\..\lib\LinearMath_vs2010_x64_debug.lib;..\..\lib\lua-5.2.3_vs2010_x64_debug.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)App_AllBullet2Demos_vs2010_x64_debug.exe</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Demos3\AllBullet2Demos\BulletDemoEntries.h" />
+    <ClInclude Include="..\..\Demos3\AllBullet2Demos\BulletDemoInterface.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\BasicDemo\Bullet2RigidBodyDemo.h" />
+    <ClInclude Include="..\..\Demos\BasicDemo\BasicDemoPhysicsSetup.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\BulletMultiBodyDemos.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\MultiDofDemo.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\BasicDemo\BasicDemo.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\BasicDemo\HingeDemo.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\ChainDemo\ChainDemo.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\RagdollDemo\RagdollDemo.h" />
+    <ClInclude Include="..\..\Demos3\bullet2\LuaDemo\LuaDemo.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3AlignedAllocator.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3AlignedObjectArray.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3CommandLineArgs.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3HashMap.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Logging.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Matrix3x3.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3MinMax.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3PoolAllocator.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3QuadWord.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Quaternion.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Random.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Scalar.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3StackAlloc.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Transform.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3TransformUtil.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\b3Vector3.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Float4.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Int2.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Int4.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Mat3x3.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3PlatformDefinitions.h" />
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Quat.h" />
+    <ClInclude Include="..\..\btgui\Timing\b3Clock.h" />
+    <ClInclude Include="..\..\Demos3\GpuDemos\gwenUserInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GlewWindows\glew.c">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\AllBullet2Demos\main.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\BasicDemo\Bullet2RigidBodyDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos\BasicDemo\BasicDemoPhysicsSetup.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\BulletMultiBodyDemos.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\MultiDofDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\BasicDemo\BasicDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\BasicDemo\HingeDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\ChainDemo\ChainDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\RagdollDemo\RagdollDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\LuaDemo\LuaDemo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet3Common\b3AlignedAllocator.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet3Common\b3Logging.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet3Common\b3Vector3.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Timing\b3Clock.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\gwenUserInterface.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

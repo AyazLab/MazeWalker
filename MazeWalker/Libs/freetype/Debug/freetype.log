@@ -1,0 +1,462 @@
+﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(937,5): warning MSB8027: Two or more files with the name of ftdebug.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are builds\amiga\src\base\ftdebug.c, builds\wince\ftdebug.c, builds\windows\ftdebug.c, src\base\ftdebug.c.
+D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(937,5): warning MSB8027: Two or more files with the name of ftsystem.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are builds\amiga\src\base\ftsystem.c, builds\unix\ftsystem.c, builds\vms\ftsystem.c, src\base\ftsystem.c.
+D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(937,5): warning MSB8027: Two or more files with the name of ftmac.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are builds\mac\ftmac.c, src\base\ftmac.c.
+  winfnt.c
+src\winfonts\winfnt.c(21): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  type42.c
+src\type42\type42.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t42parse.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\type42\t42objs.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t42objs.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\type42\t42objs.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t42drivr.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\type42\t42drivr.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  type1.c
+src\type1\type1.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1parse.c
+src\type1\t1parse.c(36): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1objs.c
+src\type1\t1objs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1load.c
+src\type1\t1load.c(63): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1gload.c
+src\type1\t1gload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1driver.c
+src\type1\t1driver.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1afm.c
+src\type1\t1afm.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttsubpix.c
+src\truetype\ttsubpix.c(18): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttpload.c
+src\truetype\ttpload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttpic.c
+src\truetype\ttpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttobjs.c
+src\truetype\ttobjs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttinterp.c
+src\truetype\ttinterp.c(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttgxvar.c
+src\truetype\ttgxvar.c(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttgload.c
+src\truetype\ttgload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttdriver.c
+src\truetype\ttdriver.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  truetype.c
+src\truetype\truetype.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  test_trig.c
+src\tools\test_trig.c(1): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  test_bbox.c
+src\tools\test_bbox.c(1): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  test_afm.c
+src\tools\test_afm.c(5): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftrandom.c
+src\tools\ftrandom\ftrandom.c(38): fatal error C1083: Cannot open include file: 'strings.h': No such file or directory
+  apinames.c
+src\tools\apinames.c(373): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+src\tools\apinames.c(441): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  smooth.c
+src\smooth\smooth.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftspic.c
+src\smooth\ftspic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsmooth.c
+src\smooth\ftsmooth.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftgrays.c
+src\smooth\ftgrays.c(263): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttsbit.c
+src\sfnt\ttsbit.c(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttpost.c
+src\sfnt\ttpost.c(28): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttmtx.c
+src\sfnt\ttmtx.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttload.c
+src\sfnt\ttload.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttkern.c
+src\sfnt\ttkern.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttcmap.c
+src\sfnt\ttcmap.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ttbdf.c
+src\sfnt\ttbdf.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  sfobjs.c
+src\sfnt\sfobjs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  sfntpic.c
+src\sfnt\sfntpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  sfnt.c
+src\sfnt\sfnt.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  sfdriver.c
+src\sfnt\sfdriver.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pngshim.c
+src\sfnt\pngshim.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  rastpic.c
+src\raster\rastpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  raster.c
+src\raster\raster.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftrend1.c
+src\raster\ftrend1.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftraster.c
+src\raster\ftraster.c(65): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pspic.c
+src\psnames\pspic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  psnames.c
+src\psnames\psnames.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  psmodule.c
+src\psnames\psmodule.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pshrec.c
+src\pshinter\pshrec.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pshpic.c
+src\pshinter\pshpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pshmod.c
+src\pshinter\pshmod.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pshinter.c
+src\pshinter\pshinter.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pshglob.c
+src\pshinter\pshglob.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pshalgo.c
+src\pshinter\pshalgo.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1decode.c
+src\psaux\t1decode.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  t1cmap.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\psaux\t1cmap.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  psobjs.c
+src\psaux\psobjs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  psconv.c
+src\psaux\psconv.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  psauxmod.c
+src\psaux\psauxmod.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  psaux.c
+src\psaux\psaux.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afmparse.c
+src\psaux\afmparse.c(18): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfrsbit.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\pfr\pfrtypes.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfrobjs.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\pfr\pfrtypes.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfrload.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\pfr\pfrtypes.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfrgload.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\pfr\pfrtypes.h(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfrdrivr.c
+src\pfr\pfrdrivr.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfrcmap.c
+src\pfr\pfrcmap.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pfr.c
+src\pfr\pfr.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pcfutil.c
+src\pcf\pcfutil.c(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pcfread.c
+src\pcf\pcfread.c(28): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pcfdrivr.c
+src\pcf\pcfdrivr.c(28): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  pcf.c
+src\pcf\pcf.c(29): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvmod.c
+src\otvalid\otvmod.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvmath.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvalid.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvjstf.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvalid.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvgsub.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvalid.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvgpos.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvalid.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvgdef.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvalid.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvcommn.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvcommn.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  otvbase.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\otvalid\otvalid.h(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  otvalid.c
+src\otvalid\otvalid.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftzopen.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\lzw\ftzopen.h(25): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftlzw.c
+src\lzw\ftlzw.c(24): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  zutil.c
+src\gzip\zutil.c(170): warning C4013: 'ft_scalloc' undefined; assuming extern returning int
+src\gzip\zutil.c(177): warning C4013: 'ft_sfree' undefined; assuming extern returning int
+  infutil.c
+src\gzip\infutil.c(14): error C2373: 'inflate_mask': redefinition; different type modifiers
+  d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gzip\infutil.h(89): note: see declaration of 'inflate_mask'
+src\gzip\infutil.c(49): warning C4013: 'ft_memcpy' undefined; assuming extern returning int
+  inftrees.c
+src\gzip\inftrees.c(461): warning C4013: 'FT_UNUSED' undefined; assuming extern returning int
+  inflate.c
+src\gzip\inflate.c(274): error C2129: static function 'inflate_blocks_statef *inflate_blocks_new(z_streamp,check_func,uInt)' declared but not defined
+  d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gzip\infblock.h(17): note: see declaration of 'inflate_blocks_new'
+  infcodes.c
+src\gzip\infcodes.c(108): warning C4013: 'inflate_fast' undefined; assuming extern returning int
+src\gzip\infcodes.c(251): error C2129: static function 'int inflate_flush(inflate_blocks_statef *,z_streamp,int)' declared but not defined
+  d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gzip\infutil.h(93): note: see declaration of 'inflate_flush'
+  infblock.c
+src\gzip\infblock.c(206): warning C4013: 'ft_memcpy' undefined; assuming extern returning int
+src\gzip\infblock.c(388): error C2129: static function 'int inflate_trees_dynamic(uInt,uInt,uIntf *,uIntf *,uIntf *,inflate_huft **,inflate_huft **,inflate_huft *,z_streamp)' declared but not defined
+  d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gzip\inftrees.h(45): note: see declaration of 'inflate_trees_dynamic'
+  ftgzip.c
+src\gzip\ftgzip.c(23): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  adler32.c
+  gxvtrak.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvprop.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvopbd.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmorx5.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmorx4.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmorx2.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmorx1.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmorx0.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  gxvmorx.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmort5.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmort4.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmort2.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmort1.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmort0.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmort.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvmod.c
+src\gxvalid\gxvmod.c(28): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvlcar.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvkern.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvjust.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvfgen.c
+src\gxvalid\gxvfgen.c(469): warning C4013: 'ft_strncmp' undefined; assuming extern returning int
+  gxvfeat.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvcommn.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvcommn.h(46): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvbsln.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\gxvalid\gxvalid.h(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  gxvalid.c
+src\gxvalid\gxvalid.c(21): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  type1cid.c
+src\cid\type1cid.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cidriver.c
+src\cid\cidriver.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cidparse.c
+src\cid\cidparse.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cidobjs.c
+src\cid\cidobjs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  cidload.c
+src\cid\cidload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cidgload.c
+src\cid\cidgload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffpic.c
+src\cff\cffpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffparse.c
+src\cff\cffparse.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffobjs.c
+src\cff\cffobjs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffload.c
+src\cff\cffload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffgload.c
+src\cff\cffgload.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffdrivr.c
+src\cff\cffdrivr.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cffcmap.c
+src\cff\cffcmap.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cff.c
+src\cff\cff.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2stack.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2read.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2intrp.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2hints.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2ft.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2font.c
+src\cff\cf2font.c(39): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2error.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2blues.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  cf2arrst.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cf2types.h(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcsbits.c
+src\cache\ftcsbits.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  ftcmru.c
+src\cache\ftcmru.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcmanag.c
+src\cache\ftcmanag.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcimage.c
+src\cache\ftcimage.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcglyph.c
+src\cache\ftcglyph.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftccmap.c
+src\cache\ftccmap.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftccache.c
+src\cache\ftccache.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcbasic.c
+src\cache\ftcbasic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcache.c
+src\cache\ftcache.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftbzip2.c
+src\bzip2\ftbzip2.c(25): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  bdflib.c
+src\bdf\bdflib.c(34): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  bdfdrivr.c
+src\bdf\bdfdrivr.c(27): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  bdf.c
+src\bdf\bdf.c(29): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  md5.c
+  ftwinfnt.c
+src\base\ftwinfnt.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftutil.c
+src\base\ftutil.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  fttype1.c
+src\base\fttype1.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  fttrigon.c
+src\base\fttrigon.c(32): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsystem.c
+src\base\ftsystem.c(28): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsynth.c
+src\base\ftsynth.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftstroke.c
+src\base\ftstroke.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  ftstream.c
+src\base\ftstream.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsnames.c
+src\base\ftsnames.c(22): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftrfork.c
+src\base\ftrfork.c(27): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftpic.c
+src\base\ftpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftpfr.c
+src\base\ftpfr.c(18): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftpatent.c
+src\base\ftpatent.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftoutln.c
+src\base\ftoutln.c(26): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftotval.c
+src\base\ftotval.c(18): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftobjs.c
+src\base\ftobjs.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftmm.c
+src\base\ftmm.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftmac.c
+src\base\ftmac.c(68): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftlcdfil.c
+src\base\ftlcdfil.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftinit.c
+src\base\ftinit.c(40): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  fthash.c
+src\base\fthash.c(42): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftgxval.c
+src\base\ftgxval.c(28): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftglyph.c
+src\base\ftglyph.c(31): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftgloadr.c
+src\base\ftgloadr.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftgasp.c
+src\base\ftgasp.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftfstype.c
+src\base\ftfstype.c(18): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftfntfmt.c
+src\base\ftfntfmt.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  ftdebug.c
+src\base\ftdebug.c(44): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftdbgmem.c
+src\base\ftdbgmem.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcid.c
+src\base\ftcid.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftcalc.c
+src\base\ftcalc.c(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftbitmap.c
+src\base\ftbitmap.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftbdf.c
+src\base\ftbdf.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftbbox.c
+src\base\ftbbox.c(27): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftbase.c
+src\base\ftbase.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftapi.c
+src\base\ftapi.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftadvanc.c
+src\base\ftadvanc.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  basepic.c
+src\base\basepic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  autofit.c
+src\autofit\autofit.c(20): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afwarp.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afshaper.c
+src\autofit\afshaper.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afranges.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afpic.c
+src\autofit\afpic.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afmodule.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afloader.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  aflatin2.c
+src\autofit\aflatin2.c(24): error C2006: '#include': expected a filename, found 'identifier'
+src\autofit\aflatin2.c(24): fatal error C1083: Cannot open include file: '': No such file or directory
+  aflatin.c
+src\autofit\aflatin.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  Generating Code...
+  Compiling...
+  afindic.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afhints.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afglobal.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afdummy.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afcjk.c
+src\autofit\afcjk.c(25): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afblue.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  afangles.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\autofit\aftypes.h(35): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftdebug.c
+builds\windows\ftdebug.c(44): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftdebug.c
+builds\wince\ftdebug.c(44): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsystem.c
+builds\vms\ftsystem.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsystem.c
+builds\unix\ftsystem.c(19): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftmac.c
+builds\mac\ftmac.c(65): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  ftsystem.c
+builds\amiga\src\base\ftsystem.c(47): fatal error C1083: Cannot open include file: 'proto/exec.h': No such file or directory
+  ftdebug.c
+builds\amiga\src\base\ftdebug.c(51): fatal error C1083: Cannot open include file: 'exec/types.h': No such file or directory
+  Generating Code...

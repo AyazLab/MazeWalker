@@ -1,0 +1,2 @@
+﻿btBroadphaseProxy.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  BulletCollision.vcxproj -> D:\VSStudio\Visual Studio 2013\Projects\MazeWalker\Bullet\build3\vs2010\..\..\lib\BulletCollision_vs2010.lib

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{206B0365-07B5-FC46-ACBC-DB89A3CF80E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\clew">
+      <UniqueIdentifier>{CBCE81B9-F0A7-9040-B646-CCED3022BDCC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui">
+      <UniqueIdentifier>{C9F761D7-AE91-B244-92C8-9021E970CCCB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow">
+      <UniqueIdentifier>{FDBFDC09-3041-3546-9A65-D3EB97BAFAA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow\GlewWindows">
+      <UniqueIdentifier>{87B0219A-2AF9-364D-96D6-1C719750396B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3">
+      <UniqueIdentifier>{322CF298-4F0B-B94F-A332-6AF63ADAB7DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos">
+      <UniqueIdentifier>{F909E1F1-46C7-B640-8D79-73B8908A1773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos\broadphase">
+      <UniqueIdentifier>{35FF7784-E8B0-0547-B9A1-901A0647C8DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos\constraints">
+      <UniqueIdentifier>{240F4BCB-3E1B-6B47-A0C7-667729F0C8B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos\raytrace">
+      <UniqueIdentifier>{6EDF190C-A487-3148-B3F7-4C6443EB8346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos\rigidbody">
+      <UniqueIdentifier>{20FB996D-6EF4-1949-8F23-E54221E456A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos\shadows">
+      <UniqueIdentifier>{37688DFA-5C7E-A14F-B576-ED2F1544103B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos\softbody">
+      <UniqueIdentifier>{7BED558B-5E08-D44D-AA0F-1FC41515E31D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\Wavefront">
+      <UniqueIdentifier>{4E56EA96-D9BB-244D-85B1-7CBA40259E5E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLTrueTypeFont">
+      <UniqueIdentifier>{9E57C6F6-9D2B-F143-A941-CB936A61DC9A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\FontFiles">
+      <UniqueIdentifier>{2B52F66C-E195-B044-9FD0-24F35E2F7CD6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\stb_image">
+      <UniqueIdentifier>{58D2FC08-5010-F04C-AAE3-3DBDC9D188E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Timing">
+      <UniqueIdentifier>{679DBC8D-E8E4-C64D-9128-BE27D3D4A840}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\clew\clew.h">
+      <Filter>src\clew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\GpuDemo.h">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\GpuDemoInternalData.h">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\gwenInternalData.h">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\gwenUserInterface.h">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\ParticleDemo.h">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\broadphase\PairBench.h">
+      <Filter>Demos3\GpuDemos\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\broadphase\pairsKernel.h">
+      <Filter>Demos3\GpuDemos\broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\constraints\ConstraintsDemo.h">
+      <Filter>Demos3\GpuDemos\constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\raytrace\RaytracedShadowDemo.h">
+      <Filter>Demos3\GpuDemos\raytrace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\Bullet2FileDemo.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\BulletDataExtractor.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\ConcaveScene.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\GpuCompoundScene.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\GpuConvexScene.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\GpuRigidBodyDemo.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\GpuRigidBodyDemoInternalData.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\rigidbody\GpuSphereScene.h">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\shadows\ShadowMapDemo.h">
+      <Filter>Demos3\GpuDemos\shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\shadows\ShadowMapDemoInternalData.h">
+      <Filter>Demos3\GpuDemos\shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\softbody\GpuSoftBodyDemo.h">
+      <Filter>Demos3\GpuDemos\softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\softbody\GpuSoftBodyDemoInternalData.h">
+      <Filter>Demos3\GpuDemos\softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\Wavefront\tiny_obj_loader.h">
+      <Filter>Demos3\Wavefront</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\GLInstancingRenderer.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\GLPrimitiveRenderer.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\LoadShader.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\TwFonts.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\GLRenderToTexture.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\fontstash.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\opengl_fontstashcallbacks.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\stb_image\stb_image.h">
+      <Filter>btgui\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Timing\b3Quickprof.h">
+      <Filter>btgui\Timing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Timing\b3Clock.h">
+      <Filter>btgui\Timing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\Win32OpenGLWindow.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\Win32Window.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\clew\clew.c">
+      <Filter>src\clew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GlewWindows\glew.c">
+      <Filter>btgui\OpenGLWindow\GlewWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\GpuDemo.cpp">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\gwenUserInterface.cpp">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\main_opengl3core.cpp">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\ParticleDemo.cpp">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\broadphase\PairBench.cpp">
+      <Filter>Demos3\GpuDemos\broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\constraints\ConstraintsDemo.cpp">
+      <Filter>Demos3\GpuDemos\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\raytrace\RaytracedShadowDemo.cpp">
+      <Filter>Demos3\GpuDemos\raytrace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\Bullet2FileDemo.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\BulletDataExtractor.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\ConcaveScene.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\GpuCompoundScene.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\GpuConvexScene.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\GpuRigidBodyDemo.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\rigidbody\GpuSphereScene.cpp">
+      <Filter>Demos3\GpuDemos\rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\shadows\ShadowMapDemo.cpp">
+      <Filter>Demos3\GpuDemos\shadows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\softbody\GpuSoftBodyDemo.cpp">
+      <Filter>Demos3\GpuDemos\softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\Wavefront\tiny_obj_loader.cpp">
+      <Filter>Demos3\Wavefront</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GLInstancingRenderer.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GLPrimitiveRenderer.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\LoadShader.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\TwFonts.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GLRenderToTexture.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLTrueTypeFont\fontstash.cpp">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLTrueTypeFont\opengl_fontstashcallbacks.cpp">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\FontFiles\OpenSans.cpp">
+      <Filter>btgui\FontFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\stb_image\stb_image.cpp">
+      <Filter>btgui\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Timing\b3Quickprof.cpp">
+      <Filter>btgui\Timing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Timing\b3Clock.cpp">
+      <Filter>btgui\Timing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\Win32OpenGLWindow.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\Win32Window.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

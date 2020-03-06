@@ -1,0 +1,13 @@
+﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+  btAlignedAllocator.cpp
+  btConvexHull.cpp
+  btConvexHullComputer.cpp
+  btGeometryUtil.cpp
+  btPolarDecomposition.cpp
+  btQuickprof.cpp
+  btSerializer.cpp
+  btVector3.cpp
+d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\src\linearmath\btquickprof.cpp(221): warning C4244: '*=': conversion from 'double' to 'LONGLONG', possible loss of data
+d:\vsstudio\visual studio 2013\projects\mazewalker\bullet\src\linearmath\btquickprof.cpp(290): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+btVector3.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  LinearMath.vcxproj -> D:\VSStudio\Visual Studio 2013\Projects\MazeWalker\Bullet\build3\vs2010\..\..\lib\LinearMath_vs2010.lib

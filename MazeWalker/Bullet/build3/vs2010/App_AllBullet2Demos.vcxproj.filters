@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="btgui">
+      <UniqueIdentifier>{6FF65166-DF36-8E4C-B51A-8D2BF7EE6FFA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow">
+      <UniqueIdentifier>{23502E7A-F77E-F84A-B3AE-013362E1E1F7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow\GlewWindows">
+      <UniqueIdentifier>{E983CE96-7829-F249-9E9F-D269A238B20B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3">
+      <UniqueIdentifier>{77AE3F0C-18ED-0148-BEEB-C1B068AE0090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\AllBullet2Demos">
+      <UniqueIdentifier>{D99C93A1-81CE-6247-B666-FC85D3DA97C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\bullet2">
+      <UniqueIdentifier>{10EDC38A-C9DC-0844-B690-1BF6F97486E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\bullet2\BasicDemo">
+      <UniqueIdentifier>{0CD39A7A-4178-C740-B636-D8BBE7598BCF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos">
+      <UniqueIdentifier>{7AFEE779-5A2E-9A41-AE08-01273390C1D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos\BasicDemo">
+      <UniqueIdentifier>{9F59B169-6F2A-E24D-902D-A13F0107EAE0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\bullet2\FeatherstoneMultiBodyDemo">
+      <UniqueIdentifier>{A4E7ECE7-8D42-8440-8558-73D352E575AC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\bullet2\ChainDemo">
+      <UniqueIdentifier>{ABA63565-82FB-9C40-B072-EB08AFBCB392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\bullet2\RagdollDemo">
+      <UniqueIdentifier>{92104BB1-71C1-9545-B06B-99E8741B5C7D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\bullet2\LuaDemo">
+      <UniqueIdentifier>{CE3F07FE-E852-7F4E-A924-D4F9BE6C491C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{BA6FFDF2-2958-5546-B5F0-E43D7E4C01E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Bullet3Common">
+      <UniqueIdentifier>{AA925E56-B0E7-A140-8C0D-1A58D3080DC2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Bullet3Common\shared">
+      <UniqueIdentifier>{9C1EE6FA-3CF7-EE42-A586-562FFA6EDDF0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Timing">
+      <UniqueIdentifier>{FB25919B-D2AD-FC49-AAF3-69227EFBB025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos3\GpuDemos">
+      <UniqueIdentifier>{BFF5215E-3CD9-FA4D-9D03-740FC2818F86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Demos3\AllBullet2Demos\BulletDemoEntries.h">
+      <Filter>Demos3\AllBullet2Demos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\AllBullet2Demos\BulletDemoInterface.h">
+      <Filter>Demos3\AllBullet2Demos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\BasicDemo\Bullet2RigidBodyDemo.h">
+      <Filter>Demos3\bullet2\BasicDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos\BasicDemo\BasicDemoPhysicsSetup.h">
+      <Filter>Demos\BasicDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\BulletMultiBodyDemos.h">
+      <Filter>Demos3\bullet2\FeatherstoneMultiBodyDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\MultiDofDemo.h">
+      <Filter>Demos3\bullet2\FeatherstoneMultiBodyDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\BasicDemo\BasicDemo.h">
+      <Filter>Demos3\bullet2\BasicDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\BasicDemo\HingeDemo.h">
+      <Filter>Demos3\bullet2\BasicDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\ChainDemo\ChainDemo.h">
+      <Filter>Demos3\bullet2\ChainDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\RagdollDemo\RagdollDemo.h">
+      <Filter>Demos3\bullet2\RagdollDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\bullet2\LuaDemo\LuaDemo.h">
+      <Filter>Demos3\bullet2\LuaDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3AlignedAllocator.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3AlignedObjectArray.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3CommandLineArgs.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3HashMap.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Logging.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Matrix3x3.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3MinMax.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3PoolAllocator.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3QuadWord.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Quaternion.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Random.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Scalar.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3StackAlloc.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Transform.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3TransformUtil.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\b3Vector3.h">
+      <Filter>src\Bullet3Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Float4.h">
+      <Filter>src\Bullet3Common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Int2.h">
+      <Filter>src\Bullet3Common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Int4.h">
+      <Filter>src\Bullet3Common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Mat3x3.h">
+      <Filter>src\Bullet3Common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3PlatformDefinitions.h">
+      <Filter>src\Bullet3Common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Bullet3Common\shared\b3Quat.h">
+      <Filter>src\Bullet3Common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Timing\b3Clock.h">
+      <Filter>btgui\Timing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Demos3\GpuDemos\gwenUserInterface.h">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GlewWindows\glew.c">
+      <Filter>btgui\OpenGLWindow\GlewWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\AllBullet2Demos\main.cpp">
+      <Filter>Demos3\AllBullet2Demos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\BasicDemo\Bullet2RigidBodyDemo.cpp">
+      <Filter>Demos3\bullet2\BasicDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos\BasicDemo\BasicDemoPhysicsSetup.cpp">
+      <Filter>Demos\BasicDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\BulletMultiBodyDemos.cpp">
+      <Filter>Demos3\bullet2\FeatherstoneMultiBodyDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\FeatherstoneMultiBodyDemo\MultiDofDemo.cpp">
+      <Filter>Demos3\bullet2\FeatherstoneMultiBodyDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\BasicDemo\BasicDemo.cpp">
+      <Filter>Demos3\bullet2\BasicDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\BasicDemo\HingeDemo.cpp">
+      <Filter>Demos3\bullet2\BasicDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\ChainDemo\ChainDemo.cpp">
+      <Filter>Demos3\bullet2\ChainDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\RagdollDemo\RagdollDemo.cpp">
+      <Filter>Demos3\bullet2\RagdollDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\bullet2\LuaDemo\LuaDemo.cpp">
+      <Filter>Demos3\bullet2\LuaDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet3Common\b3AlignedAllocator.cpp">
+      <Filter>src\Bullet3Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet3Common\b3Logging.cpp">
+      <Filter>src\Bullet3Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Bullet3Common\b3Vector3.cpp">
+      <Filter>src\Bullet3Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Timing\b3Clock.cpp">
+      <Filter>btgui\Timing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Demos3\GpuDemos\gwenUserInterface.cpp">
+      <Filter>Demos3\GpuDemos</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

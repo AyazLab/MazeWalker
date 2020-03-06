@@ -1,0 +1,303 @@
+MazeWalker Changes Log
+Unversioned
+
+3.0.5.0
+Restored playback functionality
+Dynamic object activation mechanism is revised 
+MazeScore resets between levels
+MazeAPI: multiple improvements and new features
+	
+
+3.0.4.0
+Updated GLEW to version 2.1.0 and added debug information when OpenGL fails
+Serial port functions now only show/save currently available COM ports
+Maze Dynamic object unhighliting improvement
+
+3.0.3.0
+Added ability to set custom resolutions from 'Advanced Graphics'
+Added ability to enable borderless windowed mode in 'Advanced Graphics'
+Updated LPT (Parallel port) Sync functionality
+Changed MazeWalker marker codes (see current marker dictionary table in the manual)
+Updated InpOut32 to v1.5.0.1
+Updated manual document to include new features and changes
+
+3.0.2.0
+Added API functionality to Enable and Disable gravity
+Added API capabilities to get and set dynamic model position, object, rotation and scale
+Corrected Serial port options to reflect actual settings
+
+3.0.0.0.
+Moved primary maze file structure to XML
+Added support for curved walls
+Added 4k resolution option
+Added Options to fix X and Z locations independently
+Added ability to use object as a MazeWalker avatar
+Added MazePoint behaviors for dynamic and active regions
+Added MazePoint messages and exit conditions
+Added support for Active Regions, a hybrid of end regions and dynamic objects
+Added ability to move to start position for end regions
+Added ability to adjust camera height off ground
+Perspective settings are now loaded from XML files
+Audio loading errors now display within GUI
+Added ability to load random starting positions
+Set ability to fix turnspeed to 45deg/s and move speed to 3mz/s 
+Improved memory performance for particle arrays
+Added ability to disable gravity in Advanced Settings
+Added ability to select ScoreBar behavior for either API score or MazePoints
+Minor fixes
+
+2.14.0.0
+Updated Synchronization for Physics engine
+Fixed an error where MazeWalker would crash when Floor was set to not visible
+Added Support for LPT signaling for Maze Start and Maze End
+Preload Maze Textures held between mazes in maze list
+Fixed an issue that slowed the loading of Jpegs
+
+
+2.13.0.0
+Fixed jumping related issues with double precicion in physics engine
+Ensured proper functionality of Next Level in API
+Updated ansio filtering so that it is 16x by default instead of biliniear, disabled glnearest as default texture filtering
+Updated bulletphysics to use double precision to fix issues associated with large floors and walls 
+Minor performance improvement: makes texture loading speedier when using correct file names in folders with lots of files
+Fixed issue where LookDown, would cause user to Look Up
+Imorived FOV box alignment
+
+2.12.0.0
+Updated the physics engine, Jump mechanics and gravity mechanics for physics engine-based behaviors
+Improvement for dynamic object kinematics
+Improvement for memory management (especially for larger mazes and high resolution)
+Added new fixed XZ Camera options in perspective to allow a fixed top-down maze navigation
+Joystick functionality updates
+Changed Skybox behavior so that the Skybox moves with you (necessary for a road-type environment that continues in one-direction forever)
+Start position New angle setting for pitch (up-down) 
+			   New random angle setting for both pitch (up-down) and yaw (left-right)
+Maze List: next maze button and keyboard binding
+	Added a toggle delay to the next maze and restart maze keys (500ms)
+Fixed an issue where MazeWalker did not correctly run in fullscreen
+Fixed an issue where MazeWalker would not properly load the previous filename
+Restored Framerate Independence during Look functions
+Removed 1280x768 resolution in favor of 1280x720 (720p)
+Minor other improvements
+
+
+2.11.0.0 (merged 2.10.0.3)
+Improvement for dynamic object kinematics
+Improvement for memory management (especially for larger mazes and high resolution)
+Joystick functionality changes
+
+
+2.10.0.0
+New feature: Top-down (bird's eye) and perspective views (3/4 side) of maze navigation, allocentric and egocentric customization of view type
+New feature: Multiple choice question presentation in maze list
+	Add a question and as many options as necessary, users answer will be recorded in the log.
+New option: Restart maze option at the end of a maze (use escape button to bring the dialog up)
+	restarting reloads the maze immediately appearing in the log file as a separate maze list item
+New option to hide rendered maze background during dialogs (fix for user request)
+	Option is available under 'Other Settings'
+New option to adjust Field of View to allow rendering to more properly occur on wide displays, default is 45 degrees, on triple monitors 75 degrees may be recommended.
+	This is available under 'Advanced Graphics-> Other Visual Settings'
+
+-2.9.0.0
+Oculus DK1 integration 
+Updated to standardize lighting conditions
+Resolution scaling is now DPI independent
+Restored audio functionality for play/pause/stop as well as new feature for making volume louder when objects playing are approached.
+Increased OpenGL requirement to version 3.0
+Custom resolution option (default to 5760 x 1080)
+
+-2.8.0.0
+MazeSuite API functionality (connecting remotely through TCP/IP network to send/receive commands (e.g. move left, right, forward) and data (e.g. position, look angle)
+Multimonitor start positioning
+Dynamic object animations in mazes can be paused and resumed by user gui interaction
+
+-2.7.0.0
+Dynamic object motions are actually timed instead of framerate dependent
+Enabled Walker /subject field in MazeWalker
+Prevented repeated jumping for more realistic actions
+Improved various static/dynamic object texture and collision detection features
+Png image without alpha level can now be loaded as texture
+Implemented transparency for PNGs on models
+Fixed Vsync checkbox state to be saved
+
+-2.6.5.0
+-2.6.0.0
+Enabled Autogenerated Mipmaps
+Bilinear Anisotropic Filtering enabled for supporting cards by default
+MSAA 4x enabled for supporting cards by default
+Fixed an issue with texturing/lighting in MazeLists related to white texture not properly resetting between levels
+Set wrapped image as default skybox instead of individual walls
+Updated advanced graphics options dialog
+Added non-functional filtering options for MSAA, V-Sync, Ansiotropic
+Updated video playback capabilities and prevent generating log during video playback
+minor other improvements
+
+-2.5.0.0
+Improved compatiblity with Intel HD Graphics Cards
+Modified so that shaders do not depend on EXT_GPU_Shader4
+Added "white texture" to all non-textured surfaces
+Improved Skybox support
+Now default behavior for walls is Color or Texture, not both
+Modified cameraSpeedView so it is 4 times slower
+Updated texture loading to not crash when in release mode
+Modified mouse coordinate movement (uses rotation coordinates instead of arbitrary view vectors) now have fuller range of motion
+Modified Collision detection so it is more efficient in sorting
+Modified plane surfaces so that they use variable z-depths which prevents textures/surfaces flashing.
+Modified texture loading to resolve absolute file names correctly (PNG, bmp, and jpg)
+Modified main to load wall planes with texture IDs of -1 as invisible walls
+Modified texture loading to use exclusively absolute path names and convert into
+Modified texture loading to also search "tex" directory
+Modified texture loading to forgive erroneous filenames
+   ie will attempt to load 123.bmp if 123.jpg is not available 
+Modified texture loading to stop gracefully (i.e. when given absolute paths or self-referential paths)
+
+-2.4.0.5
+minor fix about model displays
+
+-2.4.0.2
+Developer settings option updated 
+Timout message display funcionality restored
+Left right turn keyboard binding updated
+
+-2.4.0.1
+Rebuild with Visual Studio 2012 (with XP supported)
+minor enhancements
+
+-2.4.0.0
+Rebuild with Visual Studio 2012 (with XP supported)
+Enabled statistics display during developer mode
+	FPS and information display enabled when developer keys are enabled
+Changed timing from GetTickCount() to QueryPerformanceCounter() for higher resolution timing
+Changed texture shader to add support for transparent textures
+     (currently requires OpenGL2.0 minimum because of EXT_SHADER4)
+Changes to standardize movements to framerate
+Changes to Ghost mode
+     Prototype flying mode, move up down in the direct you are looking
+     space is move up vertical (jump), crouch is move down
+Added Object and Wall occlusion techniques
+Minor enhancements and improvements for lights and bar and file operations. 
+Added skybox (Background texture)
+    Looks for texture ID 900 for wrapped texture
+    Looks for texture ID 901-906 for individual box sides
+       901 is mazeMaker bottom
+       902 is mazeMaker right
+       903 is mazeMaker Top
+       904 is mazeMaker Bottom
+       905 is Top
+       906 is Bottom
+MazeWalker prefers 6 sided over wrapped texture
+
+-2.3.2.0
+	Maze List Text item minor fixes: Handle cases when text item do not have background images set
+
+-2.3.1.0
+	Text item in maze lists can have background images (bmp, jpg or png)
+	minor fixes
+
+-2.3.0.0
+	randomized start angle option (needs to be enabled in mazemaker)
+	skip warning messages option (main window - general settings)
+	increased texture collection size limit to 500
+	updated timer initialization for log
+
+-2.2.0.0
+	message for model incorrect (display model number)
+	message for can not open maze file (add filename to the next line)
+	audio collection
+	new file format
+	dynamic object properties
+	wall/floor visibility
+
+-2.1.5.0
+	model not loaded message includes reference code
+
+-2.1.4.9
+	autolog file name includes month and year
+	autolog first line includes 
+
+-2.1.4.8
+	Open File on main dialog has both maze and maze list filters enabled by default
+
+-2.1.4.7
+	Hide cursor for text display when there is a timeout
+	Enter will not skip textbox if timeout is set (escape will skip)
+	
+-2.1.4.5
+	Added markers for beginning and end of text display (65 for beggining and 75 for end)
+	Minor fixes
+
+-2.1.4.0
+	Fixed display multiline text message
+	Can take commandline parameter as maze list file
+	Display text message with or without box, with or without background
+
+
+-2.1.3.0
+	Autolog feature for automatically generating log files for each run under "my documents/mazesuite" folder
+	Command line switch (LG) for naming log files
+	Improved collision detection for wall corners
+	Fixed a light and shader that would can cause color change for objects with certain materials
+
+-2.1.2.17
+	PNG image file format support (can be used for textures)
+	OBJ model file format compatibility improvements
+	Updated cursor compatibility for window re-positioning and re-sizing
+	Message and user interface compatibility improvements
+
+-2.1.2.16
+	Png image format support
+	Mouse cursor control are updated
+
+-2.1.2.15
+	Visual Studio 2010 Build
+	Fix mouse cursor positioning when not fullscreen
+	Fix command line parameter parsing for quations
+	Removed precompiled headers and MFC
+	Fixed default win code 
+	New icon
+
+-2.1.2.11
+	Set trigger char value (in ascii)
+	
+-2.1.2.10
+	Wait for trigger can be bypassed by 'jump' button (by default it is space bar)
+
+-2.1.2.9
+	Trigger char is changed to both captial and lower case 't'.
+
+-2.1.2.8
+	BCI related (feedback & self assessment)
+
+-2.1.2.0
+	Trigger from serial port
+
+-2.1.0.0
+	Adrian: Model Feature (Can load models)
+	Adrian: Mouse movement
+
+-2.0.2.0
+	Compiled by VS2008 (removed glaux lib)
+	Added BuildTexture Function
+	
+-2.0.1.5
+	Fixed Clear method in MyLightList Class
+
+-2.0.1.4
+	b & 1 = Left Turn
+	y & 2 = Move Forward
+	g & 3 = Move Backward
+	r & 4 = Right Turn
+
+
+-2.0.1.3
+	Add: Movement speed control (A>faster, Z>slower)
+
+-2.0.1.2
+	Fix: Maze list processing. (TextureDictionary>Clear was releasing root obj)
+
+-2.0.1.0
+	Video Mode (Playback from log file)
+	Improve collision detection (smooth tracking of diagonal walls)
+	Custom Light Sources
+	Turn Light On/Off with L Key
+	Texture Index Dictionary

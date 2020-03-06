@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="btgui">
+      <UniqueIdentifier>{0FFBD5F5-CA64-0847-A887-B583EB3AFB1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow">
+      <UniqueIdentifier>{AA56EE22-85EF-F945-8E18-00A1949AD611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow\GlewWindows">
+      <UniqueIdentifier>{5ED32BA4-7C86-8C4B-B344-A0AF03647216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\FontFiles">
+      <UniqueIdentifier>{67D3EF0F-05E5-F94E-B8D7-035439FF1A4A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLTrueTypeFont">
+      <UniqueIdentifier>{A94C9048-217B-1047-A53D-CB28E1033D01}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\fontstash.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\opengl_fontstashcallbacks.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\stb_image_write.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\stb_truetype.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GlewWindows\glew.c">
+      <Filter>btgui\OpenGLWindow\GlewWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\FontFiles\OpenSans.cpp">
+      <Filter>btgui\FontFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLTrueTypeFont\fontstash.cpp">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLTrueTypeFont\opengl_fontstashcallbacks.cpp">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

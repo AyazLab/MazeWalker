@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="btgui">
+      <UniqueIdentifier>{CE96BFAC-E61C-EE44-B91A-22B5E0C3281A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow">
+      <UniqueIdentifier>{8CCFE78D-DA9E-2949-9036-9AD8A6DAFE1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLWindow\GlewWindows">
+      <UniqueIdentifier>{626148C7-91F3-F64E-83C2-F874B5CC005B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\FontFiles">
+      <UniqueIdentifier>{709D2644-2B56-7244-AE82-BBE74F131AB2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\OpenGLTrueTypeFont">
+      <UniqueIdentifier>{BA09A819-94F6-8042-B887-69B950B827AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\Timing">
+      <UniqueIdentifier>{6E00B770-CDE9-B140-9983-6492B7443B8B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="btgui\GwenOpenGLTest">
+      <UniqueIdentifier>{DBB2F2AD-4D33-B24D-BDF9-818F80A7EEE6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\TwFonts.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\LoadShader.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\GLPrimitiveRenderer.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\GwenOpenGL3CoreRenderer.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\fontstash.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLTrueTypeFont\opengl_fontstashcallbacks.h">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\Timing\b3Clock.h">
+      <Filter>btgui\Timing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\GwenOpenGLTest\UnitTest.h">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\Win32OpenGLWindow.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btgui\OpenGLWindow\Win32Window.h">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GlewWindows\glew.c">
+      <Filter>btgui\OpenGLWindow\GlewWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\FontFiles\OpenSans.cpp">
+      <Filter>btgui\FontFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\TwFonts.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\LoadShader.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\GLPrimitiveRenderer.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLTrueTypeFont\fontstash.cpp">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLTrueTypeFont\opengl_fontstashcallbacks.cpp">
+      <Filter>btgui\OpenGLTrueTypeFont</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\Timing\b3Clock.cpp">
+      <Filter>btgui\Timing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\Button.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\Checkbox.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\ComboBox.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\CrossSplitter.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\GroupBox.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\ImagePanel.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\Label.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\ListBox.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\MenuStrip.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\Numeric.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\OpenGLSample.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\PanelListPanel.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\ProgressBar.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\Properties.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\RadioButton.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\ScrollControl.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\Slider.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\StatusBar.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\TabControl.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\TextBox.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\TreeControl.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\GwenOpenGLTest\UnitTest.cpp">
+      <Filter>btgui\GwenOpenGLTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\Win32OpenGLWindow.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\OpenGLWindow\Win32Window.cpp">
+      <Filter>btgui\OpenGLWindow</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

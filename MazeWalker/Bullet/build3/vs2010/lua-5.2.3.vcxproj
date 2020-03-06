@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3945BE95-8DFE-6544-A1A9-B8F9792EB4AF}</ProjectGuid>
+    <RootNamespace>lua-5.2.3</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\x32\Release\lua-5.2.3\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">lua-5.2.3_vs2010</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">obj\x64\Release\lua-5.2.3\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">lua-5.2.3_vs2010_x64_release</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\x32\Debug\lua-5.2.3\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lua-5.2.3_vs2010_debug</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">obj\x64\Debug\lua-5.2.3\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">lua-5.2.3_vs2010_x64_debug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)lua-5.2.3_vs2010.lib</OutputFile>
+    <TargetMachine>MachineX86</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)lua-5.2.3_vs2010_x64_release.lib</OutputFile>
+    <TargetMachine>MachineX64</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)lua-5.2.3_vs2010_debug.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)lua-5.2.3_vs2010_debug.lib</OutputFile>
+    <TargetMachine>MachineX86</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+    <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)lua-5.2.3_vs2010_x64_debug.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG=1;_HAS_EXCEPTIONS=0;LUA_COMPAT_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\btgui\lua-5.2.3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)lua-5.2.3_vs2010_x64_debug.lib</OutputFile>
+    <TargetMachine>MachineX64</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lapi.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lauxlib.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lcode.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lctype.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\ldebug.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\ldo.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lfunc.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lgc.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\llex.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\llimits.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lmem.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lobject.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lopcodes.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lparser.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lstate.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lstring.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\ltable.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\ltm.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lua.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\luaconf.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lualib.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lundump.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lvm.h" />
+    <ClInclude Include="..\..\btgui\lua-5.2.3\src\lzio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lapi.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lauxlib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lbaselib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lbitlib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lcode.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lcorolib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lctype.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ldblib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ldebug.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ldo.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ldump.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lfunc.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lgc.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\linit.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\liolib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\llex.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lmathlib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lmem.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\loadlib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lobject.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lopcodes.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\loslib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lparser.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lstate.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lstring.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lstrlib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ltable.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ltablib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\ltm.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lundump.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lvm.c">
+    </ClCompile>
+    <ClCompile Include="..\..\btgui\lua-5.2.3\src\lzio.c">
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

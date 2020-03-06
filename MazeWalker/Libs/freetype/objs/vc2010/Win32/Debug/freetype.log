@@ -1,0 +1,43 @@
+﻿  autofit.c
+  bdf.c
+  cff.c
+  ftbase.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\cff\cffload.c(1368): warning C4244: '=': conversion from 'FT_UInt32' to 'FT_Byte', possible loss of data (compiling source file ..\..\..\src\cff\cff.c)
+  ftbitmap.c
+  ftcache.c
+  ftfstype.c
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\base\ftobjs.c(4995): warning C4702: unreachable code
+d:\vsstudio\visual studio 2013\projects\mazewalker\libs\freetype\src\base\ftobjs.c(4996): warning C4702: unreachable code
+  ftgasp.c
+  ftglyph.c
+  ftgzip.c
+  ftinit.c
+  ftlzw.c
+  ftstroke.c
+  ftsystem.c
+  smooth.c
+  ftbbox.c
+  ftfntfmt.c
+  ftmm.c
+  ftpfr.c
+  ftsynth.c
+  fttype1.c
+  ftwinfnt.c
+  ftlcdfil.c
+  ftgxval.c
+  ftotval.c
+  ftpatent.c
+  pcf.c
+  pfr.c
+  psaux.c
+  pshinter.c
+  psmodule.c
+  raster.c
+  sfnt.c
+  truetype.c
+  type1.c
+  type1cid.c
+  type42.c
+  winfnt.c
+  ftdebug.c
+  freetype.vcxproj -> D:\VSStudio\Visual Studio 2013\Projects\MazeWalker\Libs\freetype\builds\windows\vc2010\.\..\..\..\objs\vc2010\Win32\freetype28d.lib

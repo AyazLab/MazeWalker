@@ -1,0 +1,4 @@
+Add view and movespeed options into mazewalker dialog
+Fix or disable look up/down perspective in 3/4 view
+Proper object frustrum culling
+Does API dialog require admin permissions on some computers?

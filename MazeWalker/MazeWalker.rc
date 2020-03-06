@@ -1,0 +1,642 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR                  "res/cursor1.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 209, 299
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTERMOUSE | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "MazeWalker"
+MENU IDR_MENU1
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "START",IDOK,105,271,50,26
+    PUSHBUTTON      "CLOSE",IDCANCEL,44,271,50,26
+    GROUPBOX        "Video Settings",IDC_STATIC,7,7,194,52
+    COMBOBOX        IDC_COMBO1,12,35,84,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Full Screen",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,145,37,52,10
+    COMBOBOX        IDC_COMBO2,102,35,38,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Resolution",IDC_STATIC,13,23,34,8
+    LTEXT           "Color Dept",IDC_STATIC,103,24,35,8
+    GROUPBOX        "Control Settings",IDC_STATIC,7,62,194,56
+    CONTROL         "Show Cross-hair (C)",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,133,80,10
+    CTEXT           "Press ESC (Escape) button to exit the MAZE!",IDC_STATIC,7,256,194,10,SS_SUNKEN
+    GROUPBOX        "Open Maze",IDC_STATIC,7,175,194,30
+    LTEXT           "",IDC_FILENAME,14,188,160,11,SS_CENTERIMAGE | SS_SUNKEN | SS_PATHELLIPSIS
+    PUSHBUTTON      "...",IDC_BUTTON1,178,186,19,14
+    CONTROL         "Use Mouse",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,74,51,10
+    GROUPBOX        "General Settings",IDC_STATIC,7,122,194,49
+    CONTROL         "Show Timer (T)",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,133,71,10
+    GROUPBOX        "Keep Log",IDC_STATIC,7,207,194,44
+    LTEXT           "",IDC_FILENAME2,14,220,160,11,SS_CENTERIMAGE | SS_SUNKEN | SS_PATHELLIPSIS
+    PUSHBUTTON      "...",IDC_BUTTON2,178,218,19,14
+    LTEXT           "Walker :",IDC_STATIC,16,237,28,8
+    EDITTEXT        IDC_EDIT1,47,235,94,12,ES_AUTOHSCROLL
+    CONTROL         "Use Joystick",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,101,74,55,10
+    CONTROL         "Use Pre-recorded Log File [Video Playback Mode]",IDC_CHECK7,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,89,176,10
+    LTEXT           "",IDC_FILENAME3,14,104,160,11,SS_SUNKEN | SS_PATHELLIPSIS
+    PUSHBUTTON      "...",IDC_BUTTON4,178,102,19,14
+    CONTROL         "Enable Lights (L)",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,145,80,10
+    CONTROL         "Show Bar (B)",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,145,65,10
+    CONTROL         "Enable Shaders (I)",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,157,75,10
+    CONTROL         "AutoLog",IDC_AUTOLOGCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,146,236,43,10
+    CONTROL         "",IDC_DEVICECHECK3,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,7,288,16,10
+    CONTROL         "",IDC_DEVICECHECK2,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,7,278,16,10
+    CONTROL         "",IDC_DEVICECHECK,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,7,268,16,10
+    CONTROL         "Skip Warnings",IDC_SKIPWarningCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,157,72,10
+END
+
+IDD_DIALOG_ABOUT DIALOGEX 0, 0, 347, 155
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "About MazeWalker"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         IDB_BITMAP1,IDC_MYIMAGE,"Static",SS_BITMAP | SS_CENTERIMAGE | SS_REALSIZEIMAGE | SS_SUNKEN,1,1,168,152
+    DEFPUSHBUTTON   "Close",IDOK,296,139,50,14
+    LTEXT           "Drexel University (C) 2018\n\nHasan Ayaz\nAdrian Curtin\n\nhttp://www.mazesuite.com/",IDC_STATIC,173,21,132,53
+    LTEXT           "MazeWalker v2.1.2",IDC_VERSIONS,173,6,147,8
+    EDITTEXT        IDC_EDIT1,172,74,174,63,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_DIALOG_KEYBOARD DIALOGEX 0, 0, 179, 336
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change Keyboard Bindings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDC_CONT,121,316,50,14
+    PUSHBUTTON      "...",IDC_BUTTON1,64,21,50,14
+    PUSHBUTTON      "...",IDC_BUTTON2,121,21,50,14
+    PUSHBUTTON      "...",IDC_BUTTON3,64,35,50,14
+    PUSHBUTTON      "...",IDC_BUTTON4,121,35,50,14
+    PUSHBUTTON      "...",IDC_BUTTON5,64,49,50,14
+    PUSHBUTTON      "...",IDC_BUTTON6,121,49,50,14
+    PUSHBUTTON      "...",IDC_BUTTON7,64,63,50,14
+    PUSHBUTTON      "...",IDC_BUTTON8,121,63,50,14
+    PUSHBUTTON      "...",IDC_BUTTON9,64,77,50,14
+    PUSHBUTTON      "...",IDC_BUTTON10,121,77,50,14
+    PUSHBUTTON      "...",IDC_BUTTON11,64,91,50,14
+    PUSHBUTTON      "...",IDC_BUTTON12,121,91,50,14
+    PUSHBUTTON      "...",IDC_BUTTON13,64,106,50,14
+    PUSHBUTTON      "...",IDC_BUTTON14,64,120,50,14
+    PUSHBUTTON      "...",IDC_BUTTON15,64,148,50,14
+    PUSHBUTTON      "...",IDC_BUTTON16,64,162,50,14
+    PUSHBUTTON      "...",IDC_BUTTON17,64,176,50,14
+    LTEXT           "Move Forward",IDC_STATIC,8,24,47,8
+    LTEXT           "Move Backward",IDC_STATIC,8,38,51,8
+    LTEXT           "Strafe Left",IDC_STATIC,8,52,36,8
+    LTEXT           "Strafe Right",IDC_STATIC,8,66,40,8
+    LTEXT           "Look Left",IDC_STATIC,8,80,30,8
+    LTEXT           "Look Right",IDC_STATIC,8,94,34,8
+    CTEXT           "Button 1",IDC_STATIC,63,9,55,8
+    CTEXT           "Button 2",IDC_STATIC,119,9,52,8
+    LTEXT           "Toggle Lights",IDC_STATIC,8,179,49,8
+    LTEXT           "Toggle Cursor",IDC_STATIC,8,193,46,8
+    LTEXT           "Toggle Bar",IDC_STATIC,8,207,35,8
+    LTEXT           "Toggle Timer",IDC_STATIC,8,221,42,8
+    PUSHBUTTON      "...",IDC_BUTTON19,64,190,50,14
+    PUSHBUTTON      "...",IDC_BUTTON20,64,204,50,14
+    PUSHBUTTON      "...",IDC_BUTTON21,64,218,50,14
+    LTEXT           "Run",IDC_STATIC,8,108,14,8
+    LTEXT           "Crouch",IDC_STATIC,8,123,24,8
+    LTEXT           "Speed Up",IDC_STATIC,8,151,32,8
+    LTEXT           "Speed Down",IDC_STATIC,8,165,41,8
+    PUSHBUTTON      "Default",IDC_RestoreDefault,9,316,50,14
+    PUSHBUTTON      "...",IDC_BUTTON18,64,134,50,14
+    LTEXT           "Change Keyboard Bindings",IDC_STATIC,0,0,86,8
+    LTEXT           "Jump / Pause",IDC_STATIC,8,137,44,8
+    PUSHBUTTON      "Cancel",IDC_KEYBOARD_CANCEL,64,316,50,14
+    LTEXT           "Escape to unbind",IDC_STATIC,0,8,56,8
+    PUSHBUTTON      "...",IDC_BUTTON23,64,232,50,14
+    PUSHBUTTON      "...",IDC_BUTTON24,64,246,50,14
+    LTEXT           "Look Up",IDC_STATIC,8,235,26,8
+    LTEXT           "Look Down",IDC_STATIC,8,249,36,8
+    LTEXT           "Interact",IDC_STATIC,9,263,27,8
+    PUSHBUTTON      "...",IDC_BUTTON_INTERACT,64,260,50,14
+    LTEXT           "Restart Maze",IDC_STATIC,8,276,44,8
+    PUSHBUTTON      "...",IDC_BUTTON_RESTART,64,274,50,14
+    LTEXT           "Next Maze",IDC_STATIC,8,290,44,8
+    PUSHBUTTON      "...",IDC_BUTTON_NEXT,64,289,50,14
+END
+
+IDD_DIALOG_ADVANCED DIALOGEX 0, 0, 249, 180
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Advanced Graphics Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "OK",IDC_SHADER_OK,194,162,50,14
+    PUSHBUTTON      "Cancel",IDC_SHADER_CANCEL,136,162,50,14
+    GROUPBOX        "Shader Settings",IDC_STATIC,4,46,240,61
+    CONTROL         "Render Textures",IDC_SHADER_TEXTURES_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,80,70,10
+    CONTROL         "Enable Specular Lighting",IDC_SHADER_SPECULAR_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,70,93,10
+    CONTROL         "Enable Diffuse Lighting",IDC_SHADER_DIFFUSE_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,60,89,10
+    COMBOBOX        IDC_AMBIENT_COMBO,110,70,117,155,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_MAXLIGHTS_COMBO,203,90,24,139,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Ambient Lighting Type",IDC_STATIC,111,61,72,8
+    LTEXT           "Maximum Lights",IDC_STATIC,145,90,53,8
+    CONTROL         "Use Shaders with Objects",IDC_SHADER_OBJECTS_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,91,98,10
+    GROUPBOX        "Post-Processing Settings",IDC_STATIC,4,108,240,50
+    CONTROL         "Enable 4X MSAA Filtering",IDC_CHECK_MSAA,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,121,95,10
+    CONTROL         "Enable 16x Anisotropic Filtering",IDC_CHECK_ANISO,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,132,116,10
+    CONTROL         "Enable V-Sync",IDC_CHECK_VSYNC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,143,61,10
+    GROUPBOX        "Custom Resolution",IDC_STATIC,4,4,121,39
+    EDITTEXT        IDC_EDIT_CustomWidth,14,20,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_CustomHeight,68,20,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Width",IDC_STATIC,45,22,20,8
+    LTEXT           "Height",IDC_STATIC,100,22,22,8
+    CONTROL         "Borderless Windowed Mode",IDC_BORDERLESS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,21,104,10
+    GROUPBOX        "Other Display Settings",IDC_STATIC,128,4,116,39
+END
+
+IDD_DIALOG_API DIALOGEX 0, 0, 385, 71
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "API Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,328,35,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,328,50,50,14
+    CONTROL         "Enable Device 1",IDC_Sensor_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,17,67,10
+    CONTROL         "Enable Device 2",IDC_SENSOR_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,32,67,10
+    CONTROL         "Enable Device 3",IDC_SENSOR_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,48,67,10
+    EDITTEXT        IDC_SENSORPORTEDIT1,81,17,40,14,ES_NUMBER
+    LTEXT           "TCP Listening Port",IDC_STATIC,71,6,59,8
+    EDITTEXT        IDC_SENSORPORTEDIT2,81,32,40,14,ES_NUMBER
+    EDITTEXT        IDC_SENSORPORTEDIT3,81,48,40,14,ES_NUMBER
+    CONTROL         "Local Device",IDC_LOCALCHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,245,17,55,10
+    CONTROL         "Local Device",IDC_LOCALCHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,246,32,55,10
+    CONTROL         "Local Device",IDC_LOCALCHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,246,48,55,10
+    CONTROL         "",IDC_IPADDRESS1,"SysIPAddress32",WS_TABSTOP,139,17,100,15
+    LTEXT           "IP Address",IDC_STATIC,143,6,36,8
+    CONTROL         "",IDC_IPADDRESS2,"SysIPAddress32",WS_TABSTOP,139,32,100,15
+    CONTROL         "",IDC_IPADDRESS3,"SysIPAddress32",WS_TABSTOP,139,49,100,15
+    CONTROL         "Wait for Devices",IDC_WAIT_FOR_CONNECTION_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,309,17,69,10
+END
+
+IDD_DIALOG_Other DIALOGEX 0, 0, 171, 223
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Developer Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,115,205,50,14
+    PUSHBUTTON      "Default",ID_Default,5,205,50,14
+    PUSHBUTTON      "Cancel",ID_CANCEL,60,205,50,14
+    CONTROL         "Enable Developer Keys",IDC_DEVKEYSCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,7,89,10
+    LTEXT           "9: Set Score to 10\n0: Set Score to 100\nO:Move Up\nP: Disable Gravity and Collisions\nU: Change Perspective Mode",IDC_STATIC,28,19,121,42
+    CONTROL         "Enable Interactive Playback",IDC_INTERACTIVECHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,64,105,10
+    LTEXT           "Score Bar Display:",IDC_ScoreBox_Caption,13,180,62,10
+    CONTROL         "Enable Debug Performance Display",IDC_FPSCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,105,135,10
+    LTEXT           "In Video Playback mode, pauses during events and requires device cue to resume.",IDC_InteractiveCaption2,28,75,99,26
+    CONTROL         "Hide rendered maze in Dialogs",IDC_HIDE_RENDERED_MAZE_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,140,135,10
+    CONTROL         "Disable Gravity (2D motion only)",IDC_DISABLE_GRAVITY_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,161,135,10
+    COMBOBOX        IDC_SCOREBAR_COMBO,83,179,62,86,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Displays FrameRate, Position, and Debug information",IDC_InteractiveCaption3,28,117,105,23
+END
+
+IDD_DIALOG5 DIALOGEX 0, 0, 262, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | DS_CENTERMOUSE | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDC_CONT,205,49,50,14
+    CTEXT           "",IDC_MES,7,7,248,40
+END
+
+IDD_DIALOG_JOYSTICK DIALOGEX 0, 0, 229, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Joystick Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,172,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,125,191,44,14
+    LTEXT           "Look Left/Right",IDC_STATIC,7,63,50,8
+    LTEXT           "Look Up/Down",IDC_STATIC,7,75,47,8
+    LTEXT           "Move",IDC_STATIC,7,87,87,11
+    COMBOBOX        IDC_jMoveAxis,67,84,74,157,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_jStrafeAxis,68,97,73,161,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_jUpDownAxis,67,71,73,147,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Invert",IDC_STATIC,145,46,21,8
+    CONTROL         "",IDC_iLeftRightAxis,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,151,58,16,10
+    CONTROL         "",IDC_iUpDownAxis,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,151,73,16,10
+    CONTROL         "",IDC_iMoveAxis,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,151,88,16,10
+    PUSHBUTTON      "Preset 1",IDC_JOYSTICK_DEFAULT1,7,191,36,14
+    LTEXT           "Sensitivity",IDC_STATIC,177,46,34,8
+    EDITTEXT        IDC_SENSELR,177,58,20,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SENSEUD,177,72,20,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SENSEMOVE,177,85,20,14,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_JOYNUMCOMBO,72,6,126,125,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Selected Joystick:",IDC_STATIC,10,9,58,8
+    COMBOBOX        IDC_jLeftRightAxis,67,57,73,156,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Strafe",IDC_STATIC,7,100,21,8
+    LTEXT           "Action:",IDC_STATIC,7,47,24,8
+    LTEXT           "Axis:",IDC_STATIC,67,47,17,8
+    CONTROL         "",IDC_iStrafeAxis,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,151,101,16,10
+    EDITTEXT        IDC_SENSESTRAFE,177,99,20,14,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_jJumpButton,68,129,67,219,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Jump",IDC_STATIC,7,129,18,8
+    LTEXT           "Interact",IDC_STATIC,7,148,27,8
+    COMBOBOX        IDC_jInteractButton,68,145,67,201,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Preset 2",IDC_JOYSTICK_DEFAULT2,45,191,37,14
+    LTEXT           "Button:",IDC_STATIC,69,115,25,8
+    PUSHBUTTON      "API Only",IDC_JOYSTICK_API,85,191,37,14
+    LTEXT           "mazeAPI Inputs are always enabled if joystick is enabled and actions are assigned. Please check connection settings.",IDC_STATIC,12,22,215,21,WS_DISABLED
+END
+
+IDD_DIALOG_COMM DIALOGEX 0, 0, 205, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Serial & Parallel Port"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,148,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,191,50,14
+    CONTROL         "Enable Serial Port (Send Markers)",IDC_SerialCheck,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,17,168,10
+    COMBOBOX        IDC_PORTCOMBO,118,59,46,136,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BAUDRATECOMBO,61,75,56,98,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Available Ports:",IDC_STATIC,130,46,51,10
+    LTEXT           "Baud Rate:",IDC_STATIC,15,77,37,8
+    LTEXT           "Parity:",IDC_STATIC,15,93,42,11
+    COMBOBOX        IDC_PARITYCOMBO,61,91,56,53,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STOPBITSCOMBO,61,107,56,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Stop Bits:",IDC_STATIC,15,109,32,13
+    CONTROL         "Listen and Log Incoming Markers",IDC_LISTENCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,29,168,10
+    GROUPBOX        "Parrallel Port (LPT)",IDC_STATIC,7,131,191,59
+    GROUPBOX        "Serial Port (COM)",IDC_STATIC,7,5,191,119
+    CONTROL         "Send Maze Start/End over LPT1",IDC_LPT_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,145,124,10
+    LTEXT           "Current Port:",IDC_STATICPORTLABEL,15,60,45,10
+    PUSHBUTTON      "Set",ID_SETPORT,166,59,28,12
+    LTEXT           "Unassigned",IDC_STATICCURRENTPORT,63,60,38,8
+    LTEXT           "<-",IDC_STATIC,106,60,12,10
+    EDITTEXT        IDC_EDITLPT,41,157,28,14,ES_AUTOHSCROLL
+    LTEXT           "Port:",IDC_STATIC,15,160,17,8
+    PUSHBUTTON      "Set",IDC_SETLPTPORT,88,158,19,11
+    EDITTEXT        IDC_EDITLPT_DELAY,41,173,28,14,ES_AUTOHSCROLL
+    LTEXT           "Delay:",IDC_STATIC,15,176,21,8
+    PUSHBUTTON      "Set",IDC_SETLPT_DELAY,87,175,20,11
+    LTEXT           "Increase if not receiving LPT",IDC_STATIC,108,176,90,8
+    LTEXT           "ms",IDC_STATIC,70,175,10,8
+END
+
+IDD_DIALOG_SYNC DIALOGEX 0, 0, 207, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Synchronization Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,132,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,58,132,50,14
+    GROUPBOX        "Start Cue",IDC_triggerGroup,5,6,197,119
+    COMBOBOX        IDC_CUECOMBO,73,22,110,79,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Cue Source",IDC_STATIC,23,23,40,11
+    LTEXT           "Cue Character",IDC_STATIC,25,52,77,11
+    EDITTEXT        IDC_EDIT_TRIGGERCHAR,99,49,40,15,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Serial Options",IDC_STATIC,13,38,176,32
+    GROUPBOX        "Joystick Options",IDC_STATIC,13,72,175,32
+    LTEXT           "Cue Button",IDC_STATIC,25,87,48,14
+    COMBOBOX        IDC_JOYCUECOMBO,75,85,108,74,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Default",ID_Default,5,132,50,14
+    CONTROL         "Enable Keyboard Cue Skip",IDC_SKIPBUTTONCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,108,129,10
+END
+
+IDD_DIALOG_OCULUS DIALOGEX 0, 0, 159, 61
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Oculus Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,102,40,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,40,50,14
+    CONTROL         "Enable Oculus Rift",IDC_OCULUS_CHECK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,7,14,74,10
+END
+
+IDD_DIALOG_VIEW_OPTIONS DIALOGEX 0, 0, 155, 212
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Perspective Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,98,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,191,50,14
+    COMBOBOX        IDC_PRESEPECTIVE_COMBO,68,20,74,67,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "View Perspective",IDC_STATIC,10,21,54,8
+    GROUPBOX        "Top-Down Options",IDC_STATIC,7,39,141,41
+    LTEXT           "Orientation",IDC_STATIC,10,51,50,8
+    COMBOBOX        IDC_ORIENTATION_COMBO,81,48,61,60,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use Mouse To Orient",IDC_TOPDOWN_MOUSE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,65,83,10
+    GROUPBOX        " Other Options",IDC_STATIC,7,83,141,106
+    GROUPBOX        "Display",IDC_STATIC,7,7,141,30
+    CONTROL         "X-ray display (Only line rendering)",IDC_SIMPLE_RENDERCHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,113,124,10
+    LTEXT           "Camera Height",IDC_STATIC,16,98,70,8
+    EDITTEXT        IDC_EDIT_HEIGHT,79,95,61,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Fix X Location",IDC_FIXED_CAMERA_X_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,131,64,11
+    EDITTEXT        IDC_EDIT_FIXZ,91,146,44,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_FIXX,26,146,43,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "X:",IDC_STATIC,14,148,11,8
+    LTEXT           "Z:",IDC_STATIC,79,148,11,8
+    EDITTEXT        IDC_FOV_EDIT,98,170,43,14,ES_NUMBER
+    LTEXT           "Field Of View (Degrees)",IDC_STATIC,11,172,76,8
+    CONTROL         "Fix Z Location",IDC_FIXED_CAMERA_Z_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,84,131,64,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 297
+    END
+
+    IDD_DIALOG_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 346
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_DIALOG_KEYBOARD, DIALOG
+    BEGIN
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 330
+    END
+
+    IDD_DIALOG_ADVANCED, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 244
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_DIALOG_API, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 378
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_DIALOG_Other, DIALOG
+    BEGIN
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_DIALOG5, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DIALOG_JOYSTICK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_DIALOG_COMM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_DIALOG_SYNC, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 202
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_DIALOG_OCULUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_DIALOG_VIEW_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 148
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,5,0
+ PRODUCTVERSION 3,0,5,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Hasan Ayaz"
+            VALUE "CompanyName", "Drexel University"
+            VALUE "FileDescription", "MazeWalk Application"
+            VALUE "FileVersion", "3.0.5.0"
+            VALUE "InternalName", "MazeWalk"
+            VALUE "LegalCopyright", "Copyright (C) 2018"
+            VALUE "OriginalFilename", "MazeWalk.exe"
+            VALUE "ProductName", " MazeWalk Application"
+            VALUE "ProductVersion", "3.0.5.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Start",                       ID_FILE_START
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+    POPUP "Advanced"
+    BEGIN
+        MENUITEM "Perspective Settings",        ID_ADVANCED_PERSPECTIVESETTINGS
+        MENUITEM "Keyboard Settings",           ID_OTHER_CONTROLS
+        MENUITEM "Joystick Settings",           ID_ADVANCED_JOYSTICK
+        MENUITEM "Synchronization Settings",    ID_ADVANCED_SYNC
+        MENUITEM "Serial + Parallel Port Settings", ID_ADVANCED_SERIALOPTIONS
+        MENUITEM "Advanced Graphics Settings",  ID_ADVANCED_SHADEROPTIONS
+        MENUITEM "API Settings",                ID_ADVANCED_SENSOROPTIONS
+        MENUITEM "Developer Settings",          ID_ADVANCED_OTHER
+        MENUITEM "Oculus Settings (Beta)",      ID_ADVANCED_OCULUS
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "MazeUpdate Utility",          ID_HELP_MAZEUPDATEUTILITY
+        MENUITEM SEPARATOR
+        MENUITEM "About",                       ID_INFO_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "res\\mazeWalker.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\mazeWalker_500.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG_Other AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_SYNC AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_ADVANCED AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_COMM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
