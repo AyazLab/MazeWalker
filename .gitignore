@@ -1068,3 +1068,6 @@ MazeWalker/Bullet/build3/vs2010/obj/x32/Release/BulletCollision/btBox2dShape.obj
 MazeWalker/Bullet/build3/vs2010/obj/x32/Release/BulletCollision/btBox2dBox2dCollisionAlgorithm.obj
 MazeWalker/Bullet/build3/vs2010/obj/x32/Release/BulletCollision/btAxisSweep3.obj
 MazeWalker/Bullet/build3/vs2010/obj/x32/Release/BulletCollision/btActivatingCollisionAlgorithm.obj
+*.ipch
+*.tlog
+MazeWalker/Debug/tmp/MazeWalker.log
