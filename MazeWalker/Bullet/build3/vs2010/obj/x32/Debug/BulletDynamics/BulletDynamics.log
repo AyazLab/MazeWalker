@@ -1,1 +1,47 @@
-﻿
+﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+  btKinematicCharacterController.cpp
+  btConeTwistConstraint.cpp
+  btContactConstraint.cpp
+  btFixedConstraint.cpp
+  btGearConstraint.cpp
+  btGeneric6DofConstraint.cpp
+  btGeneric6DofSpringConstraint.cpp
+  btHinge2Constraint.cpp
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\character\btkinematiccharactercontroller.cpp(660): warning C4244: 'argument': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\character\btkinematiccharactercontroller.cpp(660): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  btHingeConstraint.cpp
+  btNNCGConstraintSolver.cpp
+  btPoint2PointConstraint.cpp
+  btSequentialImpulseConstraintSolver.cpp
+  btSliderConstraint.cpp
+  btSolve2LinearConstraint.cpp
+  btTypedConstraint.cpp
+  btUniversalConstraint.cpp
+  btDiscreteDynamicsWorld.cpp
+  btRigidBody.cpp
+  btSimpleDynamicsWorld.cpp
+  btMultiBody.cpp
+  btMultiBodyConstraint.cpp
+  btMultiBodyConstraintSolver.cpp
+  btMultiBodyDynamicsWorld.cpp
+  btMultiBodyJointLimitConstraint.cpp
+  btMultiBodyJointMotor.cpp
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1248): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1249): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1250): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1251): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1252): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1253): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1287): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1288): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1289): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1290): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1291): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\bullet\src\bulletdynamics\featherstone\btmultibody.cpp(1292): warning C4244: '=': conversion from 'btScalar' to 'float', possible loss of data
+  btMultiBodyPoint2Point.cpp
+  btDantzigLCP.cpp
+  btLemkeAlgorithm.cpp
+  btMLCPSolver.cpp
+  btRaycastVehicle.cpp
+  btWheelInfo.cpp
+  BulletDynamics.vcxproj -> D:\GitHub\MazeWalker\MazeWalker\Bullet\build3\vs2010\..\..\lib\BulletDynamics_vs2010_debug.lib

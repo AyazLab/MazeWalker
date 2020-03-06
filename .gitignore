@@ -5,3 +5,309 @@ MazeWalker/.vs/MazeWalker/v15/Solution.VC.db
 MazeWalker/.vs/MazeWalker/v15/Browse.VC.opendb
 MazeWalker/.vs/MazeWalker/v15/Browse.VC.db
 MazeWalker/.vs/MazeWalker/v15/.suo
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btActivatingCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btAxisSweep3.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBox2dBox2dCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBox2dShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBoxBoxCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBoxBoxDetector.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBoxShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBroadphaseProxy.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btBvhTriangleMeshShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCapsuleShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCollisionDispatcher.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCollisionObject.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCollisionShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCollisionWorld.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCompoundCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCompoundCompoundCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCompoundShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConcaveShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConeShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btContactProcessing.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btContinuousConvexCollision.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvex2dConvex2dAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvex2dShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexCast.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexConcaveCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexConvexAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexHullShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexInternalShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexPlaneCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexPointCloudShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexPolyhedron.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btConvexTriangleMeshShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btCylinderShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btDbvt.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btDbvtBroadphase.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btDefaultCollisionConfiguration.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btDispatcher.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btEmptyCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btEmptyShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGenericPoolAllocator.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGhostObject.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGImpactBvh.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGImpactCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGImpactQuantizedBvh.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGImpactShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGjkConvexCast.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGjkEpa2.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGjkEpaPenetrationDepthSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btGjkPairDetector.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btHashedSimplePairCache.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btHeightfieldTerrainShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btInternalEdgeUtility.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btManifoldResult.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btMinkowskiPenetrationDepthSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btMinkowskiSumShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btMultimaterialTriangleMeshShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btMultiSphereShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btOptimizedBvh.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btOverlappingPairCache.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btPersistentManifold.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btPolyhedralContactClipping.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btPolyhedralConvexShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btQuantizedBvh.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btRaycastCallback.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btScaledBvhTriangleMeshShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btShapeHull.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSimpleBroadphase.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSimulationIslandManager.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSphereBoxCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSphereShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSphereSphereCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSphereTriangleCollisionAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btStaticPlaneShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btStridingMeshInterface.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btSubSimplexConvexCast.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTetrahedronShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleBuffer.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleCallback.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleIndexVertexArray.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleIndexVertexMaterialArray.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleMesh.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleMeshShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btTriangleShapeEx.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btUniformScalingShape.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btUnionFind.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/btVoronoiSimplexSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/BulletCollision.lastbuildstate
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/CL.12088.write.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/CL.command.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/CL.read.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/Lib-link.read.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/Lib-link.write.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.tlog/Lib.command.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision_vs2010_debug.Build.CppClean.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/gim_box_set.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/gim_contact.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/gim_memory.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/gim_tri_collision.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/SphereTriangleDetector.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btConeTwistConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btContactConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btDantzigLCP.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btDiscreteDynamicsWorld.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btFixedConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btGearConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btGeneric6DofConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btGeneric6DofSpringConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btHinge2Constraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btHingeConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btKinematicCharacterController.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btLemkeAlgorithm.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMLCPSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBody.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBodyConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBodyConstraintSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBodyDynamicsWorld.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBodyJointLimitConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBodyJointMotor.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btMultiBodyPoint2Point.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btNNCGConstraintSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btPoint2PointConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btRaycastVehicle.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btRigidBody.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btSequentialImpulseConstraintSolver.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btSimpleDynamicsWorld.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btSliderConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btSolve2LinearConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btTypedConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btUniversalConstraint.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/btWheelInfo.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/BulletDynamics.lastbuildstate
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/CL.12016.write.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/CL.command.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/CL.read.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/Lib-link.read.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/Lib-link.write.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.tlog/Lib.command.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics_vs2010_debug.Build.CppClean.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btAlignedAllocator.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btConvexHull.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btConvexHullComputer.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btGeometryUtil.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btPolarDecomposition.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btQuickprof.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btSerializer.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/btVector3.obj
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/CL.15072.write.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/CL.command.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/CL.read.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/Lib-link.read.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/Lib-link.write.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/Lib.command.1.tlog
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.tlog/LinearMath.lastbuildstate
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath_vs2010_debug.Build.CppClean.log
+MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.lib
+MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
+MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.lib
+MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
+MazeWalker/Bullet/lib/LinearMath_vs2010_debug.lib
+MazeWalker/Bullet/lib/LinearMath_vs2010_debug.pdb
+MazeWalker/Debug/MazeWalker.exe
+MazeWalker/Debug/MazeWalker.exp
+MazeWalker/Debug/MazeWalker.ilk
+MazeWalker/Debug/MazeWalker.lib
+MazeWalker/Debug/MazeWalker.pdb
+MazeWalker/Debug/tmp/adler32.obj
+MazeWalker/Debug/tmp/AudioDictionary.obj
+MazeWalker/Debug/tmp/Camera.obj
+MazeWalker/Debug/tmp/com.obj
+MazeWalker/Debug/tmp/compress.obj
+MazeWalker/Debug/tmp/crc32.obj
+MazeWalker/Debug/tmp/deflate.obj
+MazeWalker/Debug/tmp/freetype.obj
+MazeWalker/Debug/tmp/glew.obj
+MazeWalker/Debug/tmp/glm.obj
+MazeWalker/Debug/tmp/glmimg.obj
+MazeWalker/Debug/tmp/gzio.obj
+MazeWalker/Debug/tmp/infback.obj
+MazeWalker/Debug/tmp/inffast.obj
+MazeWalker/Debug/tmp/inflate.obj
+MazeWalker/Debug/tmp/inftrees.obj
+MazeWalker/Debug/tmp/ioapi.obj
+MazeWalker/Debug/tmp/iowin32.obj
+MazeWalker/Debug/tmp/Joystick.obj
+MazeWalker/Debug/tmp/LightItem.obj
+MazeWalker/Debug/tmp/Log.obj
+MazeWalker/Debug/tmp/main.obj
+MazeWalker/Debug/tmp/Map.obj
+MazeWalker/Debug/tmp/MazeListItem.obj
+MazeWalker/Debug/tmp/MazeWalker.log
+MazeWalker/Debug/tmp/MazeWalker.res
+MazeWalker/Debug/tmp/MazeWalker.tlog/CL.command.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/CL.read.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/CL.write.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/link.command.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/link.read.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/link.write.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/MazeWalker.lastbuildstate
+MazeWalker/Debug/tmp/MazeWalker.tlog/MazeWalker.write.1u.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/rc.command.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/rc.read.1.tlog
+MazeWalker/Debug/tmp/MazeWalker.tlog/rc.write.1.tlog
+MazeWalker/Debug/tmp/mazX.obj
+MazeWalker/Debug/tmp/MyLightList.obj
+MazeWalker/Debug/tmp/MyList.obj
+MazeWalker/Debug/tmp/particle.obj
+MazeWalker/Debug/tmp/png.obj
+MazeWalker/Debug/tmp/pngerror.obj
+MazeWalker/Debug/tmp/pnggccrd.obj
+MazeWalker/Debug/tmp/pngget.obj
+MazeWalker/Debug/tmp/pngmem.obj
+MazeWalker/Debug/tmp/pngpread.obj
+MazeWalker/Debug/tmp/pngread.obj
+MazeWalker/Debug/tmp/pngrio.obj
+MazeWalker/Debug/tmp/pngrtran.obj
+MazeWalker/Debug/tmp/pngrutil.obj
+MazeWalker/Debug/tmp/pngset.obj
+MazeWalker/Debug/tmp/pngtrans.obj
+MazeWalker/Debug/tmp/pngvcrd.obj
+MazeWalker/Debug/tmp/pngwio.obj
+MazeWalker/Debug/tmp/pngwrite.obj
+MazeWalker/Debug/tmp/pngwtran.obj
+MazeWalker/Debug/tmp/pngwutil.obj
+MazeWalker/Debug/tmp/QPC.obj
+MazeWalker/Debug/tmp/ServerSocket.obj
+MazeWalker/Debug/tmp/setControls.obj
+MazeWalker/Debug/tmp/texture.obj
+MazeWalker/Debug/tmp/TextureDictionary.obj
+MazeWalker/Debug/tmp/TextureDictionaryItem.obj
+MazeWalker/Debug/tmp/Tools.obj
+MazeWalker/Debug/tmp/trees.obj
+MazeWalker/Debug/tmp/uncompr.obj
+MazeWalker/Debug/tmp/unzip.obj
+MazeWalker/Debug/tmp/vc141.pdb
+MazeWalker/Debug/tmp/zutil.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/autofit.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/bdf.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/cff.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.log
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/CL.command.1.tlog
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/CL.read.1.tlog
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/CL.write.1.tlog
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/freetype.lastbuildstate
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/Lib-link.read.1.tlog
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/Lib-link.write.1.tlog
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.tlog/Lib.command.1.tlog
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype28MTd.Build.CppClean.log
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftbase.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftbbox.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftbitmap.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftcache.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftdebug.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftfntfmt.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftfstype.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftgasp.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftglyph.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftgxval.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftgzip.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftinit.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftlcdfil.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftlzw.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftmm.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftotval.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftpatent.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftpfr.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftstroke.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftsynth.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftsystem.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/fttype1.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/ftwinfnt.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/pcf.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/pfr.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/psaux.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/pshinter.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/psmodule.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/raster.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/sfnt.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/smooth.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/truetype.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/type1.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/type1cid.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/type42.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/winfnt.obj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/freetype28MTd.lib
+MazeWalker/Libs/freetype/objs/vc2010/Win32/freetype28MTd.pdb
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew.obj
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew.res
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew32sd.Build.CppClean.log
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.log
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.pdb
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/CL.command.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/CL.read.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/CL.write.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/glew_static.lastbuildstate
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/Lib-link-cvtres.read.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/Lib-link-cvtres.write.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/Lib.command.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/rc.command.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/rc.read.1.tlog
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.tlog/rc.write.1.tlog
+MazeWalker/Libs/glew/lib/Debug/Win32/glew32sd.lib
