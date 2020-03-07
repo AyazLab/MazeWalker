@@ -251,6 +251,7 @@ int MyList::ReadMazeListFile(char *filename)
 
 				for (int i=0;i<multiMsgNum;i++)
 				{
+					int sz = strlen(msgTemp);
 					memcpy(curTxt,&msgTemp[(i)*(TXTBUFFERLIMIT - 1)], TXTBUFFERLIMIT-1);
 					curTxt[TXTBUFFERLIMIT - 1] = 0;
 					this->AddText(curTxt,lf,res);

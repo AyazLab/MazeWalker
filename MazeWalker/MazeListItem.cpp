@@ -22,7 +22,7 @@ void MazeListItem::AddMaze(char *val,bool isMazX)
 		int i = 1;
 
 	sprintf(value,"%s",val);
-	value[399] = 0;
+	value[TXTMSGBUFFERLIMIT_MAZELISTITEM-1] = 0;
 
 	next=NULL;
 }
@@ -31,8 +31,8 @@ void MazeListItem::AddText(char * val, long lftm,int shStyle)
 	type = Text;
 	lifeTime=lftm;
 	showStyle=shStyle;
-	strcpy(value,val);
-	strcpy(BGfname,"");
+	strcpy_s(value, TXTMSGBUFFERLIMIT_MAZELISTITEM,val);
+	strcpy_s(BGfname, TXTMSGBUFFERLIMIT_MAZELISTITEM,"");
 	next=NULL;
 }
 

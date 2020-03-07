@@ -3,6 +3,8 @@
 #include "stdio.h"
 #include <string.h>
 
+#define TXTMSGBUFFERLIMIT_MAZELISTITEM 800
+
 
 enum ItemType 
 {
@@ -13,11 +15,11 @@ class MazeListItem
 {
 public:
     ItemType type;
-	char value[400];
+	char value[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 
 	int showStyle;
 	long lifeTime;
-	char BGfname[800];
+	char BGfname[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 	bool isMazX = false;
 
 	MazeListItem* next;

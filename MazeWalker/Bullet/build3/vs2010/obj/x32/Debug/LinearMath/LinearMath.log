@@ -1,4 +1,4 @@
-﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
   btAlignedAllocator.cpp
   btConvexHull.cpp
   btConvexHullComputer.cpp
@@ -9,4 +9,4 @@
   btVector3.cpp
 d:\github\mazewalker\mazewalker\bullet\src\linearmath\btquickprof.cpp(221): warning C4244: '*=': conversion from 'double' to 'LONGLONG', possible loss of data
 d:\github\mazewalker\mazewalker\bullet\src\linearmath\btquickprof.cpp(290): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
-  LinearMath.vcxproj -> D:\GitHub\MazeWalker\MazeWalker\Bullet\build3\vs2010\..\..\lib\LinearMath_vs2010_debug.lib
+  LinearMath.vcxproj -> D:\Github\MazeWalker\MazeWalker\Bullet\build3\vs2010\..\..\lib\LinearMath_vs2010_debug.lib

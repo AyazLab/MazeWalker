@@ -16,4 +16,5 @@ char *textFileRead(char *fn);
 int textFileWrite(char *fn, char *s);
 char* printShaderInfoLog(GLuint obj);
 void trim(char *str);
+void addLineBreaksAndMC(char* str,int sz);
 

@@ -1,4 +1,4 @@
-﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
   btAxisSweep3.cpp
   btBroadphaseProxy.cpp
   btCollisionAlgorithm.cpp
@@ -93,4 +93,4 @@
   btSubSimplexConvexCast.cpp
   btVoronoiSimplexSolver.cpp
 btBroadphaseProxy.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  BulletCollision.vcxproj -> D:\GitHub\MazeWalker\MazeWalker\Bullet\build3\vs2010\..\..\lib\BulletCollision_vs2010_debug.lib
+  BulletCollision.vcxproj -> D:\Github\MazeWalker\MazeWalker\Bullet\build3\vs2010\..\..\lib\BulletCollision_vs2010_debug.lib

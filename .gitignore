@@ -1072,3 +1072,33 @@ MazeWalker/Bullet/build3/vs2010/obj/x32/Release/BulletCollision/btActivatingColl
 *.tlog
 MazeWalker/Debug/tmp/MazeWalker.log
 MazeWalker/Debug/tmp/MazeWalker.log
+MazeWalker/.vs/MazeWalker/v16/Browse.VC.db
+MazeWalker/.vs/MazeWalker/v16/Browse.VC.opendb
+MazeWalker/.vs/MazeWalker/v16/Solution.VC.db
+MazeWalker/.vs/MazeWalker/v16/Solution.VC.db-shm
+MazeWalker/.vs/MazeWalker/v16/Solution.VC.db-wal
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.log
+MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
+MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
+MazeWalker/Bullet/lib/LinearMath_vs2010_debug.pdb
+MazeWalker/Debug/tmp/MazeWalker.log
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.log
+MazeWalker/Libs/freetype/objs/vc2010/Win32/freetype28MTd.pdb
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.log
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.log
+MazeWalker/Libs/glew/build/vc12/glew_static.vcxproj
+MazeWalker/Libs/freetype/objs/vc2010/Win32/freetype28MTd.pdb
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.log
+MazeWalker/Libs/freetype/builds/windows/vc2010/freetype.vcxproj
+MazeWalker/Debug/tmp/MazeWalker.log
+MazeWalker/Bullet/lib/LinearMath_vs2010_debug.pdb
+MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
+MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.log
+MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.log

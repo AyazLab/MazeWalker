@@ -6203,7 +6203,7 @@ class OptionBox
 		float b;
 	};
 
-	char text[250];
+	char text[TXTBUFFERLIMIT];
 	int selected = 0;
 	int px = 0;
 	int py = 0;
@@ -6409,6 +6409,8 @@ public:char* GetText()
 
 };
 
+
+
 void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 {
 	int i,res=0,numOfLines=0;
@@ -6428,35 +6430,18 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	DWORD messageTime=GetQPC();
 	
 	char displayTextChar[TXTBUFFERLIMIT];
-	char tempDisplayTextChar[TXTBUFFERLIMIT];
+	//char tempDisplayTextChar[TXTBUFFERLIMIT];
 //	char prev;
 
 	if (displayText == NULL)
 	{
 		return;
 	}
-	strcpy_s(tempDisplayTextChar, TXTBUFFERLIMIT, displayText);
-	int j = 0;
-	for (int i = 0; i < TXTBUFFERLIMIT-1; i++) //replace \\n with line break except in errors and replace \\a with \a
+	strcpy_s(displayTextChar, TXTBUFFERLIMIT, displayText);
+	if (showStyle != TEXTBOXSTYLE_WARNING && showStyle != TEXTBOXSTYLE_FATAL_ERROR)
 	{
-		if (tempDisplayTextChar[i] == '\\' && tempDisplayTextChar[i + 1] == 'n'&&showStyle != TEXTBOXSTYLE_WARNING&&showStyle != TEXTBOXSTYLE_FATAL_ERROR)
-		{
-			tempDisplayTextChar[i+1] ='\n';
-			tempDisplayTextChar[i] = '\n';
-			i = i + 1;
-			j = j - 1;
-		}
-		else if (tempDisplayTextChar[i] == '\\' && tempDisplayTextChar[i + 1] == 'a'&&showStyle != TEXTBOXSTYLE_WARNING&&showStyle != TEXTBOXSTYLE_FATAL_ERROR)
-		{
-			tempDisplayTextChar[i + 1] = '\a';
-			tempDisplayTextChar[i] = '\a';
-			i = i + 1;
-			j = j - 1;
-		}
-		displayTextChar[i+j] = tempDisplayTextChar[i];
+		addLineBreaksAndMC(displayTextChar, TXTBUFFERLIMIT);
 	}
-	
-	strcpy_s(tempDisplayTextChar,TXTBUFFERLIMIT,displayText);
 	displayTextChar[strlen(displayText)] = 0;
 
 
@@ -6485,11 +6470,10 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	wchar_t wdisplayText[TXTBUFFERLIMIT];
 	freetype::ascii2utf8(wdisplayText, displayTextChar, TXTBUFFERLIMIT);
 
-	for(i=0;i<strlen(displayText)+1;i++)
+	for(i=0;i<strlen(displayTextChar)+1;i++)
 	{
-		
 
-		if (MultipleChoice == MC_CHOICES ||strlen(displayText)==0)
+		if (MultipleChoice == MC_CHOICES ||strlen(displayTextChar)==0)
 			break;
 		else if (MultipleChoice > 0)
 		{

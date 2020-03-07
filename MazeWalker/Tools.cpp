@@ -25,6 +25,44 @@ bool trueFalse(char *str, bool defaultResponse)
 		return defaultResponse;
 }
 
+void addLineBreaksAndMC(char* str,int sz) //replaces \\n with \n   and \\a with \a (multiple choice linebreak)
+{
+	//int sz = sizeof(&str);
+	char* tempStr;
+
+	//	char prev;
+	if (str == NULL)
+	{
+		return;
+	}
+	strcpy_s(tempStr,sz, str);
+	int j = 0;
+	for (int i = 0; i < sz - 1; i++) //replace \\n with line break except in errors and replace \\a with \a
+	{
+		if (tempStr[i] == '\\')
+		{
+			if (tempStr[i + 1] == 'n')
+			{
+				tempStr[i + 1] = '\n';
+				tempStr[i] = '\n';
+				i = i + 1; //skip one letter
+				j = j - 1; //note the offset
+			}
+			else if (tempStr[i + 1] == 'a')
+			{
+				tempStr[i + 1] = '\a';
+				tempStr[i] = '\a';
+				i = i + 1;
+				j = j - 1;
+			}
+		}
+		str[i + j] = tempStr[i];
+	}
+	str[sz + j - 1] = 0;
+	strcpy(tempStr, str);
+	//str[strlen(displayText)] = 0;
+}
+
 void trim(char *str)
 {
 	int i,j=0;

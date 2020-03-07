@@ -6,16 +6,16 @@
   ftcache.c
   ftfstype.c
   ftgasp.c
-d:\github\mazewalker\mazewalker\libs\freetype\src\cff\cffload.c(1368): warning C4244: '=': conversion from 'FT_UInt32' to 'FT_Byte', possible loss of data (compiling source file ..\..\..\src\cff\cff.c)
   ftglyph.c
   ftgzip.c
-d:\github\mazewalker\mazewalker\libs\freetype\src\base\ftobjs.c(4995): warning C4702: unreachable code
-d:\github\mazewalker\mazewalker\libs\freetype\src\base\ftobjs.c(4996): warning C4702: unreachable code
   ftinit.c
   ftlzw.c
+D:\Github\MazeWalker\MazeWalker\Libs\freetype\src\cff\cffload.c(1368,69): warning C4244: '=': conversion from 'FT_UInt32' to 'FT_Byte', possible loss of data (compiling source file ..\..\..\src\cff\cff.c)
   ftstroke.c
   ftsystem.c
   smooth.c
+D:\Github\MazeWalker\MazeWalker\Libs\freetype\src\base\ftobjs.c(4995): warning C4702: unreachable code
+D:\Github\MazeWalker\MazeWalker\Libs\freetype\src\base\ftobjs.c(4996): warning C4702: unreachable code
   ftbbox.c
   ftfntfmt.c
   ftmm.c
@@ -30,8 +30,8 @@ d:\github\mazewalker\mazewalker\libs\freetype\src\base\ftobjs.c(4996): warning C
   pcf.c
   pfr.c
   psaux.c
-  pshinter.c
   psmodule.c
+  pshinter.c
   raster.c
   sfnt.c
   truetype.c
@@ -40,4 +40,4 @@ d:\github\mazewalker\mazewalker\libs\freetype\src\base\ftobjs.c(4996): warning C
   type42.c
   winfnt.c
   ftdebug.c
-  freetype.vcxproj -> D:\GitHub\MazeWalker\MazeWalker\Libs\freetype\builds\windows\vc2010\.\..\..\..\objs\vc2010\Win32\freetype28MTd.lib
+  freetype.vcxproj -> D:\Github\MazeWalker\MazeWalker\Libs\freetype\builds\windows\vc2010\.\..\..\..\objs\vc2010\Win32\freetype28MTd.lib

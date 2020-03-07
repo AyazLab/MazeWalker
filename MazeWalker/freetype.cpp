@@ -370,7 +370,7 @@ namespace freetype {
 
 	void ascii2utf8(wchar_t* out, char* text, const int tsize)
 	{
-		wchar_t wtext[512] = L"";
+		wchar_t wtext[2048] = L"";
 
 		int wi = 0;
 		int endStr = 0;
