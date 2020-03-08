@@ -6453,6 +6453,9 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	int fontHeight = fontUI.h;
 	int longestMCpart = 8 * spaceLength;
 	int longestPart = 8 * spaceLength;;
+
+	//Convert to multiline depending on how many lines fit
+	autoSizeToWidth(displayTextChar, TXTBUFFERLIMIT, (int)Width / (spaceLength * 12.0f / 10.0f));
 	
 
 	int MultipleChoice = 0;
@@ -6468,7 +6471,12 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	int lineStartIndex = 0;
 	
 	wchar_t wdisplayText[TXTBUFFERLIMIT];
-	freetype::ascii2utf8(wdisplayText, displayTextChar, TXTBUFFERLIMIT);
+	char tempTxt[TXTBUFFERLIMIT];
+	strcpy_s(tempTxt, TXTBUFFERLIMIT, displayTextChar);
+
+	freetype::ascii2utf8(wdisplayText, tempTxt, TXTBUFFERLIMIT);
+
+	strcpy_s(displayTextChar, TXTBUFFERLIMIT, tempTxt);
 
 	for(i=0;i<strlen(displayTextChar)+1;i++)
 	{

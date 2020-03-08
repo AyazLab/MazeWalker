@@ -6,6 +6,8 @@
 #include <string.h>
 #include "GL/glew.h"
 
+#define BIGSTRBUFFER 10000
+
 
 bool GetUntilTab(FILE* fp,char *out,int len);
 
@@ -17,4 +19,5 @@ int textFileWrite(char *fn, char *s);
 char* printShaderInfoLog(GLuint obj);
 void trim(char *str);
 void addLineBreaksAndMC(char* str,int sz);
+void autoSizeToWidth(char* str, int sz, int txtWidth);
 

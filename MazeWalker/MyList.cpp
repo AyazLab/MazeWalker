@@ -225,7 +225,9 @@ int MyList::ReadMazeListFile(char *filename)
 
 				msgLen = strlen(msgTemp);
 
-				multiMsgNum = floor(msgLen*1.0f / ((TXTBUFFERLIMIT-1)*1.0f))+1;
+				int bufEdge = TXTBUFFERLIMIT / 10;
+
+				multiMsgNum = floor(msgLen*1.0f / ((TXTBUFFERLIMIT-1- bufEdge)*1.0f))+1;
 
 				GetUntilTab(fp, dlgType, TXTBUFFERLIMIT);
 				res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
@@ -252,8 +254,8 @@ int MyList::ReadMazeListFile(char *filename)
 				for (int i=0;i<multiMsgNum;i++)
 				{
 					int sz = strlen(msgTemp);
-					memcpy(curTxt,&msgTemp[(i)*(TXTBUFFERLIMIT - 1)], TXTBUFFERLIMIT-1);
-					curTxt[TXTBUFFERLIMIT - 1] = 0;
+					memcpy(curTxt,&msgTemp[(i)*(TXTBUFFERLIMIT - 1- bufEdge)], TXTBUFFERLIMIT-1- bufEdge);
+					curTxt[TXTBUFFERLIMIT - 1- bufEdge] = 0;
 					this->AddText(curTxt,lf,res);
 					if (hasImg)
 					{

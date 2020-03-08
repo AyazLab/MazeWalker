@@ -1,20 +1,361 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  freetype.cpp
-d:\github\mazewalker\mazewalker\freetype.cpp(59): warning C4018: '>=': signed/unsigned mismatch
-d:\github\mazewalker\mazewalker\freetype.cpp(88): warning C4244: 'argument': conversion from 'FT_Int' to 'GLfloat', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(93): warning C4244: 'argument': conversion from 'unsigned int' to 'GLfloat', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(111): warning C4244: 'argument': conversion from 'unsigned int' to 'GLfloat', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(113): warning C4244: 'argument': conversion from 'unsigned int' to 'GLfloat', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(114): warning C4244: 'argument': conversion from 'unsigned int' to 'GLfloat', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(117): warning C4244: 'argument': conversion from 'FT_Pos' to 'GLfloat', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(137): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(189): warning C4018: '<': signed/unsigned mismatch
-d:\github\mazewalker\mazewalker\freetype.cpp(332): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(337): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\github\mazewalker\mazewalker\freetype.cpp(266): warning C4996: 'vswprintf': function has been changed to conform with the ISO C standard, adding an extra character count parameter. To use the traditional Microsoft version, set _CRT_NON_CONFORMING_SWPRINTFS.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wstdio.h(1835): note: see declaration of 'vswprintf'
-d:\github\mazewalker\mazewalker\freetype.cpp(428): warning C4244: '=': conversion from 'double' to 'wchar_t', possible loss of data
+  main.cpp
+c:\program files (x86)\microsoft sdks\windows\v7.1a\include\shlobj.h(1151): warning C4091: 'typedef ': ignored on left of 'tagGPFIDL_FLAGS' when no variable is declared
+d:\github\mazewalker\mazewalker\main.cpp(821): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(828): warning C4473: 'sprintf' : not enough arguments passed for format string
+  d:\github\mazewalker\mazewalker\main.cpp(828): note: placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+  d:\github\mazewalker\mazewalker\main.cpp(828): note: the missing variadic argument 1 is required by format string '%.1f'
+d:\github\mazewalker\mazewalker\main.cpp(860): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(869): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(873): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(877): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(881): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(896): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(900): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(904): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(908): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(928): warning C4244: '=': conversion from 'double' to 'DWORD', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(943): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(967): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(971): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(994): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1002): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1036): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1043): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1047): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1311): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1315): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1319): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1344): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1349): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1354): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1360): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1366): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1420): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1424): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1428): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1453): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1458): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1463): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1469): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1475): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1508): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1513): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1518): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1523): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1528): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1533): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1562): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1563): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1567): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1568): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1572): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1573): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1701): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1705): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1709): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1727): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1743): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1749): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1755): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1761): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1767): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1779): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1785): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1810): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1814): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1818): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1887): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1891): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1895): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1899): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1967): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1973): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1980): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2005): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2101): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2106): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2111): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2115): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2164): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2170): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2176): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2198): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2351): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2435): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2439): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2463): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2467): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2471): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2479): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2483): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2487): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2491): warning C4244: '*=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2550): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2623): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2629): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2635): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2647): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2651): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2656): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2657): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2663): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2664): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2725): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2731): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2737): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2743): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2749): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2755): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2849): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2855): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2861): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2867): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2873): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2879): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(2988): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3044): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(3054): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3058): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3078): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3082): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3086): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3103): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3111): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3125): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3129): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3133): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3138): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(3156): warning C4473: 'sprintf' : not enough arguments passed for format string
+  d:\github\mazewalker\mazewalker\main.cpp(3156): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  d:\github\mazewalker\mazewalker\main.cpp(3156): note: the missing variadic argument 2 is required by format string '%s'
+d:\github\mazewalker\mazewalker\main.cpp(3194): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(1554): warning C4101: 'z': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(1555): warning C4101: 'texX': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(1554): warning C4101: 'y': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(1554): warning C4101: 'x': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(1555): warning C4101: 'texY': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(3230): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3251): warning C4552: '!=': result of expression not used
+d:\github\mazewalker\mazewalker\main.cpp(3355): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3356): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3402): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3473): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3547): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3548): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3554): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3555): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3559): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3568): warning C4473: 'sscanf_s' : not enough arguments passed for format string
+  d:\github\mazewalker\mazewalker\main.cpp(3568): note: placeholders and their parameters expect 4 variadic arguments, but 1 were provided
+  d:\github\mazewalker\mazewalker\main.cpp(3568): note: the missing variadic argument 2 is required by format string '%f'
+d:\github\mazewalker\mazewalker\main.cpp(3571): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3670): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3671): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3681): warning C4244: '=': conversion from 'float' to 'DWORD', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(3758): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4072): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4285): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4287): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4371): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4442): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4443): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4453): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4455): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4464): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4471): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4473): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4533): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4535): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4546): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4585): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4625): warning C4553: '==': result of expression not used; did you intend '='?
+d:\github\mazewalker\mazewalker\main.cpp(4643): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4760): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(4786): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(4961): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5440): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5577): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(5788): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5969): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5970): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5971): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5972): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5976): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5977): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5978): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5979): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5983): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5984): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5985): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5986): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5992): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5993): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5994): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5995): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(5999): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6000): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6001): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6002): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6006): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6007): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6008): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6009): warning C4244: 'argument': conversion from 'LONG' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6018): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6019): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6020): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6021): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6024): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6025): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6026): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6027): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6240): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(6259): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6260): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6333): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6334): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6453): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6458): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6481): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(6600): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6606): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6613): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6659): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(6684): warning C4018: '>': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(6770): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6771): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6772): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6821): warning C4018: '>=': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(6926): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6927): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6962): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6966): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6990): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(6996): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7035): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7037): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7044): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7064): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7068): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7072): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7078): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7091): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7112): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7119): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7198): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(7331): warning C4018: '>': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(7424): warning C4305: '*=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(7476): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7481): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7485): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7490): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7542): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7554): warning C4244: '=': conversion from 'volatile int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7654): warning C4244: 'argument': conversion from 'const btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7660): warning C4244: '=': conversion from 'const btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7661): warning C4244: '=': conversion from 'const btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7662): warning C4244: '=': conversion from 'const btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7681): warning C4305: '=': truncation from 'double' to 'GLfloat'
+d:\github\mazewalker\mazewalker\main.cpp(7796): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7802): warning C4305: '+=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(7804): warning C4305: '-=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(7814): warning C4305: '+=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(7816): warning C4305: '-=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(7835): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7837): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(7882): warning C4305: '-=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(7914): warning C4305: '=': truncation from 'double' to 'GLfloat'
+d:\github\mazewalker\mazewalker\main.cpp(8598): warning C4101: 'inp1': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(11161): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11162): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11174): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11175): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11177): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11178): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11215): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11233): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11237): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11242): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11904): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11944): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11949): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11957): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11962): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(11996): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12012): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12021): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12026): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12042): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12051): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12056): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12072): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12081): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12160): warning C4305: '-=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12167): warning C4305: '+=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12298): warning C4305: '/=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12309): warning C4305: '-=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12317): warning C4305: '+=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12451): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(12460): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(12465): warning C4305: '=': truncation from 'double' to 'float'
+d:\github\mazewalker\mazewalker\main.cpp(12467): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(12651): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(12668): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(12754): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(12795): warning C4018: '<': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(13237): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(13239): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(13311): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(13885): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(13886): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(13887): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(13935): warning C4018: '>=': signed/unsigned mismatch
+d:\github\mazewalker\mazewalker\main.cpp(13585): warning C4101: 'nextChar': unreferenced local variable
+d:\github\mazewalker\mazewalker\main.cpp(14250): warning C4244: 'initializing': conversion from 'float' to 'DWORD', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14526): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14528): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14530): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14538): warning C4244: '=': conversion from 'double' to 'volatile float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14548): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14558): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14567): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14577): warning C4244: '=': conversion from 'double' to 'volatile float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14596): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14598): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14600): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14621): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14623): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14625): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14627): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14691): warning C4244: '=': conversion from 'int' to 'volatile float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14701): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14862): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14864): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14866): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14868): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14872): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14876): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14880): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(14884): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15072): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15142): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15143): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15146): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15147): warning C4244: '=': conversion from 'UINT' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15182): warning C4244: '=': conversion from 'GLdouble' to 'LONG', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15183): warning C4244: '=': conversion from 'GLdouble' to 'LONG', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15242): warning C4244: 'initializing': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15243): warning C4244: 'initializing': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15244): warning C4244: 'initializing': conversion from 'btScalar' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(15290): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\github\mazewalker\mazewalker\main.cpp(4793): warning C4172: returning address of local variable or temporary: ret
+d:\github\mazewalker\mazewalker\main.cpp(4704): warning C4172: returning address of local variable or temporary: fname
+d:\github\mazewalker\mazewalker\main.cpp(4769): warning C4172: returning address of local variable or temporary: f
+d:\github\mazewalker\mazewalker\main.cpp(4779): warning C4172: returning address of local variable or temporary: next
+d:\github\mazewalker\mazewalker\main.cpp(7282): warning C4172: returning address of local variable or temporary: ret
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.

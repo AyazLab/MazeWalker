@@ -25,17 +25,79 @@ bool trueFalse(char *str, bool defaultResponse)
 		return defaultResponse;
 }
 
-void addLineBreaksAndMC(char* str,int sz) //replaces \\n with \n   and \\a with \a (multiple choice linebreak)
+void autoSizeToWidth(char* str, int sz, int txtWidth)
 {
-	//int sz = sizeof(&str);
-	char* tempStr;
+	char tempStr[BIGSTRBUFFER];
 
 	//	char prev;
 	if (str == NULL)
 	{
 		return;
 	}
-	strcpy_s(tempStr,sz, str);
+	int len = strlen(str);
+	sprintf_s(tempStr, sz,"%s", str);
+	int j = 0;
+	int lineLengthCount = 0;
+	int lastRelativeSpace = 0;
+	int numLines = 0;
+	for (int i = 0; i < len; i++) //add \n to new string when line is longer than width
+	{
+		if (str[i] == '\n' || str[i] == '\a' || str[i] == NULL)
+		{
+			lineLengthCount = 0;
+			lastRelativeSpace = txtWidth;
+			numLines++;
+		}
+		else
+		{
+			if (str[i] == ' ')
+				lastRelativeSpace = txtWidth - lineLengthCount;
+			lineLengthCount++;
+		}
+
+		if (i + j >= sz)
+		{
+			tempStr[sz - 1] = NULL;
+			break;
+		}
+
+		if (lineLengthCount >= txtWidth)
+		{
+			lineLengthCount = 0;
+			numLines++;
+			if (lastRelativeSpace < txtWidth / 3)
+			{
+				tempStr[i - lastRelativeSpace + j] = '\n'; //change that space to a \n
+				lastRelativeSpace = txtWidth;
+			}
+			else
+			{
+				tempStr[i + j] = '\n';
+				j++;
+			}
+		}
+
+		tempStr[i + j]=str[i];
+	}
+
+	if (len + j + 1 >= sz)
+		tempStr[sz - 1] = NULL;
+	else
+		tempStr[len+j+1] = NULL;
+	strcpy_s(str,sz, tempStr);
+}
+
+void addLineBreaksAndMC(char* str,int sz) //replaces \\n with \n   and \\a with \a (multiple choice linebreak)
+{
+	//int sz = sizeof(&str);
+	char tempStr[BIGSTRBUFFER];
+
+	//	char prev;
+	if (str == NULL)
+	{
+		return;
+	}
+	memcpy(tempStr,str,sz);
 	int j = 0;
 	for (int i = 0; i < sz - 1; i++) //replace \\n with line break except in errors and replace \\a with \a
 	{
@@ -59,7 +121,7 @@ void addLineBreaksAndMC(char* str,int sz) //replaces \\n with \n   and \\a with 
 		str[i + j] = tempStr[i];
 	}
 	str[sz + j - 1] = 0;
-	strcpy(tempStr, str);
+	//strcpy(tempStr, str);
 	//str[strlen(displayText)] = 0;
 }
 

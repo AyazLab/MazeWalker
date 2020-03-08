@@ -372,13 +372,17 @@ namespace freetype {
 	{
 		wchar_t wtext[2048] = L"";
 
-		int wi = 0;
-		int endStr = 0;
+		char inTxt[2048];
 
-		for (int i = 0; i < tsize; i++) //search for line end
+		strcpy_s(inTxt, tsize, text);
+
+		int wi = 0;
+		int endStr = strlen(inTxt);
+
+		for (int i = endStr; i < tsize; i++) //search for line end
 		{
 			endStr++;
-			if (text[i] == 0)
+			if (inTxt[i] == 0)
 				break;
 		}
 
@@ -387,7 +391,7 @@ namespace freetype {
 		for (int i = 0; i < endStr; i++)
 		{
 			unsigned char c[4];
-			c[0] = text[i];
+			c[0] = inTxt[i];
 
 
 			if (c == 0)
@@ -397,23 +401,23 @@ namespace freetype {
 			{
 				utfs = 0;
 			}
-			else if (endStr >= i + 1 && (bitvalue(text[i], 2) == 0) && (bitvalue(text[i], 0) == 1))	//10xxxxxx
+			else if (endStr >= i + 1 && (bitvalue(inTxt[i], 2) == 0) && (bitvalue(inTxt[i], 0) == 1))	//10xxxxxx
 			{
 				utfs = 1;
-				c[1] = text[i + 1];
+				c[1] = inTxt[i + 1];
 			}
-			else if ((endStr >= i + 2) && (bitvalue(text[i], 3) == 0) && (bitvalue(text[i + 1], 0) == 1) && (bitvalue(text[i + 2], 0) == 1)) //110xxxxx
+			else if ((endStr >= i + 2) && (bitvalue(inTxt[i], 3) == 0) && (bitvalue(inTxt[i + 1], 0) == 1) && (bitvalue(inTxt[i + 2], 0) == 1)) //110xxxxx
 			{
 				utfs = 2;
-				c[1] = text[i + 1];
-				c[2] = text[i + 2];
+				c[1] = inTxt[i + 1];
+				c[2] = inTxt[i + 2];
 			}
-			else if ((endStr >= i + 3) && (bitvalue(text[i], 4) == 0) && (bitvalue(text[i + 1], 0) == 1) && (bitvalue(text[i + 2], 0) == 1) && (bitvalue(text[i + 3], 0) == 1)) //1110xxxx
+			else if ((endStr >= i + 3) && (bitvalue(inTxt[i], 4) == 0) && (bitvalue(inTxt[i + 1], 0) == 1) && (bitvalue(inTxt[i + 2], 0) == 1) && (bitvalue(inTxt[i + 3], 0) == 1)) //1110xxxx
 			{
 				utfs = 3;
-				c[1] = text[i + 1];
-				c[2] = text[i + 2];
-				c[3] = text[i + 3];
+				c[1] = inTxt[i + 1];
+				c[2] = inTxt[i + 2];
+				c[3] = inTxt[i + 3];
 			}
 			else
 			{
