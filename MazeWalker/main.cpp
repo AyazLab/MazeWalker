@@ -175,6 +175,12 @@ bool bMazeLoop=true;
 bool bMazeEndReached=false;
 bool bRestartMaze = false;
 
+bool bStatusWaitingForAPI = false;
+bool bStatusWaitingForCue = false;
+bool bStatusMazeLoading = false;
+bool bStatusMazeRunning = false;
+bool bStatusMazeMessage = false;
+
 bool bMouseInput=true;		//Get mouse input
 bool bJoyStickInput=false;  //Get joystick input
 int joystickNum=JOYSTICKID1;
@@ -8481,6 +8487,8 @@ BOOL CreateWnd(char* title, int width, int height, int bits, int monitor)
 	           // Clear The Screen And The Depth Buffer
 	
 	glRasterPos2f((float)width/2.0f,(float)height/2.0f);
+
+	bStatusMazeLoading = true;
 	glPrint(true,"%s","Loading");
 	glPopMatrix();
 	glMatrixMode(GL_MODELVIEW);
@@ -13151,6 +13159,8 @@ baud = 2400;
 	{
 		if (curMazeListItem && curMazeListItem->type == Maze)
 		{
+			bStatusMazeRunning = false;
+			bStatusMazeLoading = true;
 
 			SetCurrentDirectory(rootDIR);
 
@@ -13173,8 +13183,8 @@ baud = 2400;
 			objMap = new Map();
 
 
-
 			EventLog(0, 58, 0, "Maze Loading");
+
 
 
 			if (ReadMap(curMazeListItem->value) == 0)
@@ -13183,9 +13193,6 @@ baud = 2400;
 				done = true;
 				continue;
 			}
-
-			
-
 
 
 			objMap->Count();
@@ -13199,12 +13206,15 @@ baud = 2400;
 
 			//glCallList(ROOM); //gets rid of color issue
 
-			
+
+			bStatusMazeLoading = false;
+
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			if (bWaitForAPIdevices)
 			{
+				bStatusWaitingForAPI = true;
 				EventLog(0, 59, 0, "Waiting for API devices");
 				if (shadersCompiled)
 					glUseProgram(shaderProgNoLights);
@@ -13280,9 +13290,12 @@ baud = 2400;
 				}
 			}
 
+			bStatusWaitingForAPI = false;
+
 
 			if (cueType != 0)
 			{
+				bStatusWaitingForCue = true;
 				EventLog(1, 60, 0, "Cue Period Started");
 				if (shadersCompiled)
 					glUseProgram(shaderProgNoLights);
@@ -13383,7 +13396,9 @@ baud = 2400;
 				}
 			}
 
+			bStatusWaitingForCue = false;
 
+			bStatusMazeRunning = true;
 
 			if (LogStatus())
 			{
@@ -14119,11 +14134,12 @@ baud = 2400;
 			objMap=NULL;
 
 			mazeStartedAndRunning = 2;
+			bStatusMazeRunning = false;
 			EventLog(1,70, 0,"Maze Ended");
 		}
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{
-			
+			bStatusMazeMessage = true;
 			//Show Text Message...
 			strcpy_s(filename, curMazeListItem->value);
 			lifeTime = curMazeListItem->lifeTime;
@@ -14155,6 +14171,7 @@ baud = 2400;
 			GUIMessageBox(curMazeListItem->value, lifeTime, curMazeListItem->showStyle, texID);
 			SetFocus(hWnd);
 			EventLog(1, 81, 0, "TextMessage End");
+			bStatusMazeMessage = false;
 			//MessageBox(parent,temp->value,"Message",0);
 		}
 
@@ -14356,6 +14373,21 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 	 sendToTCP(posPacket);
  }
 
+ void sendTCPstring(int command, char* tcpString)
+ {
+	 tcpMessage posPacket;
+	 posPacket.command = command;
+	 posPacket.iArg = command;
+	 posPacket.dArgs[0] = -999;
+	 posPacket.dArgs[1] = -999;
+	 posPacket.dArgs[2] = -999;
+	 posPacket.dArgs[3] = -999;
+
+	 posPacket.storeStringInArr(tcpString);
+	 sendToTCP(posPacket);
+ }
+
+
 
  DWORD WINAPI listenThread(LPVOID lpParam)
  {
@@ -14477,7 +14509,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 else
 					objCamera.cameraSpeedMove = (float)m.dArgs[0]/60;  //Expects default value to be 3Mz/s  ... 0.05*60
 			 }
-			 else if (m.command == -100)
+			 else if (m.command == -100)  //Logg message from tcp
 			 {
 				 if (LogStatus())
 				 {
@@ -14488,7 +14520,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 					 AddToLog(msg);
 				 }
 			 }
-			 else if (m.command == -101)
+			 else if (m.command == -101)  //Log message and show to user
 			 {
 				 char* tcpMsg = new char[256];
 				 tcpMsg = m.getStringFromArr();
@@ -14735,6 +14767,34 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 sendToTCP(7, (int)(objCamera.mPos.z * 10));
 			 else if (m.command == 12) //Get Current Score
 				 sendToTCP(12, (int)barScore);
+			 else if (m.command == 101) //Get MazeWalker Status Code
+			 {
+				 if (bStatusMazeLoading)
+					 sendToTCP(101, 0);
+				 else if (bStatusWaitingForAPI)
+					 sendToTCP(101, 1);
+				 else if (bStatusWaitingForCue)
+					 sendToTCP(101, 2);
+				 else if (bStatusMazeMessage)
+					 sendToTCP(101, 3);
+				 else if (bStatusMazeRunning && !pausePlayback)
+					 sendToTCP(101, 4);
+				 else if (bStatusMazeRunning && pausePlayback)
+					 sendToTCP(101, 5);
+				 else
+					 sendToTCP(101, 999);
+				
+		     }
+
+			 else if (m.command == 102) //get elapsed time (in maze)
+			 {
+					sendToTCP(102, GetQPC() - startTime);
+			 }
+
+			 else if (m.command == 103) //get current maze name
+			 {
+					sendTCPstring(103, "test");
+			 }
 
 			 else if (m.command == 97)//get position
 			 {
@@ -14771,6 +14831,44 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 else  //not found error
 				 {
 					 sendTCPerror(290, "Model Not Found");
+				 }
+			 }
+			 else if (m.command == 291) //get dynamic model status by ID
+			 {
+				 MapModel* temp2;
+				 bool modelFound = false;
+
+				 if (m.iArg != -1) //search for model by ID
+				 {
+					 temp2 = getDynModelByID(m.iArg);
+					 if (temp2 != NULL)
+						 modelFound = true;
+				 }
+				 else //search by label
+				 {
+					 char* labelstr = m.getStringFromArr();
+					 temp2 = getDynModelByLabel(labelstr);
+					 if (temp2 != NULL)
+						 modelFound = true;
+				 }
+				 if (modelFound)
+				 {
+					 int status = 0;
+
+					 if (temp2->highlighted)
+						 status = 1;
+					 else if (temp2->activated&&temp2->moving)
+						 status = 2;
+					 else if (temp2->activated)
+						 status = 3;
+					 else if (temp2->destroyed)
+						 status = 4;
+
+					sendToTCP(291, status);
+				 }
+				 else  //not found error
+				 {
+					 sendTCPerror(297, "Model Not Found");
 				 }
 			 }
 			 else if (m.command == 297)//get dynamic model position & ModelID

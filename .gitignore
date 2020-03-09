@@ -1103,3 +1103,7 @@ MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/LinearMath/LinearMath.log
 MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletDynamics/BulletDynamics.log
 MazeWalker/Bullet/build3/vs2010/obj/x32/Debug/BulletCollision/BulletCollision.log
 MazeWalker/Debug/tmp/MazeWalker.log
+MazeWalker/Libs/freetype/objs/vc2010/Win32/Debug Multithreaded/freetype.log
+MazeWalker/Libs/glew/build/vc12/tmp/glew_static/Debug/Win32/glew_static.log
+MazeWalker/Libs/freetype/objs/vc2010/Win32/freetype28MTd.pdb
+MazeWalker/Debug/tmp/MazeWalker.log

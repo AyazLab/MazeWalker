@@ -9,6 +9,7 @@
 #include "TextureDictionary.h"
 #include "glm.h"
 #include "MyLightList.h"
+#include <cmath>
 
 
 
