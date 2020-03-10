@@ -1,4 +1,4 @@
-﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: Support for targeting Windows XP is deprecated and will not be present in future releases of Visual Studio. Please see https://go.microsoft.com/fwlink/?linkid=2023588 for more information.
   autofit.c
   ftbitmap.c
   ftfstype.c
@@ -22,17 +22,17 @@
   ftgzip.c
   ftinit.c
   ftlzw.c
-d:\github\mazewalker\mazewalker\libs\freetype\src\cff\cffload.c(1368): warning C4244: '=': conversion from 'FT_UInt32' to 'FT_Byte', possible loss of data (compiling source file ..\..\..\src\cff\cff.c)
+D:\GitHub\MazeWalker\MazeWalker\Libs\freetype\src\cff\cffload.c(1368): warning C4244: '=': conversion from 'FT_UInt32' to 'FT_Byte', possible loss of data (compiling source file ..\..\..\src\cff\cff.c)
   ftsystem.c
   smooth.c
   ftmm.c
   pcf.c
   pfr.c
+D:\GitHub\MazeWalker\MazeWalker\Libs\freetype\src\base\ftutil.c(171): warning C4702: unreachable code
+D:\GitHub\MazeWalker\MazeWalker\Libs\freetype\src\base\ftobjs.c(4996): warning C4702: unreachable code
   psaux.c
   pshinter.c
   psmodule.c
-d:\github\mazewalker\mazewalker\libs\freetype\src\base\ftutil.c(171): warning C4702: unreachable code
-d:\github\mazewalker\mazewalker\libs\freetype\src\base\ftobjs.c(4996): warning C4702: unreachable code
   raster.c
   sfnt.c
   truetype.c
