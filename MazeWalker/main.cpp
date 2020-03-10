@@ -14868,7 +14868,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 }
 				 else  //not found error
 				 {
-					 sendTCPerror(297, "Model Not Found");
+					 sendTCPerror(291, "Model Not Found");
 				 }
 			 }
 			 else if (m.command == 297)//get dynamic model position & ModelID
