@@ -14649,6 +14649,8 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 }
 				 if (modelFound)
 				 {
+					 temp2->moving = false;
+
 					 if(!isnan(m.dArgs[0]))
 						temp2->rot.x = m.dArgs[0];
 					 if (!isnan(m.dArgs[1]))
