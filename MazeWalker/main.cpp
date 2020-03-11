@@ -14207,6 +14207,9 @@ baud = 2400;
 	device[0].Disconnect();
 	device[1].Disconnect();
 	device[2].Disconnect();
+	deviceEnabled[0] = false;
+	deviceEnabled[1] = false;
+	deviceEnabled[2] = false;
 
 	
 	curAudioDict.Stop(0);
@@ -14409,7 +14412,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 
 		 Sleep(100);
 		 
-		 while (device[devID].Receive() > 0 && deviceEnabled[devID])
+		 while (deviceEnabled[devID]&&device[devID].Receive() > 0)
 		 {
 			 if (connected == false)
 			 {
