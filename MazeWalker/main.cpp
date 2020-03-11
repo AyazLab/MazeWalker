@@ -3229,9 +3229,12 @@ int ReadMapXML(char* mazeXMLfile)
 	return 1;
 }
 
+char curMazeFilename[TXTBUFFERLIMIT];
 
 int ReadMap(char* theFile)
 {
+	sprintf_s(curMazeFilename, TXTBUFFERLIMIT, "%s", theFile);
+
 	firstLog=false;
 	srand(GetQPC()*time(NULL)); //seed based on time
 	FILE *fp=fopen(theFile,"r");
@@ -14139,6 +14142,8 @@ baud = 2400;
 		}
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{
+			sprintf(curMazeFilename, "MazeList Text");
+
 			bStatusMazeMessage = true;
 			//Show Text Message...
 			strcpy_s(filename, curMazeListItem->value);
@@ -14378,16 +14383,28 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 
  void sendTCPstring(int command, char* tcpString)
  {
+
+	 int msgLen = strlen(tcpString);
+	 int numPackets = (msgLen-(msgLen%32))/32+1;
+
 	 tcpMessage posPacket;
 	 posPacket.command = command;
-	 posPacket.iArg = command;
-	 posPacket.dArgs[0] = -999;
-	 posPacket.dArgs[1] = -999;
-	 posPacket.dArgs[2] = -999;
-	 posPacket.dArgs[3] = -999;
 
-	 posPacket.storeStringInArr(tcpString);
-	 sendToTCP(posPacket);
+	 for (int i = 0; i < numPackets; i++)
+	 {
+		 
+		 posPacket.iArg = i;
+		 posPacket.dArgs[0] = -999;
+		 posPacket.dArgs[1] = -999;
+		 posPacket.dArgs[2] = -999;
+		 posPacket.dArgs[3] = -999;
+
+		 posPacket.storeStringInArr(&tcpString[i*32]);
+		 sendToTCP(posPacket);
+	 }
+
+	 
+	 
  }
 
 
@@ -14798,7 +14815,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 
 			 else if (m.command == 103) //get current maze name
 			 {
-					sendTCPstring(103, "test");
+					sendTCPstring(103, curMazeFilename);
 			 }
 
 			 else if (m.command == 97)//get position
