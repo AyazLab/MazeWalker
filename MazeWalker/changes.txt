@@ -1,6 +1,9 @@
 MazeWalker Changes Log
 Unversioned
 
+3.1
+Added to github
+
 3.0.5.0
 Restored playback functionality
 Dynamic object activation mechanism is revised 
