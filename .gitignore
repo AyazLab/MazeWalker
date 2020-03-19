@@ -1162,3 +1162,10 @@ MazeWalker/.vs/MazeWalker/v16/.suo
 MazeWalker/.vs/MazeWalker/v16/.suo
 MazeWalker/.vs/MazeWalker/v16/.suo
 MazeWalker/Debug/tmp/MazeWalker.log
+*.obj
+*.tlog
+*.lastbuildstate
+*.pdb
+*.lastbuildstate
+MazeWalker/Release/tmp/RCa19376
+MazeWalker/Release/tmp/RCa18308

@@ -183,6 +183,7 @@
 #define IDC_SETLPTPORT                  1121
 #define IDC_EDITLPT                     1122
 #define IDC_EDITLPT_DELAY               1123
+#define IDC_STATIC_COPYRIGHT            1123
 #define IDC_SETLPTPORT2                 1124
 #define IDC_SETLPT_DELAY                1124
 #define ID_INFO_ABOUT                   40001
@@ -214,7 +215,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        121
 #define _APS_NEXT_COMMAND_VALUE         40024
-#define _APS_NEXT_CONTROL_VALUE         1123
+#define _APS_NEXT_CONTROL_VALUE         1124
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
