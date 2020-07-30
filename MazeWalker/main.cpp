@@ -40,7 +40,7 @@ bool oculusEnabled = false;
 
 
 
-#define BUF_SIZE 10000
+#define BUF_SIZE 10000	
 
 #define BAR_THRESHOLD	85
 
@@ -131,7 +131,7 @@ MazeListItem *curMazeListItem = NULL;
 DWORD updateTime,updateTimeKeys,updateTime2,updateTime3,toggleKeyTime;
 #define UpdateTimeBufferCount 10
 DWORD updateTimeFrame[UpdateTimeBufferCount];
-char mwalkerIniPath[MAX_PATH],userLibraryPath[MAX_PATH],libraryPath[MAX_PATH],exePath[MAX_PATH];
+char mwalkerIniPath[MAX_PATH],userLibraryDir[MAX_PATH],libraryDir[MAX_PATH],exePath[MAX_PATH];
 
 BOOL JoyPresent=FALSE;
 bool joyUp=false,joyLeft=false,joyRight=false,joyDown=false;
@@ -211,6 +211,11 @@ long lifeTime=0;
 char filename[TXTBUFFERLIMIT+1];
 char logfile[TXTBUFFERLIMIT];
 char walker[100]="";
+
+char curMazeFilename[TXTBUFFERLIMIT];
+
+//char mazeWorkingDir[500] = "";
+//extern char melWorkingDir[500] = "";
 
 int linenumber; //for debugging
 
@@ -514,7 +519,7 @@ GLvoid BuildFont(GLvoid)								// Build Our Bitmap Font
 	char* fontpath = new char[512];
 
 	sprintf(fontpath, "%s\\Fonts\\%s", pSystemRoot, fName);
-	if (CheckFile(fontpath))
+	if (CheckFileExists(fontpath))
 	{
 		fontUI.init(fontpath, fontsize);                                  // Build The FreeType Font
 		fontheight = (int)fontUI.h;
@@ -525,7 +530,7 @@ GLvoid BuildFont(GLvoid)								// Build Our Bitmap Font
 	fName = "arialbd.ttf";
 	sprintf(fontpath, "%s\\Fonts\\%s", pSystemRoot, fName);
 
-	if (CheckFile(fontpath))
+	if (CheckFileExists(fontpath))
 	{
 		fontUI.init(fontpath, fontsize);                                  // Build The FreeType Font
 		fontheight = (int)fontUI.h;
@@ -536,7 +541,7 @@ GLvoid BuildFont(GLvoid)								// Build Our Bitmap Font
 	fName = "system.ttf";
 	sprintf(fontpath, "%s\\Fonts\\%s", pSystemRoot, fName);
 
-	if (CheckFile(fontpath))
+	if (CheckFileExists(fontpath))
 	{
 		fontUI.init(fontpath, fontsize);                                  // Build The FreeType Font
 		fontheight = (int)fontUI.h;
@@ -731,9 +736,6 @@ int ReadMapXML(char* mazeXMLfile)
 
 	firstLog = false;
 
-	char mazeWorkingDir[500]=""; //to record the directory of the current maze file
-	strcpy(mazeWorkingDir, mazeXMLfile);
-
 
 
 //	srand(GetQPC()*time(NULL)); //seed based on time
@@ -741,27 +743,15 @@ int ReadMapXML(char* mazeXMLfile)
 	if (fp == NULL)
 	{
 		char message[900];
-		sprintf(message, "Couldn't open MAZE file!\n%s", mazeXMLfile);
+		sprintf(message, "Couldn't open Maze file!\n%s", mazeXMLfile);
 		if (strlen(mazeXMLfile) > 300)
-			sprintf(message, "Couldn't open MAZE file!\nMazeList Error");
+			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
 		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
 		return 0;
 	}
 	else
 	{
 		fclose(fp);
-
-		int fDirectoryIndex = 0;
-		for (int i = strlen(mazeXMLfile); i > 0; i--)
-		{
-			if (mazeXMLfile[i] == '\\')
-			{
-				fDirectoryIndex = i;
-				break;
-			}
-		}
-
-		mazeWorkingDir[fDirectoryIndex] = 0;
 	}
 
 	int texture=-1, type=-1;
@@ -779,7 +769,7 @@ int ReadMapXML(char* mazeXMLfile)
 	struct SVertex v2[4];
 	LightItem* lightItem = NULL;
 
-	SetCurrentDirectoryA(mazeWorkingDir);
+	SetCurrentDirectoryA(getMazeWorkingDir());
 
 	int index = 0, counter = 0;
 	UINT i;
@@ -1111,37 +1101,13 @@ int ReadMapXML(char* mazeXMLfile)
 
 					strcpy(fPath, fname.c_str());
 
-					char fname2[600], fname3[600];
-					char soundSTR[800] = "";
-					char audiopath[600] = "\\audio\\";
 
-					strcat_s(audiopath, fPath);
-
-					if (CheckFile(fPath))		//try loading file
-						strcpy(soundSTR, fPath);
-					else if (CheckFile(audiopath)) //try loading file from audio DIR
-						strcpy(soundSTR, audiopath);
-					else
+					char* soundPath;
+					soundPath=getBestPath(fname, "audio");
+					
+					if (soundPath)
 					{
-						strcpy(fname2, userLibraryPath); //try userlibarary
-						strcat(fname2, audiopath);
-
-						strcpy(fname3, libraryPath);	//try library
-						strcat(fname3, audiopath);
-
-						if (CheckFile(fname2))
-							strcpy(soundSTR, fname2);
-						else if (CheckFile(fname3))
-							strcpy(soundSTR, fname3);
-						else
-						{
-							sprintf(soundSTR, "");
-						}
-					}
-
-					if (strlen(soundSTR) > 2)
-					{
-						curAudioDict.Add(index, soundSTR);
+						curAudioDict.Add(index, soundPath);
 					}
 					else
 					{
@@ -1183,39 +1149,25 @@ int ReadMapXML(char* mazeXMLfile)
 					}
 					else
 					{
-						char fnameLocal[600], fname2[600], fname3[600];
-						char objpath[600] = "\\objs\\";
+						char* modelPathP;
+						char modelDir[800] = "";
+
+						char curDir[_MAX_PATH] = "";
+						GetCurrentDirectory(MAX_PATH, curDir);
+
+						char modelPath[_MAX_PATH];
+
+						modelPathP =getBestPath(fname, "objs");
 
 
-						strcat_s(objpath, fPath);
-
-						sprintf(fnameLocal, "%s%s", mazeWorkingDir, objpath);
-						sprintf(fname2, "%s%s", userLibraryPath, objpath);
-						sprintf(fname3, "%s%s", libraryPath, objpath);
-
-						if (CheckFile(fPath))
-							model = LoadModel(fPath);
-						else if (CheckFile(fnameLocal))
-							model = LoadModel(fnameLocal);
-						else if (CheckFile(fname2))
+						if (modelPathP)
 						{
-
-							sprintf(objpath, "%s\\objs\\", userLibraryPath);
-							GetCurrentDirectory(MAX_PATH, fname2);
-							SetCurrentDirectory(objpath);
-
-							model = LoadModel(fPath);
-
-							SetCurrentDirectory(fname2);
-
-						}
-						else if (CheckFile(fname3))
-						{
-							sprintf(objpath, "%s\\objs\\", libraryPath);
-							GetCurrentDirectory(MAX_PATH, fname3);
-							SetCurrentDirectory(objpath);
-							model = LoadModel(fPath);
-							SetCurrentDirectory(fname3);
+							strncpy(modelPath, modelPathP, _MAX_PATH - 1);
+							strcpy(modelDir, getFileDir(modelPath));
+							
+							SetCurrentDirectory(modelDir);
+							model = LoadModel(modelPath);
+							SetCurrentDirectory(curDir);
 						}
 						else
 						{
@@ -3224,36 +3176,58 @@ int ReadMapXML(char* mazeXMLfile)
 	//Move to Map BuildCollision()
 	InitBulletPhysics();
 
-
+	updateMazeWorkingDir("");
 
 	return 1;
 }
 
-char curMazeFilename[TXTBUFFERLIMIT];
+
 
 int ReadMap(char* theFile)
 {
-	sprintf_s(curMazeFilename, TXTBUFFERLIMIT, "%s", theFile);
+	updateMazeWorkingDir("");
+
+	char* bestPath=getBestPath(theFile,"Mazes");
+	if (bestPath)
+	{
+		strncpy(curMazeFilename, bestPath,_MAX_PATH-1); //try to find best path for mazefile
+	}
+	else
+	{
+		char message[900];
+		sprintf(message, "Couldn't open Maze file!\n%s", theFile);
+		if (strlen(theFile) > 300)
+			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
+		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		return 0;
+	}
+	updateMazeWorkingDir(getFileDir(curMazeFilename));
+
 
 	firstLog=false;
 	srand(GetQPC()*time(NULL)); //seed based on time
-	FILE *fp=fopen(theFile,"r");
-	if(fp==NULL)
+	
+	char* ext = new char[500];
+
+	ext = getFileExt(curMazeFilename);
+	if (strcmp(ext, ".xml") == 0)
+	{
+		return(ReadMapXML(curMazeFilename));
+	}
+
+
+	FILE* fp = fopen(curMazeFilename, "r");
+	if (fp == NULL)
 	{
 		char message[900];
-		sprintf(message,"Couldn't open MAZE file!\n%s",theFile);
-		if (strlen(theFile)>300)
-			sprintf(message, "Couldn't open MAZE file!\nMazeList Error");
+		sprintf(message, "Couldn't open Maze file!\n%s", theFile);
+		if (strlen(theFile) > 300)
+			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
 		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
 		return 0;
 	}
 
 	float inp1, inp2, inp3, inp4, inp5, inp6, inp7;
-	char* ext = new char[500];
-	ext = &theFile[strlen(theFile) - 4];
-	if (ext[0] == '.'&&tolower(ext[1]) == 'x'&&tolower(ext[2]) == 'm'&& tolower(ext[3]) == 'l')
-		return(ReadMapXML(theFile));
-
 	char linebuf[LINEBUFFERLIMIT];
 	
 
@@ -3264,7 +3238,7 @@ int ReadMap(char* theFile)
 		if (inp1 > 0)
 		{
 			fclose(fp);
-			return ReadMapXML(theFile);
+			return ReadMapXML(curMazeFilename);
 		}
 		else
 		{
@@ -3277,7 +3251,7 @@ int ReadMap(char* theFile)
 				if (inp1 > 0)
 				{
 					fclose(fp);
-					return ReadMapXML(theFile);
+					return ReadMapXML(curMazeFilename);
 				}
 			}
 		}
@@ -3306,9 +3280,9 @@ int ReadMap(char* theFile)
 	curTextureDict.MarkAllUnused();
 	////////////
 	
-	char mazeWorkingDir[500]; //to record the directory of the current maze file
+	 //to record the directory of the current maze file
 	
-
+	
 
 
 	double mzFileEdition=inp1;
@@ -3324,20 +3298,13 @@ int ReadMap(char* theFile)
 	struct SVertex v[4];
 	LightItem* lightItem=NULL;
 
-
 	
-	for(res=0;theFile[res]!=NULL;res++)
-		;
-	for(type=res;theFile[type]!='\\' && type>0;type--)
-		;
-	for(res=0;res<=type;res++)
-		mazeWorkingDir[res]=theFile[res];
-	mazeWorkingDir[type]=NULL;
-	SetCurrentDirectoryA(mazeWorkingDir);
+	SetCurrentDirectoryA(getMazeWorkingDir());
 
 	int index=0,counter=0;
 	UINT i;
-	char fname[LINEBUFFERLIMIT]; fname[0]=0;
+	char fname[LINEBUFFERLIMIT]; 
+	fname[0]=0;
 	int n,elementLineCount; 
 	linenumber=1;
 	bool foundNextItem=false;
@@ -3884,34 +3851,13 @@ int ReadMap(char* theFile)
 						}
 						else
 						{
-							char fnameLocal[600],fname2[600], fname3[600];
-							char audiopath[600]="\\audio\\";
+							char* soundPath;
 
-							strcat_s(audiopath,fname);
-							sprintf(fnameLocal, "%s%s", mazeWorkingDir, audiopath);
-							sprintf(fname2, "%s%s",userLibraryPath,audiopath);
-							sprintf(fname3, "%s%s",libraryPath,audiopath);
-				
-							if(CheckFile(fname))
-								strcpy(soundSTR,fname);
-							else if (CheckFile(fnameLocal))
-								strcpy(soundSTR, fnameLocal);
-							else if(CheckFile(fname2))
-							{
-								strcpy(soundSTR,fname2);
+							soundPath=getBestPath(fname, "audio");
 
-							}
-							else if(CheckFile(fname3))
+							if (soundPath)
 							{
-								strcpy(soundSTR,fname3);
-							}
-							else
-							{
-								sprintf(soundSTR,"");
-							}
-							if(strlen(soundSTR)>2)
-							{
-								curAudioDict.Add(index,soundSTR);
+								curAudioDict.Add(index, soundPath);
 							}
 							else
 							{
@@ -3950,38 +3896,25 @@ int ReadMap(char* theFile)
 					}
 					else
 					{					
-						char fnameLocal[600],fname2[600],fname3[600];
-						char objpath[600]="\\objs\\";
+						char* modelPathP;
+						char modelDir[800] = "";
 
-						
-						strcat_s(objpath, fname);
-						sprintf(fnameLocal, "%s%s", mazeWorkingDir, objpath);
-						sprintf(fname2, "%s%s",userLibraryPath,objpath);
-						sprintf(fname3, "%s%s",libraryPath,objpath);
+						char curDir[_MAX_PATH] = "";
+						GetCurrentDirectory(MAX_PATH, curDir);
 
-						if (CheckFile(fname))
-							model = LoadModel(fname);
-						else if (CheckFile(fnameLocal))
-							model = LoadModel(fnameLocal);
-						else if(CheckFile(fname2))
+						char modelPath[_MAX_PATH];
+
+						modelPathP = getBestPath(fname, "objs");
+
+
+						if (modelPathP)
 						{
-						
-							sprintf(objpath, "%s\\objs\\",userLibraryPath);
-							GetCurrentDirectory(MAX_PATH, fname2);
-							SetCurrentDirectory(objpath);
-						
-							model=LoadModel(fname);	
-							
-							SetCurrentDirectory(fname2);
+							strncpy(modelPath, modelPathP, _MAX_PATH - 1);
+							strcpy(modelDir, getFileDir(modelPath));
 
-						}
-						else if(CheckFile(fname3))
-						{
-							sprintf(objpath, "%s\\objs\\",libraryPath);
-							GetCurrentDirectory(MAX_PATH, fname3);
-							SetCurrentDirectory(objpath);
-							model=LoadModel(fname);	
-							SetCurrentDirectory(fname3);
+							SetCurrentDirectory(modelDir);
+							model = LoadModel(modelPath);
+							SetCurrentDirectory(curDir);
 						}
 						else
 						{
@@ -4671,7 +4604,8 @@ int ReadMap(char* theFile)
 	//Move to Map BuildCollision()
 	InitBulletPhysics();
 
-
+	//sprintf(mazeWorkingDir, ""); //clear mazeworkgdir
+	updateMazeWorkingDir("");
 	
 	return 1;
 }
@@ -4680,112 +4614,30 @@ char* getTextureFilename(char* input)
 {
 	
 
-	char fname[256]="";
-	int len=strlen(input);
-	int dirCount=0;
-	int dirString=0;
+	char fname[_MAX_PATH]="";
+
+
+	char* bestPath = getBestPath(input, "tex");
+	if (bestPath)
+		return bestPath;
+
+	bestPath = getBestPath(input, "textures");
+	if (bestPath)
+		return bestPath;
+
+	bestPath = getBestPath(input, "images");
+	if (bestPath)
+		return bestPath;
+
+	bestPath = getBestPath(input, "img");
+	if (bestPath)
+		return bestPath;
+
+	return NULL;
+
 	
-
-	int dot=len-1;
-	int space=0;
-	for(int i=0;i<len;i++)
-	{
-		fname[i-space]=tolower(input[i]);
-		if(fname[i-space]=='.')
-			dot=i-space;
-		if(fname[i-space]=='\\'||fname[i-space]=='/')
-		{
-			fname[i-space]='\\';
-			dirCount++;
-			dirString=i-space;
-		}
-		if(i<len+1&&fname[i-space]=='\\'&&input[i+1]=='\\')
-		{
-			i++;
-			space++;
-		}
-	}
-
-	dot=len-dot;
-	fname[len-space]=0;
-
-	if(fname[1]==':')
-		return fname;
-	
-	char dirStr[600];
-	if(dirCount>0)
-		sprintf(dirStr,"\\%s",fname); //copy fname
-	else
-		dirStr[0]=0;
-	
-
-	if(dirCount>0)
-	{
-		dirStr[dirString+1]=0; //mute after last bracket
-		sprintf(fname,"%s",&fname[dirString+1]); //remove dir from fname
-	}
-
-
-	char dir[5][600];
-
-	GetCurrentDirectory(MAX_PATH, dir[0]);
-	GetCurrentDirectory(MAX_PATH, dir[1]);
-	GetCurrentDirectory(MAX_PATH, dir[2]);
-	sprintf(dir[0], "%s\\textures%s",dir[0],dirStr); 
-	sprintf(dir[1], "%s\\tex%s",dir[1],dirStr);
-	sprintf(dir[2], "%s%s",dir[2],dirStr);
-	sprintf(dir[3], "%s%s",libraryPath,dirStr);
-	sprintf(dir[4], "%s%s",userLibraryPath,dirStr);
-
-	char fnameTest[5][600];
-	sprintf(fnameTest[0], "%s\\%s", dir[0], fname);
-	sprintf(fnameTest[1], "%s\\%s", dir[1], fname);
-	sprintf(fnameTest[2], "%s\\%s", dir[2], fname);
-	sprintf(fnameTest[3], "%s\\%s", dir[3], fname);
-	sprintf(fnameTest[4], "%s\\%s", dir[4], fname);
-
-	for (int i = 0; i < 5;i++)
-	{
-		if (CheckFile(fnameTest[i]))
-			return fnameTest[i];
-	}
-
-
-	std::vector<std::string> out;
-	std::string searchStr = std::string(fname);
-	std::string nextBest = std::string(fname);
-	nextBest=nextBest.substr(0,strlen(fname)-dot+1); //get no extension version
-	char next[600];
-	sprintf(next,"");
-
-	for (int i=0;i<5;i++)
-	{
-		out= std::vector<std::string>();
-		GetFilesInDirectory(out, dir[i]);
-		if(out.size()<1)
-			continue;
-		else
-		{
-			for(int j=0;j<out.size();j++)
-			{
-				char f[600];
-
-				sprintf(f,"%s",ftoLower(out.at(j).c_str()));
-				std::string fmatch= std::string(&f[strlen(dir[i])]);
-				
-				if(fmatch.find(searchStr,0)!=std::string::npos)
-				{
-					return f;
-				}
-				else if(fmatch.find(nextBest,0)!=std::string::npos)
-				{
-					sprintf(next,"%s",f);
-				}
-			}
-		}
-	}
-	
-	return next;
+	//
+	//return next;
 }
 
 char* ftoLower(const char* in)
@@ -4822,24 +4674,25 @@ int LoadTexture(char* fname, int mazeTexKey) //Load texture and MazeKey returns 
 			//Otherwise continue to load
 		}
 		
-												
+						
+		char* matchedfname;
 			
 			sprintf(fname2,"%s",&fname[8]);
-			sprintf(fname,"%s",getTextureFilename(&fname[8])); //find best match
+			matchedfname=getTextureFilename(&fname[8]); //find best match
 
 			int gl_key = -1;
 						
-			if(CheckFile(fname)) //check
+			if(matchedfname) //check
 			{
 
 				int temp_gl_key = -1;
 				//Check fname
-				temp_gl_key=curTextureDict.Get_glKey_from_path(fname);
+				temp_gl_key=curTextureDict.Get_glKey_from_path(matchedfname);
 
 				if (temp_gl_key > 0)
 					gl_key = temp_gl_key;
 				else //if doens't exist, load texture
-					gl_key = glmLoadTexture(fname);
+					gl_key = glmLoadTexture(matchedfname);
 			}
 						
 			if (gl_key<= 0) //Texture couldn't be loaded
@@ -4853,7 +4706,7 @@ int LoadTexture(char* fname, int mazeTexKey) //Load texture and MazeKey returns 
 			else
 			{
 				
-				curTextureDict.Add(fname, gl_key, mazeTexKey); //bind mazeKey +fname to gl_key 
+				curTextureDict.Add(matchedfname, gl_key, mazeTexKey); //bind mazeKey +fname to gl_key 
 			}
 			return gl_key;
 		
@@ -6487,14 +6340,21 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 
 	strcpy_s(displayTextChar, TXTBUFFERLIMIT, tempTxt);
 
-	for(i=0;i<strlen(displayTextChar)+1;i++)
-	{
+	int origLen = strlen(displayTextChar);
+	char* newSubStr;
+	newSubStr=displayTextChar;
 
-		if (MultipleChoice == MC_CHOICES ||strlen(displayTextChar)==0)
-			break;
-		else if (MultipleChoice > 0)
+	for(i=0;i< origLen+1;i++)
+	{
+		newSubStr = &displayTextChar[i];
+		if (MultipleChoice > 0)
 		{
-			MClen[MultipleChoice - 1]++;
+			if (strlen(newSubStr) == 0 ||(MultipleChoice == MC_CHOICES))
+			{
+				break;
+			}
+			else
+				MClen[MultipleChoice - 1]++;
 		}
 		else if(displayTextChar[i]==NULL ||displayTextChar[i]=='\n')
 		{
@@ -6538,6 +6398,7 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 				MClen[MultipleChoice - 1] = 0;
 
 				displayTextChar[i] = 0;
+				
 				MC[MultipleChoice - 1] = i;
 			}
 		}
@@ -8727,7 +8588,7 @@ LRESULT CALLBACK DlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 
 				ofn.lpstrFile[0] = '\0';
 				ofn.nMaxFile = sizeof(temp);
-				ofn.lpstrFilter = "Maze List Files (*.mel)\0*.MEL\0Maze Files (*.maz)\0*.MAZ\0Maze Files (*.mazX)\0*.MAZX\0All MazeSuite Files\0*.mel;*.maz;*.mazX;*.xml";
+				ofn.lpstrFilter = "Maze List Files (*.mel,*.melx)\0*.mel;*.melx\0Maze Files (*.maz)\0*.MAZ\0Maze Files (*.mazX)\0*.MAZX\0All MazeSuite Files\0*.mel;*.melx;*.maz;*.mazx";
 				ofn.nFilterIndex = 4;
 				ofn.lpstrFileTitle = NULL;
 				ofn.nMaxFileTitle = 0;
@@ -12547,9 +12408,9 @@ int WINAPI WinMain(	HINSTANCE	hInstance1,			// Instance
 
 
 	SHGetFolderPath(hWnd,CSIDL_APPDATA,NULL,0,mwalkerIniPath); //retreives users appdata path
-	SHGetFolderPath(hWnd,CSIDL_PERSONAL,NULL,0,userLibraryPath);
-	strcat(userLibraryPath,"\\MazeSuite");
-	strcat(userLibraryPath,"\\Library");
+	SHGetFolderPath(hWnd,CSIDL_PERSONAL,NULL,0,userLibraryDir);
+	strcat(userLibraryDir,"\\MazeSuite");
+	strcat(userLibraryDir,"\\Library");
 	strcat(mwalkerIniPath,"\\MazeWalker");
 	CreateDirectory(mwalkerIniPath,NULL);
 	strcat(mwalkerIniPath,"\\MazeWalker.ini");
@@ -12580,27 +12441,31 @@ int WINAPI WinMain(	HINSTANCE	hInstance1,			// Instance
 			}
 		}
 		if(exePath[0]==34)
-			strcpy_s(libraryPath,&exePath[1]);
+			strcpy_s(libraryDir,&exePath[1]);
 		else
-			strcpy_s(libraryPath,exePath);
-		strcat_s(libraryPath,"\\library");
-		GetPrivateProfileString("LibraryPath","LibraryPath",userLibraryPath,userLibraryPath,MAX_PATH,mwalkerIniPath);
+			strcpy_s(libraryDir,exePath);
+		strcat_s(libraryDir,"\\library");
+		GetPrivateProfileString("LibraryPath","LibraryPath", userLibraryDir, userLibraryDir,MAX_PATH,mwalkerIniPath);
 		char* libraryPathPart;
 		char oldUserLibPath[800];
-		strcpy_s(oldUserLibPath,userLibraryPath);
+		strcpy_s(oldUserLibPath, userLibraryDir);
 		libraryPathPart=strtok(oldUserLibPath,"\\");
-		strcpy_s(userLibraryPath,libraryPathPart);
+		strcpy_s(userLibraryDir,libraryPathPart);
 		while(libraryPathPart!=NULL)
 		{
 			libraryPathPart=strtok(NULL,"\\");
 			if(libraryPathPart==NULL)
 				break;
-			strcat_s(userLibraryPath,"\\");
-			strcat_s(userLibraryPath,libraryPathPart);
-			CreateDirectory(userLibraryPath,NULL);
+			strcat_s(userLibraryDir,"\\");
+			strcat_s(userLibraryDir,libraryPathPart);
+			CreateDirectory(userLibraryDir,NULL);
 		}
-		WritePrivateProfileString("LibraryPath","LibraryPath",userLibraryPath,mwalkerIniPath);
+		WritePrivateProfileString("LibraryPath","LibraryPath", userLibraryDir,mwalkerIniPath);
 	}
+
+	updateUserLibraryDir(userLibraryDir);
+	updateLibraryDir(libraryDir);
+
 	for(int count=0;count<3;count++)
 	{
 		if(devicePort[count]==0)
@@ -12835,7 +12700,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance1,			// Instance
 			}
 
 
-			if(CheckFile(clogAddress))
+			if(CheckFileExists(clogAddress))
 			{
 				videoPlayBack=true;
 				
@@ -15108,42 +14973,8 @@ void sendToTCP(tcpMessage t)
 	}
 }
 
-bool CheckFile(char* file)
-{
-	FILE* fp=fopen(file,"r");
-	if(fp!=NULL)
-	{
-		fclose(fp);
-		return true;
-	}
-	else
-		return false;
-}
-void GetFilesInDirectory(std::vector<std::string> &out, const std::string &directory)
-{
-    HANDLE dir;
-    WIN32_FIND_DATA file_data;
 
-    if ((dir = FindFirstFile((directory + "/*").c_str(), &file_data)) == INVALID_HANDLE_VALUE)
-        return; /* No files found */
 
-    do {
-        const std::string file_name = file_data.cFileName;
-        const std::string full_file_name = directory + "/" + file_name;
-        const bool is_directory = (file_data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0;
-
-        if (file_name[0] == '.')
-            continue;
-
-        if (is_directory)
-            continue;
-
-        out.push_back(full_file_name);
-    } while (FindNextFile(dir, &file_data));
-
-    FindClose(dir);
-
-} // GetFilesInDirectory
 
 
  void loadIniSettings()

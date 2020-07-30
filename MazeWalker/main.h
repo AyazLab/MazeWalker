@@ -139,7 +139,6 @@ void BuildShaders();
  void sendToAll(int code,int val);
  void sendToTCP(int code, int val);
 
- bool CheckFile(char* file);
  void GUIMessageBox (char* displayText,int showTime,int showStyle);
  void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID);
  void DrawLoadingScreen(int width, int height);
