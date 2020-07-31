@@ -33,7 +33,7 @@ char* getBestPath(char* filename);
 
 char* getBestPath(std::string filename_string, char* folder);
 char* getBestPath(std::string filename_string);
-char* getBestPathNo(char* filename, std::vector<std::string> foldersToCheck);
+char* getBestPath(char* filename, std::vector<std::string> foldersToCheck);
 
 void GetFilesInDirectory(std::vector<std::string>& out, const std::string& directory);
 char* getBestPathNoExt(char* filename, char* folder);
