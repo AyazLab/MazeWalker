@@ -4,6 +4,7 @@
 
 #include "glmimg.h"
 #include "texture.h"
+#include "Tools.h"
 #ifndef GL_BGR
 #define GL_BGR GL_BGR_EXT
 #endif
@@ -34,39 +35,10 @@ GLuint glmLoadTexture(char *filename, GLboolean alpha, GLboolean repeat, GLboole
 	Texture ttt;
 
 	int x =(int)strlen(filename);
-	char *extension = filename;
-    if (extension[x-4]=='.')
-		extension=extension+(x-3);
-	else if (extension[x-5]=='.')
-		extension=extension+(x-4);
-
-		if (extension[0]=='J')
-			extension[0]='j';
-		if (extension[0]=='P')
-			extension[0]='p';
-		if (extension[1]=='N')
-			extension[1]='n';
-		if (extension[2]=='G')
-			extension[2]='g';
-		if (extension[0]=='B')
-			extension[0]='b';
-		if (extension[0]=='T')
-			extension[0]='t';
-		if (extension[1]=='M')
-			extension[1]='m';
-		if (extension[1]=='P')
-			extension[1]='p';
-		if (extension[1]=='G')
-			extension[1]='g';
-		if (extension[2]=='A')
-			extension[2]='a';
-		if (extension[0]=='P')
-			extension[0]='p';
-		if (extension[2]=='E'||extension[2]=='G'||extension[2]=='e')
-			extension[2]='g';
+	char *extension = getFileExt(filename);
 
 
-		if (extension[0]=='j'&&extension[1]=='p'&&extension[2]=='g')
+		if (strcmp(extension,".jpg")==0&& strcmp(extension, ".jpeg"))
 		{
 			if (!LoadJPG(tex,filename))
 			{			
@@ -78,7 +50,7 @@ GLuint glmLoadTexture(char *filename, GLboolean alpha, GLboolean repeat, GLboole
 			else
 				return tex;
 		}
-		else if (extension[0]=='p'&&extension[1]=='n'&&extension[2]=='g')
+		else if (strcmp(extension, ".png") == 0)
 		{
 			if (!LoadPNG(tex,filename))
 			{			
@@ -90,7 +62,7 @@ GLuint glmLoadTexture(char *filename, GLboolean alpha, GLboolean repeat, GLboole
 				return tex;
 		}
 	
-	else if (extension[0]=='b'&&extension[1]=='m'&&extension[2]=='p')
+	else if ((strcmp(extension, ".bmp") == 0))
 	{
 			if (!LoadBMP(tex,filename))
 				{			
@@ -102,7 +74,7 @@ GLuint glmLoadTexture(char *filename, GLboolean alpha, GLboolean repeat, GLboole
 					return tex;
 	}
 
-	else if (extension[0]=='t'&&extension[1]=='g'&&extension[2]=='a')
+	else if ((strcmp(extension, ".tga") == 0))
 	{
 		if(!(LoadTGA(&ttt,(char *)filename)))
 		{

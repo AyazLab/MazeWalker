@@ -557,23 +557,26 @@ char* getBestPathNoExt(char* filename, char* folder)
 
 char* swapSlash(char* pathIn)
 {
-	char* d = (char*)malloc(strlen(pathIn) + 1);
+	char d[_MAX_PATH];
+	strcpy(d, pathIn);
+
+	char* dP = d;
+
 	int i = 0;
-	while (*pathIn)
+	while (*dP)
 	{
-		if (*pathIn == '\\')
-			*d = '/';
+		if (*dP == '\\')
+			*dP = '/';
 		else
-			*d = tolower(*pathIn);
-		d++;
-		pathIn++;
+			*dP = tolower(*dP);
+		dP++;
 		i++;
 	}
 
-	*d = 0;
-	d = d - i;
+	*dP = 0;
+	dP = d;
 
-	return d;
+	return dP;
 }
 
 
@@ -675,7 +678,7 @@ void GetFilesInDirectory(std::vector<std::string>& out, const std::string& direc
 void updateMazeWorkingDir(char* newDir)
 {
 	if (newDir)
-		strcpy_s(mazeWorkingDir, _MAX_PATH, swapSlash(newDir));
+		strncpy(mazeWorkingDir,  swapSlash(newDir),_MAX_PATH-1);
 	else
 		mazeWorkingDir[0] = 0;
 }
@@ -732,4 +735,39 @@ char* getLibraryDir()
 	char ret[_MAX_PATH];
 	strcpy(ret, libraryPath);
 	return ret;
+}
+
+char* getBestPathImg(char* input)
+{
+	return getTextureFilename(input);
+}
+
+char* getTextureFilename(char* input)
+{
+
+
+	char fname[_MAX_PATH] = "";
+
+
+	char* bestPath = getBestPath(input, "tex");
+	if (bestPath)
+		return bestPath;
+
+	bestPath = getBestPath(input, "textures");
+	if (bestPath)
+		return bestPath;
+
+	bestPath = getBestPath(input, "images");
+	if (bestPath)
+		return bestPath;
+
+	bestPath = getBestPath(input, "img");
+	if (bestPath)
+		return bestPath;
+
+	return NULL;
+
+
+	//
+	//return next;
 }

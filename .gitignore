@@ -19,12 +19,10 @@ MazeMaker/MazeMaker
 MazeWalker/Release/tmp/
 MazeWalker/Release/
 MazeWalker/Libs/glew/lib/Release/
-MazeWalker/Libs/glew/build/
+MazeWalker/Libs/glew/build/tmp
 MazeWalker/Libs/freetype/objs/
-MazeWalker/Bullet/lib/LinearMath_vs2010.lib
-MazeWalker/Bullet/lib/BulletDynamics_vs2010.lib
-MazeWalker/Bullet/lib/BulletCollision_vs2010.lib
-MazeWalker/Bullet/build3/
+MazeWalker/Bullet/lib/
+MazeWalker/Bullet/build3/tmp/
 *.ipch
 *.tlog
 MazeWalker/Debug/

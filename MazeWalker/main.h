@@ -173,8 +173,7 @@ int LoadTexture(char* fname,int index);
 void SetLights();
 void DrawMouse();
 void DrawCrosshair();
-char* getTextureFilename(char* fname);
-void GetFilesInDirectory(std::vector<std::string> &out, const std::string &directory);
+
 char* ftoLower(const char* in);
 int BuildWhite();
 void MazeInit();

@@ -4610,35 +4610,7 @@ int ReadMap(char* theFile)
 	return 1;
 }
 
-char* getTextureFilename(char* input)
-{
-	
 
-	char fname[_MAX_PATH]="";
-
-
-	char* bestPath = getBestPath(input, "tex");
-	if (bestPath)
-		return bestPath;
-
-	bestPath = getBestPath(input, "textures");
-	if (bestPath)
-		return bestPath;
-
-	bestPath = getBestPath(input, "images");
-	if (bestPath)
-		return bestPath;
-
-	bestPath = getBestPath(input, "img");
-	if (bestPath)
-		return bestPath;
-
-	return NULL;
-
-	
-	//
-	//return next;
-}
 
 char* ftoLower(const char* in)
 {

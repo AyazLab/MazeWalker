@@ -52,3 +52,6 @@ void updateLibraryDir(char* newDir);
 char* getLibraryDir();
 
 char* swapSlash(char* pathIn);
+
+char* getBestPathImg(char* input);
+char* getTextureFilename(char* input);

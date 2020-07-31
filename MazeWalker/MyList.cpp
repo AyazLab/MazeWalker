@@ -560,7 +560,7 @@ int MyList::ReadMazeListClassic(char *filename)
 	int multiMsgNum = 0;
 	bool ret=false;
 
-
+	char* bestPath;
 	
 	//maze list file...
 	if(!CheckFileExists(filename))
@@ -600,7 +600,9 @@ int MyList::ReadMazeListClassic(char *filename)
 				//i++;
 				GetUntilTab(fp,&(temp[strlen(temp)]),TXTBUFFERLIMIT-strlen(temp)); //append mazefile to string
 
-				
+				bestPath = getBestPathImg(temp);
+				if (bestPath)
+					strcpy(temp, bestPath);
 				
 				this->AddMaze(temp);
 
@@ -645,6 +647,10 @@ int MyList::ReadMazeListClassic(char *filename)
 					//since previous return value is not false, end of line is not reached.
 					//get the next cell (background image)
 					GetUntilTab(fp, imgID, TXTBUFFERLIMIT);
+
+					bestPath = getBestPathImg(imgID);
+					if (bestPath)
+						strcpy(imgID, bestPath);
 				}
 
 				for (int i=0;i<multiMsgNum;i++)
