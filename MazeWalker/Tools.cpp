@@ -374,7 +374,14 @@ char libraryPath[_MAX_PATH] = "";
 char* getBestPath(char* filename)
 {
 	char* bestPath = getBestPath(filename, "");
-	return bestPath;
+	char ret[_MAX_PATH];
+	if (bestPath)
+	{
+		strncpy(ret, bestPath, _MAX_PATH - 1);
+		return ret;
+	}
+	else
+		return NULL;
 	
 }
 
@@ -384,8 +391,13 @@ char* getBestPath(std::string filename_string)
 	strncpy(fname, filename_string.c_str(), _MAX_PATH - 1);
 	char* bestPath = getBestPath(fname, "");
 	char ret[_MAX_PATH];
-	strncpy(ret, bestPath, _MAX_PATH - 1);
-	return ret;
+	if (bestPath)
+	{
+		strncpy(ret, bestPath, _MAX_PATH - 1);
+		return ret;
+	}
+	else
+		return NULL;
 
 }
 
@@ -397,161 +409,190 @@ char* getBestPath(std::string filename_string, char* folder)
 	char* bestPath = getBestPath(fname, folder);
 
 	char ret[_MAX_PATH];
-	strncpy(ret, bestPath, _MAX_PATH - 1);
-	return ret;
+	if (bestPath)
+	{
+		strncpy(ret, bestPath, _MAX_PATH - 1);
+		return ret;
+	}
+	else
+		return NULL;
+
+}
+char* getBestPath(char* filename, std::vector<std::string> foldersToCheck)
+{
+	if (strlen(filename) < 3) //for too short paths
+		return NULL;
+	if (filename[1] == ':' && CheckFileExists(filename)) //for absolute paths
+		return filename;
+	else if (filename[1] == ':')
+		return NULL;
+
+	char pathBuffer[_MAX_PATH];
+	std::vector<std::string> folderFileNameToCheck;
+	std::vector<std::string> fullPathsToCheck;
+
+	strncpy(filename, swapSlash(filename), _MAX_PATH - 1);
+
+	//pathsToCheck.push_back(filename); 
+
+	bool useFolder = foldersToCheck.size()>0;
+
+	folderFileNameToCheck.push_back(filename); //first try the file at the root
+
+	//Next Assemble the possible folders to look in (ex: img/images/textures/tex)
+	for (std::vector<std::string>::iterator it = foldersToCheck.begin(); it != foldersToCheck.end(); ++it) {
+
+		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", it->c_str(), filename);
+		folderFileNameToCheck.push_back(pathBuffer);
+	}
+
+	std::vector<std::string> dirsToCheck;
+
+	//Next try the local maze folder
+	if (strlen(mazeWorkingDir) > 0)
+	{
+		dirsToCheck.push_back(mazeWorkingDir);
+	}
+
+	//Next try the local mel folder
+	if (strlen(melWorkingDir) > 0)
+	{
+		dirsToCheck.push_back(melWorkingDir);
+	}
+
+	//Next try the user library folder
+	if (strlen(userLibraryPath) > 0)
+	{
+		dirsToCheck.push_back(userLibraryPath);
+	}
+
+	//Next try the standard library folder (where .exe file is
+	if (strlen(libraryPath) > 0)
+	{
+		dirsToCheck.push_back(libraryPath);
+	}
+
+	for (std::vector<std::string>::iterator idir = dirsToCheck.begin(); idir != dirsToCheck.end(); ++idir) {
+		for (std::vector<std::string>::iterator ifold = folderFileNameToCheck.begin(); ifold != folderFileNameToCheck.end(); ++ifold) {
+
+			sprintf(pathBuffer, "%s/%s", idir->c_str(), ifold->c_str());
+			if (CheckFileExists(pathBuffer))
+				return pathBuffer;
+
+		}
+	}
+	return NULL;
+
 
 }
 
 char* getBestPath(char* filename,char* folder)
 {
-	if (strlen(filename) < 3) //for too short paths
+	std::vector<std::string> foldersToCheck;
+	foldersToCheck.push_back(folder);
+
+	char* bestPath;
+	bestPath = getBestPath(filename, foldersToCheck);
+
+	char ret[_MAX_PATH];
+	if (bestPath)
+	{
+		strncpy(ret, bestPath, _MAX_PATH - 1);
+		return ret;
+	}
+	else
 		return NULL;
-	if (filename[2] == ':' && CheckFileExists(filename)) //for absolute paths
-		return filename;
-	else if(filename[2] == ':')
-		return NULL;
-
-	strncpy(filename, swapSlash(filename), _MAX_PATH - 1);
-
-	bool useFolder = strlen(folder) > 0;
-
-	std::vector<std::string> pathsToCheck;
-
-	pathsToCheck.push_back(filename); //first try the file
-
-	char pathBuffer[_MAX_PATH];
-
-	//Next try the local maze folder
-	if (strlen(mazeWorkingDir) > 0)
-	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", mazeWorkingDir, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", mazeWorkingDir,folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
-	}
-
-	//Next try the local mel folder
-	if (strlen(melWorkingDir) > 0)
-	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", melWorkingDir, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", melWorkingDir, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
-	}
-
-	//Next try the user library folder
-	if (strlen(userLibraryPath) > 0)
-	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", userLibraryPath, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", userLibraryPath, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
-	}
-
-	//Next try the standard library folder (where .exe file is
-	if (strlen(libraryPath) > 0)
-	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", libraryPath, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", libraryPath, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
-	}
-
-	for (std::vector<std::string>::iterator it = pathsToCheck.begin(); it != pathsToCheck.end(); ++it) {
-		
-		strncpy(pathBuffer, it->c_str(), _MAX_PATH-1);
-		if (CheckFileExists(pathBuffer))
-			return pathBuffer;
-	}
-	return NULL;
 
 }
 
 char* getBestPathNoExt(char* filename, char* folder)
 {
-	if (strlen(filename) < 3) //for too short paths
-		return NULL;
-	if (filename[2] == ':' && CheckFileExists(filename)) //for absolute paths
-		return filename;
+	std::vector<std::string> foldersToCheck;
+	foldersToCheck.push_back(folder);
+
+	char* bestPath;
+	bestPath = getBestPathNoExt(filename, foldersToCheck);
+
+	char ret[_MAX_PATH];
+	if (bestPath)
+	{
+		strncpy(ret, bestPath, _MAX_PATH - 1);
+		return ret;
+	}
 	else
 		return NULL;
+}
 
-	strncpy(filename, swapSlash(strtolower(filename)), _MAX_PATH-1);
-
-	bool useFolder = strlen(folder) > 0;
-
-	std::vector<std::string> pathsToCheck;
-
-	pathsToCheck.push_back(filename); //first try the file
+char* getBestPathNoExt(char* filename, std::vector<std::string> foldersToCheck)
+{
+	if (strlen(filename) < 3) //for too short paths
+		return NULL;
+	if (filename[1] == ':' && CheckFileExists(filename)) //for absolute paths
+		return filename;
+	else if (filename[1] == ':')
+		return NULL;
 
 	char pathBuffer[_MAX_PATH];
+	std::vector<std::string> folderFileNameToCheck;
+	std::vector<std::string> fullPathsToCheck;
+
+	strncpy(filename, swapSlash(filename), _MAX_PATH - 1);
+
+	//pathsToCheck.push_back(filename); 
+
+	bool useFolder = foldersToCheck.size() > 0;
+
+	folderFileNameToCheck.push_back(filename); //first try the file at the root
+
+	//Next Assemble the possible folders to look in (ex: img/images/textures/tex)
+	for (std::vector<std::string>::iterator it = foldersToCheck.begin(); it != foldersToCheck.end(); ++it) {
+
+		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", it->c_str(), filename);
+		folderFileNameToCheck.push_back(pathBuffer);
+	}
+
+	std::vector<std::string> dirsToCheck;
 
 	//Next try the local maze folder
 	if (strlen(mazeWorkingDir) > 0)
 	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", mazeWorkingDir, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", mazeWorkingDir, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
+		dirsToCheck.push_back(mazeWorkingDir);
 	}
 
 	//Next try the local mel folder
 	if (strlen(melWorkingDir) > 0)
 	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", melWorkingDir, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", melWorkingDir, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
+		dirsToCheck.push_back(melWorkingDir);
 	}
 
 	//Next try the user library folder
 	if (strlen(userLibraryPath) > 0)
 	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", userLibraryPath, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", userLibraryPath, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
-		}
+		dirsToCheck.push_back(userLibraryPath);
 	}
 
 	//Next try the standard library folder (where .exe file is
 	if (strlen(libraryPath) > 0)
 	{
-		sprintf_s(pathBuffer, _MAX_PATH, "%s/%s", libraryPath, filename);
-		pathsToCheck.push_back(pathBuffer);
-		if (useFolder) //include folder if provided
-		{
-			sprintf_s(pathBuffer, _MAX_PATH, "%s/%s/%s", libraryPath, folder, filename);
-			pathsToCheck.push_back(pathBuffer);
+		dirsToCheck.push_back(libraryPath);
+	}
+	char* bestPath;
+	for (std::vector<std::string>::iterator idir = dirsToCheck.begin(); idir != dirsToCheck.end(); ++idir) {
+		for (std::vector<std::string>::iterator ifold = folderFileNameToCheck.begin(); ifold != folderFileNameToCheck.end(); ++ifold) {
+
+			sprintf(pathBuffer, "%s/%s", idir->c_str(), ifold->c_str());
+			bestPath = CheckFileExistsNoExt(pathBuffer);
+			char ret[_MAX_PATH];
+			if (bestPath)
+			{
+				strncpy(ret, bestPath, _MAX_PATH - 1);
+				return ret;
+			}
+
 		}
 	}
-
-	for (std::vector<std::string>::iterator it = pathsToCheck.begin(); it != pathsToCheck.end(); ++it) {
-		strncpy(pathBuffer, it->c_str(), _MAX_PATH-1);
-		if (CheckFileExistsNoExt(pathBuffer))
-			return pathBuffer;
-	}
 	return NULL;
+
 
 }
 
@@ -748,22 +789,22 @@ char* getTextureFilename(char* input)
 
 	char fname[_MAX_PATH] = "";
 
+	std::vector<std::string> foldersToCheck;
+	foldersToCheck.push_back("tex");
+	foldersToCheck.push_back("textures");
+	foldersToCheck.push_back("images");
+	foldersToCheck.push_back("img");
 
-	char* bestPath = getBestPath(input, "tex");
-	if (bestPath)
-		return bestPath;
 
-	bestPath = getBestPath(input, "textures");
+	char* bestPath = getBestPath(input, foldersToCheck);
+	char ret[_MAX_PATH];
 	if (bestPath)
-		return bestPath;
-
-	bestPath = getBestPath(input, "images");
-	if (bestPath)
-		return bestPath;
-
-	bestPath = getBestPath(input, "img");
-	if (bestPath)
-		return bestPath;
+	{
+		strncpy(ret, bestPath, _MAX_PATH - 1);
+		return ret;
+	}
+	else
+		return NULL;
 
 	return NULL;
 
