@@ -245,7 +245,7 @@ int MyList::ReadMazeListXML(char* melFile)
 			}
 
 			xml_attribute<>* pAttr;
-			pAttr = pRoot->first_attribute("version");
+			pAttr = pRoot->first_attribute("Version");
 			if (pAttr)
 				melFileEdition = atof(pAttr->value());
 
