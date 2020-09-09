@@ -124,13 +124,25 @@ int ServerSocket::Receive()
 		char bufstar[sizeof(message)+4];
 		unsigned char buf[sizeof(message)+4];
 		result=recv(serverSocket,bufstar,sizeof(message)+4,0);
-		memcpy(buf,bufstar,44);
-		Process(buf);
+
+		if (result == SOCKET_ERROR)
+		{
+			connected = false;
+			message.command = -1000;
+		}
+		else
+		{
+			memcpy(buf,bufstar,44);
+			Process(buf);
+		}
 	}
 	
 
-	if(result==SOCKET_ERROR)
-		connected=false;
+	if (result == SOCKET_ERROR)
+	{
+		connected = false;
+		message.command = -1000;
+	}
 	return result;
 }
 

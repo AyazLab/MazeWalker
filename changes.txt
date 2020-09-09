@@ -1,6 +1,12 @@
 MazeWalker Changes Log
 Unversioned
 
+3.1.0.0
+Migrated codebase to Github
+Fixed an issue where long mazelist messages would crash mazewalker
+Added automatic message partitioning and linebreaks when messages exceed a certain length
+Added API support for mazewalker status, get elapsed time, get maze name, get model state
+
 3.0.5.0
 Restored playback functionality
 Dynamic object activation mechanism is revised 

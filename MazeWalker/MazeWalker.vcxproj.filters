@@ -28,6 +28,9 @@
     <Filter Include="unzip">
       <UniqueIdentifier>{eef0fe3d-571c-464a-825e-450f6522b343}</UniqueIdentifier>
     </Filter>
+    <Filter Include="rapidxml">
+      <UniqueIdentifier>{88e57eba-8107-4793-a751-4d31a9856bcf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp">
@@ -346,6 +349,18 @@
     </ClInclude>
     <ClInclude Include="Libs\glew\include\GL\glew.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\rapidxml\rapidxml.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\rapidxml\rapidxml_iterators.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\rapidxml\rapidxml_print.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\rapidxml\rapidxml_utils.hpp">
+      <Filter>rapidxml</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

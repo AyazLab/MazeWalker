@@ -3,6 +3,7 @@
 #include "MazeListItem.h"
 
 
+
 #define TEXTBOXSTYLE_ONDIALOG_CLEAR_BK	0
 #define TEXTBOXSTYLE_ONSCREEN_CLEAR_BK	1
 #define TEXTBOXSTYLE_ONDIALOG_WITH_BK	2
@@ -27,7 +28,8 @@ public:
 
 	MyList(void);
 	~MyList(void);
-	int ReadMazeListFile(char *filename);
+	int ReadMazeListClassic(char *filename);
 	int ReadFile(char *filename);
+	int ReadMazeListXML(char* filename);
 	char mListDIR[800];
 };

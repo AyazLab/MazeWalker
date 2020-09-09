@@ -277,6 +277,10 @@
     <ClInclude Include="libpng\png.h" />
     <ClInclude Include="libpng\pngconf.h" />
     <ClInclude Include="Libs\glew\include\GL\glew.h" />
+    <ClInclude Include="Libs\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="Libs\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="Libs\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="Libs\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="LightItem.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="main.h" />
