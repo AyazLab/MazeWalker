@@ -36,3 +36,4 @@ MazeWalker/.vs/
 MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
 MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
 MazeWalker/Bullet/lib/LinearMath_vs2010_debug.pdb
+*.pdb
