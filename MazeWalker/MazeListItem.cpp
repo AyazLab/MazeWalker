@@ -45,6 +45,13 @@ void MazeListItem::AddBG(char *fname)
 
 }
 
+void MazeListItem::AddCommand(char* cmd, bool waitForExit)
+{
+	type = Command;
+	strcpy_s(mzCommand,cmd);
+	waitForExitCmd = waitForExit;
+	next = NULL;
+}
 
 MazeListItem::~MazeListItem(void)
 {

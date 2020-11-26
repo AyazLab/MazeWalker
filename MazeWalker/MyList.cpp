@@ -64,6 +64,14 @@ void MyList::AddText(char* val,long lftm,int shStyle)
 	cur->next->AddText(val,lftm,shStyle);
 }
 
+void MyList::AddCommand(char* cmd, bool waitForComplete)
+{
+	MazeListItem* cur = GetLast();
+
+	cur->next = new MazeListItem();
+	cur->next->AddCommand(cmd, waitForComplete);
+}
+
 void MyList::AddBG(char* val)
 {
 	MazeListItem *cur = GetLast();
@@ -278,15 +286,18 @@ int MyList::ReadMazeListXML(char* melFile)
 						break;
 					if (0 == strcmp(pNode->name(), "Maze"))
 					{
-						pAttr = pNode->first_attribute("ID");
+						pAttr = pNode->first_attribute("MazeID");
 						if (pAttr)
 							mazeID = atoi(pAttr->value());
-						else
+						
+						if(!pAttr||mazeID<0)
 						{
 							mazeID = autoID;
 							autoID++;
-								
 						}
+
+
+
 						pAttr = pNode->first_attribute("File");
 						if(pAttr)
 						{
@@ -309,10 +320,12 @@ int MyList::ReadMazeListXML(char* melFile)
 						break;
 					if (0 == strcmp(pNode->name(), "Audio"))
 					{
-						pAttr = pNode->first_attribute("ID");
+						pAttr = pNode->first_attribute("AudioID");
+
 						if (pAttr)
 							mazeID = atoi(pAttr->value());
-						else
+
+						if (!pAttr || mazeID < 0)
 						{
 							mazeID = autoID;
 							autoID++;
@@ -375,7 +388,7 @@ int MyList::ReadMazeListXML(char* melFile)
 						break;
 					if (strcmp(pNode->name(), "Maze")==0)
 					{
-						pAttrID = pNode->first_attribute("ID");
+						pAttrID = pNode->first_attribute("MazeID");
 						pAttrFile = pNode->first_attribute("File");
 						char* pValue = pNode->value();
 						if (pAttrID)
@@ -403,6 +416,25 @@ int MyList::ReadMazeListXML(char* melFile)
 							continue;
 
 						this->AddMaze(temp);
+					}
+
+					else if (0 == strcmp(pNode->name(), "Command"))
+					{
+						bool waitForComplete;
+
+						pAttr = pNode->first_attribute("WaitForComplete");
+						if (pAttr)
+							waitForComplete = strcmpi(pAttr->value(),"true");
+						else
+							waitForComplete = false;
+
+						char* command = pNode->value();
+
+						if (command)
+						{
+							this->AddCommand(command, waitForComplete);
+						}
+
 					}
 
 					else if ((0 == strcmp(pNode->name(), "Image")|| (0 == strcmp(pNode->name(), "Text"))|| (0 == strcmp(pNode->name(), "MultipleChoice"))))
@@ -530,6 +562,7 @@ int MyList::ReadMazeListXML(char* melFile)
 
 			return 0;
 		}
+		strcpy(mListDIR, iDir);
 	}
 	return 1;
 }

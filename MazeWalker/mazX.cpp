@@ -714,6 +714,44 @@ long CheckFile2(char* file)
 		return -1;
 }
 
+char* ExtractToTempDIR(char* fname,char* tempPath)
+{
+
+	HZIP hz = OpenZip(fname, 0);
+
+	SetUnzipBaseDir(hz, tempPath);
+	ZIPENTRY ze; GetZipItem(hz, -1, &ze); int numitems = ze.index;
+	int len = 0;
+	char out[MAX_PATH];
+	strcpy(out, tempPath);
+	for (int zi = 0; zi < numitems; zi++)
+	{
+		GetZipItem(hz, zi, &ze);
+
+		char* checkStr = new char[MAX_PATH];
+		sprintf(checkStr, "%s%s",tempPath, ze.name);
+
+
+		long fSize = CheckFile2(checkStr);
+		if (fSize < 0 || ze.unc_size != fSize)
+			UnzipItem(hz, zi, ze.name);
+
+		len = strlen(ze.name);
+		if (len > 4 && tolower(ze.name[len - 3]) == 'm' && tolower(ze.name[len - 2]) == 'a' && tolower(ze.name[len - 1]) == 'z')
+		{
+			strcat_s(out, sizeof(char) * MAX_PATH, ze.name);
+		}
+	}
+	CloseZip(hz);
+
+
+
+	if (strlen(out) > 1)
+		return out;
+	else
+		return NULL;
+}
+
 char* ExtractToTempDIR(char* fname)
 {
 
