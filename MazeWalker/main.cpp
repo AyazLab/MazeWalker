@@ -37,7 +37,8 @@ bool oculusEnabled = false;
 #include "Libs/rapidxml/rapidxml.hpp"
 #include <fstream>
 #include <sstream>
-
+#include <filesystem>
+#include <stdlib.h>
 
 
 #define BUF_SIZE 10000	
@@ -132,6 +133,8 @@ DWORD updateTime,updateTimeKeys,updateTime2,updateTime3,toggleKeyTime;
 #define UpdateTimeBufferCount 10
 DWORD updateTimeFrame[UpdateTimeBufferCount];
 char mwalkerIniPath[MAX_PATH],userLibraryDir[MAX_PATH],libraryDir[MAX_PATH],exePath[MAX_PATH];
+char rootDIR[MAX_PATH]; //directory of mazewalker
+char tempDIR[MAX_PATH]; //directory of user temp data + MazeWalker
 
 BOOL JoyPresent=FALSE;
 bool joyUp=false,joyLeft=false,joyRight=false,joyDown=false;
@@ -3181,6 +3184,29 @@ int ReadMapXML(char* mazeXMLfile)
 	return 1;
 }
 
+int ReadMazX(char* theFile)
+{
+	updateMazeWorkingDir("");
+
+	char* bestPath = getBestPath(theFile, "Mazes");
+	if (bestPath)
+	{
+		char* outPath = ExtractToTempDIR(bestPath, tempDIR);
+		return ReadMap(outPath);
+	}
+	else
+	{
+		char message[900];
+		sprintf(message, "Couldn't open Maze file!\n%s", theFile);
+		if (strlen(theFile) > 300)
+			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
+		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		return 0;
+	}
+
+	
+
+}
 
 
 int ReadMap(char* theFile)
@@ -7991,7 +8017,7 @@ GLvoid Kill(GLvoid)								// Properly Kill The Window
 	KillFont();
 
 	if (usingMazX)
-		DeleteDirectory("_temp",true);
+		std::filesystem::remove_all(tempDIR);
 	
 
 #ifdef _MAZE_PROFILER
@@ -12987,8 +13013,17 @@ baud = 2400;
 	}
 	sendToAll(1, 50); //MazeWalker Opened
 	objCamera.Initialize();
-	char rootDIR[MAX_PATH];
+	
+
+	
 	GetCurrentDirectoryA(MAX_PATH, rootDIR);
+	GetTempPathA(MAX_PATH, tempDIR);
+
+	sprintf(tempDIR, "%sMazeWalker/", tempDIR);
+	std::filesystem::remove_all(tempDIR);
+	CreateDirectory(tempDIR, NULL);
+	
+
 
 
 	curMazeListItem = curList.GetFirst();
@@ -13004,15 +13039,7 @@ baud = 2400;
 
 			SetCurrentDirectory(rootDIR);
 
-			char* out;
-			if (curMazeListItem->isMazX)
-			{
-				out = ExtractToTempDIR(curMazeListItem->value);
-				usingMazX = true;
-			}
-
-			//if (out != NULL)
-			//	strcpy_s(temp->value,sizeof(char)*300, out);
+			
 
 			mazeStart = GetQPC();
 			mazeStartedAndRunning = 1; //for log timer settings
@@ -13026,8 +13053,17 @@ baud = 2400;
 			EventLog(0, 58, 0, "Maze Loading");
 
 
-
-			if (ReadMap(curMazeListItem->value) == 0)
+			if (curMazeListItem->isMazX)
+			{
+				if (ReadMazX(curMazeListItem->value) == 0)
+				{
+					usingMazX = true;
+					bMazeLoop = false;
+					done = true;
+					continue;
+				}
+			}
+			else if (ReadMap(curMazeListItem->value) == 0)
 			{
 				bMazeLoop = false;
 				done = true;
@@ -13977,6 +14013,18 @@ baud = 2400;
 			bStatusMazeRunning = false;
 			EventLog(1,70, 0,"Maze Ended");
 		}
+		else if (curMazeListItem && curMazeListItem->type == Command)
+		{
+			sprintf(curMazeFilename, "MazeList Cmd: %s",curMazeListItem->mzCommand);
+			char mzCmd[1024];
+			strcpy_s(mzCmd,1024,curMazeListItem->mzCommand);
+			bool waitForComplete = curMazeListItem->waitForExitCmd;
+
+			EventLog(1, 80, 0, curMazeFilename);
+			ShellExecute(0, "open", mzCmd,NULL, 0, SW_SHOW);
+			if(!waitForComplete)
+				EventLog(1, 80, 0, "MazeList CmdEnd");
+		 }
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{
 			sprintf(curMazeFilename, "MazeList Text");

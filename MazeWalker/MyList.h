@@ -19,6 +19,7 @@ public:
 	void AddMaze(char *val);
 	void AddText(char * val, long lftm,int shStyle);
 	void AddBG(char* val);
+	void AddCommand(char* cmd, bool waitForComplete);
 
 	void Clear();
 

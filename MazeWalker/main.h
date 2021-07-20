@@ -15,6 +15,7 @@
 #include "Joystick.h"
 #include "freetype.h"
 #include "mazX.h"
+#include <filesystem>
 
 
 #define PI 3.14159265
@@ -178,6 +179,7 @@ char* ftoLower(const char* in);
 int BuildWhite();
 void MazeInit();
 void AlignCamera();
+int ReadMap(char* theFile);
 StartPosition* getStartPosByIndex(int index); //negative values return head, 0 returns random ID, positive IDs will return indexed values
 //GLMmodelNode* getModelByIndex(int index);
 

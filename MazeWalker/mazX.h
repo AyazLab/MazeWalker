@@ -136,5 +136,5 @@ unsigned int FormatZipMessage(ZRESULT code, TCHAR *buf, unsigned int len);
 
 
 
-
+char* ExtractToTempDIR(char* fname, char* tempPath);
 char* ExtractToTempDIR(char* fname);
