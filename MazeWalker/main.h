@@ -16,7 +16,7 @@
 #include "freetype.h"
 #include "mazX.h"
 #include <filesystem>
-
+#include "MazeListItem.h"
 
 #define PI 3.14159265
 #define PIOVER4 0.78539816
@@ -140,8 +140,9 @@ void BuildShaders();
  void sendToAll(int code,int val);
  void sendToTCP(int code, int val);
 
- void GUIMessageBox (char* displayText,int showTime,int showStyle);
- void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID);
+ void GUIMessageBox (char* displayText,int showTime,int showStyleInt);
+ void GUIMessageBox(char* displayText, int showTime, textboxStyle showStyle);
+ void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLuint texID);
  void DrawLoadingScreen(int width, int height);
  void loadIniSettings();
  void clearModels();

@@ -749,7 +749,7 @@ int ReadMapXML(char* mazeXMLfile)
 		sprintf(message, "Couldn't open Maze file!\n%s", mazeXMLfile);
 		if (strlen(mazeXMLfile) > 300)
 			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
-		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(message, 0, WARNING);
 		return 0;
 	}
 	else
@@ -810,7 +810,7 @@ int ReadMapXML(char* mazeXMLfile)
 		{
 			char txt[250];
 			sprintf(txt, "Invalid Maze File");
-			GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+			GUIMessageBox(txt, 0, WARNING); //return 0;
 			return false;
 		}
 
@@ -827,7 +827,7 @@ int ReadMapXML(char* mazeXMLfile)
 				sprintf(txt, "Current File Version: 2.0\nMazeFile v%.1f is unsupported in this version of MazeWalker");
 			else
 				sprintf(txt, "Current File Version: 2.0\nUnknown File Version Loaded");
-			GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+			GUIMessageBox(txt, 0, WARNING); //return 0;
 		}
 
 		char fPath[800] = "";
@@ -1116,7 +1116,7 @@ int ReadMapXML(char* mazeXMLfile)
 					{
 						char txt[250];
 						sprintf(txt, "Audio '%s' not found!\n", fPath);
-						GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox(txt, 0, WARNING);
 						//MessageBoxA(NULL, txt, 0, 0);
 					}
 
@@ -1213,7 +1213,7 @@ int ReadMapXML(char* mazeXMLfile)
 							//fclose(fp);
 							char txt[250];
 							sprintf(txt, "Model not found!\n'%s'", fPath);
-							GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+							GUIMessageBox(txt, 0, WARNING); //return 0;
 						}
 					}
 
@@ -1338,7 +1338,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 					if (wallError||objMap->Add(MO_PLANE, texture, col, v, curVisibility) == 0)
 					{
-						GUIMessageBox("Error adding Wall!\nInvalid construction", 0, TEXTBOXSTYLE_WARNING); return 0;
+						GUIMessageBox("Error adding Wall!\nInvalid construction", 0, WARNING); return 0;
 					}
 				}
 
@@ -1447,7 +1447,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 					if (wallError)// || objMap->Add(MO_PLANE, texture, col, v, curVisibility) == 0)
 					{
-						GUIMessageBox("Error adding Wall!\nInvalid construction", 0, TEXTBOXSTYLE_WARNING); return 0;
+						GUIMessageBox("Error adding Wall!\nInvalid construction", 0, WARNING); return 0;
 					}
 					else
 					{
@@ -1541,7 +1541,7 @@ int ReadMapXML(char* mazeXMLfile)
 									{
 										numVerts = 0;
 										numIndex = 0;
-										GUIMessageBox("Error adding Wall!\nInvalid goemetry", 0, TEXTBOXSTYLE_WARNING); return 0;
+										GUIMessageBox("Error adding Wall!\nInvalid goemetry", 0, WARNING); return 0;
 									}
 
 									numIndex++;
@@ -1754,7 +1754,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 					if (floorError||objMap->Add(MO_PLANE, texture, col, v, curVisibility) == 0)
 					{
-						GUIMessageBox("Error adding Floor!\nInvalid construction", 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox("Error adding Floor!\nInvalid construction", 0, WARNING);
 					}
 					else if (hasCeiling)
 					{
@@ -1794,7 +1794,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 						if (objMap->Add(MO_PLANE, texture, col, v2, curVisibility) == 0)
 						{
-							GUIMessageBox("Error adding Ceiling!\n\nMAZE couldn't load plane to memory!", 0, TEXTBOXSTYLE_WARNING); 
+							GUIMessageBox("Error adding Ceiling!\n\nMAZE couldn't load plane to memory!", 0, WARNING); 
 						}
 					}
 
@@ -1871,14 +1871,14 @@ int ReadMapXML(char* mazeXMLfile)
 						{
 							char message[50];
 							sprintf(message, "No valid Models!\n Model ID %i not loaded",temp->modelID );
-							GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+							GUIMessageBox(message, 0, WARNING);
 							break;
 						}
 						else
 						{
 							char message[100];
 							sprintf(message, "%i is not a valid Model ID!\nUsing primary model instead\n", temp->modelID);
-							GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+							GUIMessageBox(message, 0, WARNING);
 							break;
 						}
 					}
@@ -1998,7 +1998,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 						if (modelError)
 						{
-							GUIMessageBox("Missing Valid Model Position, placing at 0,0", 0, TEXTBOXSTYLE_WARNING);
+							GUIMessageBox("Missing Valid Model Position, placing at 0,0", 0, WARNING);
 						}
 
 						MapModelHead = temp;
@@ -2087,14 +2087,14 @@ int ReadMapXML(char* mazeXMLfile)
 						{
 							char message[150];
 							sprintf(message, "No valid Models!\n Model ID %i not loaded", temp->modelID);
-							GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+							GUIMessageBox(message, 0, WARNING);
 	
 						}
 						else
 						{
 							char message[100];
 							sprintf(message, "%i is not a valid Model ID!\nUsing primary model instead", temp->modelID);
-							GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+							GUIMessageBox(message, 0, WARNING);
 
 						}//MessageBox(NULL,"","Unkown ModelID",MB_OK | MB_ICONINFORMATION);}
 					}
@@ -2522,7 +2522,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 						if (modelError)
 						{
-							GUIMessageBox("Missing Valid Model Position, placing at 0,0", 0, TEXTBOXSTYLE_WARNING);
+							GUIMessageBox("Missing Valid Model Position, placing at 0,0", 0, WARNING);
 						}
 
 						MapModelHead = temp;
@@ -2751,7 +2751,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 					if (endRegionError)
 					{
-						GUIMessageBox("End Region not correctly defined 0,0", 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox("End Region not correctly defined 0,0", 0, WARNING);
 					}
 
 					objMap->endRegionHead = endRegion;
@@ -2968,7 +2968,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 					if (activeRegionError)
 					{
-						GUIMessageBox("Active Region not correctly defined 0,0", 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox("Active Region not correctly defined 0,0", 0, WARNING);
 					}
 
 					objMap->activeRegionHead = activeRegion;
@@ -3115,7 +3115,7 @@ int ReadMapXML(char* mazeXMLfile)
 	{
 		char* err = new char[256];
 		sprintf(err, "Corrupted MazeXML File:\n%s\n\n%s", e.what());
-		GUIMessageBox(err, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(err, 0, WARNING);
 		
 		return 0;
 	}
@@ -3158,7 +3158,7 @@ int ReadMapXML(char* mazeXMLfile)
 	else
 	{
 		objCamera.InitialRotate(0, xLoc + Width / 2, yLoc + Height / 2, 0);
-		GUIMessageBox("No Start Position Specified",0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox("No Start Position Specified",0, WARNING);
 	}
 
 	objCamera.startView = objCamera.mView;
@@ -3170,7 +3170,7 @@ int ReadMapXML(char* mazeXMLfile)
 
 	if (objMap->wallCount <= 0)
 	{
-		GUIMessageBox("Maze has no Listed walls or objects\nMaze will now Exit", 0, TEXTBOXSTYLE_FATAL_ERROR);
+		GUIMessageBox("Maze has no Listed walls or objects\nMaze will now Exit", 0, FATAL_ERROR);
 		return 0;
 	}
 		
@@ -3200,7 +3200,7 @@ int ReadMazX(char* theFile)
 		sprintf(message, "Couldn't open Maze file!\n%s", theFile);
 		if (strlen(theFile) > 300)
 			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
-		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(message, 0, WARNING);
 		return 0;
 	}
 
@@ -3224,7 +3224,7 @@ int ReadMap(char* theFile)
 		sprintf(message, "Couldn't open Maze file!\n%s", theFile);
 		if (strlen(theFile) > 300)
 			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
-		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(message, 0, WARNING);
 		return 0;
 	}
 	updateMazeWorkingDir(getFileDir(curMazeFilename));
@@ -3249,7 +3249,7 @@ int ReadMap(char* theFile)
 		sprintf(message, "Couldn't open Maze file!\n%s", theFile);
 		if (strlen(theFile) > 300)
 			sprintf(message, "Couldn't open Maze file!\nMazeList Error");
-		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(message, 0, WARNING);
 		return 0;
 	}
 
@@ -3285,7 +3285,7 @@ int ReadMap(char* theFile)
 
 		char message[800];
 		sprintf(message, "Corrupted or old maze file.\nTry opening and saving with MazeMaker\n%s", theFile);
-		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(message, 0, WARNING);
 		return 0;
 	}
 
@@ -3316,7 +3316,7 @@ int ReadMap(char* theFile)
 	{
 		char message[800];
 		sprintf(message,"Maze version is newer than MazeWalker\nPlease Update");
-		GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+		GUIMessageBox(message, 0, WARNING);
 	}
 	
 
@@ -3460,7 +3460,7 @@ int ReadMap(char* theFile)
 				//ASSERT(objMap);
 				if(objMap->Add(type,texture,col,v,curVisibility)==0)
 				{
-					GUIMessageBox("Error with planes!!!\n\nMAZE couldn't load plane to memory!", 0, TEXTBOXSTYLE_WARNING); return 0;
+					GUIMessageBox("Error with planes!!!\n\nMAZE couldn't load plane to memory!", 0, WARNING); return 0;
 				}
 			
 
@@ -3501,7 +3501,7 @@ int ReadMap(char* theFile)
 				//ASSERT(objMap);
 				if(objMap->Add(type,texture,col,v,1)==0)
 				{
-					GUIMessageBox("Error with triangles!!\n\nMAZE couldn't be loaded to memory!", 0, TEXTBOXSTYLE_WARNING); return 0;
+					GUIMessageBox("Error with triangles!!\n\nMAZE couldn't be loaded to memory!", 0, WARNING); return 0;
 				}
 
 				break;
@@ -3889,7 +3889,7 @@ int ReadMap(char* theFile)
 							{
 								char txt[250];
 								sprintf(txt,"Audio '%s' not found!\nLine: %i", fname,linenumber);
-								GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+								GUIMessageBox(txt, 0, WARNING); //return 0;
 							}
 						
 						}
@@ -3983,7 +3983,7 @@ int ReadMap(char* theFile)
 							//fclose(fp);
 							char txt[250];
 							sprintf(txt,"Model not found!\n'%s'", fname);
-							GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+							GUIMessageBox(txt, 0, WARNING); //return 0;
 						}
 					}
 				}
@@ -4026,13 +4026,13 @@ int ReadMap(char* theFile)
 					{
 						char message[50];
 						sprintf(message, "No valid Models!\n Model ID %i not loaded\nLine: %i",(int)inp1,linenumber);
-						GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox(message, 0, WARNING);
 					}
 					else
 					{
 						char message[100];
 						sprintf(message,"%f is not a valid Model ID!\nUsing primary model instead\nLine: %i",inp1,linenumber);
-						GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox(message, 0, WARNING);
 					}//MessageBox(NULL,"","Unkown ModelID",MB_OK | MB_ICONINFORMATION);}
 					}
 				if (temp2!=NULL) 
@@ -4234,14 +4234,14 @@ int ReadMap(char* theFile)
 					
 					if ((temp2==NULL||objMap->numObjs==0))
 					{
-						//GUIMessageBox("Model is improperly defined",0,TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+						//GUIMessageBox("Model is improperly defined",0,ON_DIALOG_CLEAR_BG);
 						sprintf(message, "No valid Models!\n Model ID %i not loaded\nLine: %i",(int)inp1,linenumber);
-						GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox(message, 0, WARNING);
 					}
 					else
 					{
 						sprintf(message,"%i is not a valid Model ID!\nUsing primary model instead\nLine: %i",(int)inp1,linenumber);
-						GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+						GUIMessageBox(message, 0, WARNING);
 					}
 					
 					
@@ -4622,7 +4622,7 @@ int ReadMap(char* theFile)
 
 	if (objMap->wallCount <= 0)
 	{
-		GUIMessageBox("Maze has no Listed walls or objects\nMaze will now Exit", 0, TEXTBOXSTYLE_FATAL_ERROR);
+		GUIMessageBox("Maze has no Listed walls or objects\nMaze will now Exit", 0, FATAL_ERROR);
 		return 0;
 	}
 
@@ -4698,7 +4698,7 @@ int LoadTexture(char* fname, int mazeTexKey) //Load texture and MazeKey returns 
 					
 					char txt[250];
 					sprintf(txt,"Texture not found!\n%s",fname2);
-					GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING);
+					GUIMessageBox(txt, 0, WARNING);
 					return 0;
 			}	
 			else
@@ -5809,7 +5809,7 @@ int DrawBuffer(GLuint framebuffer)
 	if(devMsgStatus==1)
 	{
 			
-		GUIMessageBox(devMsg,devMsgTime,TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+		GUIMessageBox(devMsg,devMsgTime,ON_DIALOG_CLEAR_BG);
 		devMsgStatus=0;
 	}
 
@@ -6047,10 +6047,15 @@ void DrawSkyBox()
 }
 
 //showStyle param defined in mazelist.h
-void GUIMessageBox (char* displayText, int showTime, int showStyle)
+void GUIMessageBox(char* displayText, int showTime, int showStyleInt)
+{
+	GUIMessageBox(displayText, showTime, (textboxStyle) showStyleInt);
+}
+
+void GUIMessageBox (char* displayText, int showTime, textboxStyle showStyle)
 {
 	GUIMessageBox (displayText, showTime, showStyle, 0);
-}
+} 
 
 
 
@@ -6271,7 +6276,7 @@ public:char* GetText()
 
 
 
-void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
+void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLuint texID)
 {
 	int i,res=0,numOfLines=0;
 
@@ -6298,7 +6303,7 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 		return;
 	}
 	strcpy_s(displayTextChar, TXTBUFFERLIMIT, displayText);
-	if (showStyle != TEXTBOXSTYLE_WARNING && showStyle != TEXTBOXSTYLE_FATAL_ERROR)
+	if (showStyle != WARNING && showStyle != FATAL_ERROR)
 	{
 		addLineBreaksAndMC(displayTextChar, TXTBUFFERLIMIT);
 	}
@@ -6416,13 +6421,13 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	if(!pausePlayback)
 		pauseTime=messageTime-mazeStart;
 
-	if (hideRenderedMaze&&showStyle!=TEXTBOXSTYLE_ACTIVEREGION_ONSCREEN) // Manual override of textbox styles for certain cases
-		showStyle = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
+	if (hideRenderedMaze&&showStyle!=ACTIVEREGION_ON_SCREEN) // Manual override of textbox styles for certain cases
+		showStyle = ON_DIALOG_CLEAR_BG;
 
 	glDisable(GL_LIGHTING);
 	glDisable(GL_DEPTH_TEST);
 
-	if(showStyle==TEXTBOXSTYLE_ONDIALOG_CLEAR_BK || showStyle == TEXTBOXSTYLE_ONSCREEN_CLEAR_BK || showStyle==TEXTBOXSTYLE_WARNING)
+	if(showStyle==ON_DIALOG_CLEAR_BG || showStyle == ON_SCREEN_CLEAR_BG || showStyle==WARNING)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	            // Clear The Screen And The Depth Buffer
 
 						
@@ -6467,7 +6472,7 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 	int mw = longestPart +8*spaceLength;
 	int mh = (numOfLines+1) * 1.5*fontheight;
 	OptionBox mainText = OptionBox(&displayTextChar[0], -1, -mw / 2, 80+yOffset, mw, mh);
-	if (showStyle == TEXTBOXSTYLE_ONSCREEN_CLEAR_BK)
+	if (showStyle == ON_SCREEN_CLEAR_BG)
 		mainText.SetDrawBG(false);
 	
 	
@@ -6488,14 +6493,14 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 		boxList.push_back(mainText);
 	
 	
-	if (showStyle == TEXTBOXSTYLE_WARNING)
+	if (showStyle == WARNING)
 	{
 		OptionBox header = OptionBox("WARNING", -1, -mw / 2 + 0, mh + 80 + yOffset, mw + 2, 2 * fontHeight);
 		header.SetBorderWidth(1);
 		header.SetBorderColor(1, 1, 0);
 		boxList.push_back(header);
 	}
-	else if(showStyle== TEXTBOXSTYLE_FATAL_ERROR)
+	else if(showStyle== FATAL_ERROR)
 	{
 		OptionBox header = OptionBox("ERROR", -1, -mw / 2 + 0, mh + 80 + yOffset, mw + 2, 2 * fontHeight);
 		header.SetBorderWidth(1);
@@ -6522,7 +6527,7 @@ void GUIMessageBox (char* displayText,int showTime, int showStyle, GLuint texID)
 		w = OKlength;
 		h = OKheight;
 		OptionBox okBox = OptionBox("Ok", 1, -w / 2, 80 - OKheight + yOffset, w, h);
-		if (showStyle == TEXTBOXSTYLE_WARNING||TEXTBOXSTYLE_FATAL_ERROR)
+		if (showStyle == WARNING||FATAL_ERROR)
 		{
 			okBox.SetSelectColor(0.2, 0.2, 0.2);
 			okBox.SetBorderColor(1, 1, 0);
@@ -12913,12 +12918,12 @@ int WINAPI WinMain(	HINSTANCE	hInstance1,			// Instance
 			if(!bJoyStickInput)
 			{
 				cueType=0;
-				GUIMessageBox("Joystick Input Not Enabled\nCue is being skipped",1000,TEXTBOXSTYLE_WARNING);
+				GUIMessageBox("Joystick Input Not Enabled\nCue is being skipped",1000,WARNING);
 			}
 			else if(joystickNum<0)
 			{
 				cueType=0;
-				GUIMessageBox("API Joystick Input Not Supported for Cue\nCue is being skipped",1000,TEXTBOXSTYLE_WARNING);
+				GUIMessageBox("API Joystick Input Not Supported for Cue\nCue is being skipped",1000,WARNING);
 			}
 			else
 			{
@@ -13009,7 +13014,7 @@ baud = 2400;
 
 		res = LPT_Connect(wLptPort);
 		if (res == -1)
-			GUIMessageBox("Error: Unable to Open InpOut32 Driver", 0, TEXTBOXSTYLE_FATAL_ERROR);
+			GUIMessageBox("Error: Unable to Open InpOut32 Driver", 0, FATAL_ERROR);
 	}
 	sendToAll(1, 50); //MazeWalker Opened
 	objCamera.Initialize();
@@ -13152,7 +13157,7 @@ baud = 2400;
 					}
 					if (keys[VK_ESCAPE])
 					{
-						GUIMessageBox("Wait For API Skipped: Escape Key Pressed", 0, TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+						GUIMessageBox("Wait For API Skipped: Escape Key Pressed", 0, ON_DIALOG_CLEAR_BG);
 						break;
 					}
 
@@ -13160,7 +13165,7 @@ baud = 2400;
 
 					if (loopCount > 1000000 && false)//loop timeout disabled for now
 					{
-						GUIMessageBox("API wait skipped: Time Out", 0, TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+						GUIMessageBox("API wait skipped: Time Out", 0, ON_DIALOG_CLEAR_BG);
 						break;
 					}
 				}
@@ -13242,7 +13247,7 @@ baud = 2400;
 					}
 					if (keys[VK_ESCAPE])
 					{
-						GUIMessageBox("Trigger Skipped: Escape Key Pressed", 0, TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+						GUIMessageBox("Trigger Skipped: Escape Key Pressed", 0, ON_DIALOG_CLEAR_BG);
 						cueType = 0;
 						EventLog(2, 40, 0,"Cue Skipped");
 						break;
@@ -13251,7 +13256,7 @@ baud = 2400;
 					{
 						if (cueType != 3)
 						{
-							GUIMessageBox("Trigger Skipped: Jump/Pause Pressed   ", 1000, TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+							GUIMessageBox("Trigger Skipped: Jump/Pause Pressed   ", 1000, ON_DIALOG_CLEAR_BG);
 							EventLog(2, 40, 0,"Cue Skipped");
 						}
 						else
@@ -13264,7 +13269,7 @@ baud = 2400;
 
 					if (loopCount > 1000000 && false)//loop timeout disabled for now
 					{
-						GUIMessageBox("Trigger Skipped: Time Out", 0, TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+						GUIMessageBox("Trigger Skipped: Time Out", 0, ON_DIALOG_CLEAR_BG);
 						EventLog(2, 45, 2,"Cue Timeout");
 						cueType = 0;
 						break;
@@ -13288,7 +13293,7 @@ baud = 2400;
 			if (strlen(objMap->startMessage) > 0 && objMap->startMessageEnabled)
 			{
 				Player.gravityEnabled = false;
-				GUIMessageBox(objMap->startMessage, 0, TEXTBOXSTYLE_ONDIALOG_CLEAR_BK);
+				GUIMessageBox(objMap->startMessage, 0, ON_DIALOG_CLEAR_BG);
 				
 			}
 			
@@ -13985,25 +13990,25 @@ baud = 2400;
 				if(bTimeLimitExceed==false)
 				{
 					if(objMap->successMessage[0]!=NULL)
-						GUIMessageBox(objMap->successMessage,0,TEXTBOXSTYLE_ONDIALOG_WITH_BK);
+						GUIMessageBox(objMap->successMessage,0,ON_DIALOG_WITH_BG);
 		
 				}
 				else if (objMap->pointExitThreshold>0&&curMazePoints>=objMap->pointExitThreshold)
 				{
 					if (objMap->pointMessageEnabled&&objMap->pointMessage[0] != NULL)
-						GUIMessageBox(objMap->pointMessage, 0, TEXTBOXSTYLE_ONDIALOG_WITH_BK);
+						GUIMessageBox(objMap->pointMessage, 0, ON_DIALOG_WITH_BG);
 				}
 				else
 				{
 					if (objMap->timeoutMessage[0] != NULL)
-						GUIMessageBox(objMap->timeoutMessage, 0, TEXTBOXSTYLE_ONDIALOG_WITH_BK);
+						GUIMessageBox(objMap->timeoutMessage, 0, ON_DIALOG_WITH_BG);
 				}
 
 
 		
 			}
 			else if(bMazeEndReached&&videoPlayBack)
-				GUIMessageBox("Log file Ended",0,TEXTBOXSTYLE_ONDIALOG_WITH_BK);
+				GUIMessageBox("Log file Ended",0,ON_DIALOG_WITH_BG);
 
 			glDeleteLists(ROOM,1);
 			delete objMap;

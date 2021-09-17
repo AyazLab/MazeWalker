@@ -5,7 +5,7 @@ MazeListItem::MazeListItem(void)
 {
 	type = Maze;
 	lifeTime=0; //Time in MS to show
-	showStyle=0;
+	showStyle=ON_DIALOG_CLEAR_BG;
 	value[0]=NULL;
 	next=NULL;
 	BGfname[0] = 0;
@@ -17,7 +17,7 @@ void MazeListItem::AddMaze(char *val,bool isMazX)
 	this->isMazX = isMazX;
 	type = Maze;
 	lifeTime=0;
-	showStyle=0;
+	showStyle=ON_DIALOG_CLEAR_BG;
 	if (strlen(val) > 150)
 		int i = 1;
 
@@ -26,7 +26,7 @@ void MazeListItem::AddMaze(char *val,bool isMazX)
 
 	next=NULL;
 }
-void MazeListItem::AddText(char * val, long lifetime_ms,int shStyle)
+void MazeListItem::AddText(char * val, long lifetime_ms,textboxStyle shStyle)
 {
 	type = Text;
 	lifeTime=lifetime_ms;

@@ -56,7 +56,7 @@ void MazeList::AddMaze(char* val)
 
 }
 
-void MazeList::AddText(char* val,long lifetime,int shStyle)
+void MazeList::AddText(char* val,long lifetime,textboxStyle shStyle)
 {
 	MazeListItem *cur = GetLast();
 
@@ -197,7 +197,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 	if (!CheckFileExists(melFile))
 	{
 		sprintf(errorTxt, "Error\nFile does not exist");
-		//GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+		//GUIMessageBox(txt, 0, WARNING); //return 0;
 		return -1;
 	}
 	else
@@ -210,7 +210,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 			sprintf(errorTxt, "Couldn't open MazeList file!\n%s", melFile);
 			if (strlen(melFile) > 300)
 				sprintf(errorTxt, "Couldn't open MazeList file!\nMazeList Error");
-			//GUIMessageBox(message, 0, TEXTBOXSTYLE_WARNING);
+			//GUIMessageBox(message, 0, WARNING);
 			return 0;
 		}
 		else
@@ -248,7 +248,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 			if (pRoot == NULL)
 			{
 				sprintf(errorTxt, "Invalid MazeList File");
-				//GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+				//GUIMessageBox(txt, 0, WARNING); //return 0;
 				return -1;
 			}
 
@@ -264,7 +264,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 					sprintf(errorTxt, "Current File Version: 1.0\nMazeList File v%.1f is unsupported in this version of MazeWalker");
 				else
 					sprintf(errorTxt, "Current File Version: 1.0\nUnknown File Version Loaded");
-				//GUIMessageBox(txt, 0, TEXTBOXSTYLE_WARNING); //return 0;
+				//GUIMessageBox(txt, 0, WARNING); //return 0;
 
 				return -1;
 			}
@@ -380,6 +380,8 @@ int MazeList::ReadMazeListXML(char* melFile)
 			xml_attribute<>* pAttrID;
 			xml_attribute<>* pAttrFile;
 
+			textboxStyle tstyle;
+
 			if (pListItemsNode)
 			{
 				for (xml_node<>* pNode = pListItemsNode->first_node(); pNode; pNode = pNode->next_sibling())
@@ -446,17 +448,17 @@ int MazeList::ReadMazeListXML(char* melFile)
 						if (pAttr)
 						{
 							strcpy_s(dlgType, TXTBUFFERLIMIT, pAttr->value());
-							if (strcmp(dlgType, "OnDialog") == 0 || strcmp(dlgType, "OnFramedDialog") == 0)
+							if (strcmp(dlgType, "ON_DIALOG") == 0 || strcmp(dlgType, "OnFramedDialog") == 0)
 							{
-								res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
+								tstyle = ON_DIALOG_CLEAR_BG;
 							}
 							else
 							{
-								res = TEXTBOXSTYLE_ONSCREEN_CLEAR_BK;
+								tstyle = ON_SCREEN_CLEAR_BG;
 							}
 						}
 						else
-							res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
+							tstyle = ON_DIALOG_CLEAR_BG;
 
 						pAttr = pNode->first_attribute("LifeTime");
 						if (pAttr)
@@ -536,7 +538,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 							int sz = strlen(msgTemp);
 							memcpy(curTxt, &msgTemp[(i) * (TXTBUFFERLIMIT - 1 - bufEdge)], TXTBUFFERLIMIT - 1 - bufEdge);
 							curTxt[TXTBUFFERLIMIT - 1 - bufEdge] = 0;
-							this->AddText(curTxt, lifetime_ms, res);
+							this->AddText(curTxt, lifetime_ms, tstyle);
 							if (hasImg)
 							{
 								if (strlen(imgID) > 2)
@@ -558,7 +560,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 		{
 			char* err = new char[256];
 			sprintf(err, "Corrupted MazeXML File:\n%s\n\n%s", e.what());
-			//GUIMessageBox(err, 0, TEXTBOXSTYLE_WARNING);
+			//GUIMessageBox(err, 0, WARNING);
 
 			return 0;
 		}
@@ -644,6 +646,8 @@ int MazeList::ReadMazeListClassic(char *filename)
 				strcmpi(melType, "MultipleChoice") == 0 ||
 				strcmpi(melType, "Image") == 0) // All of these really are the same anyways
 			{
+
+				textboxStyle tstyle;
 				do
 				{				
 					ret=GetUntilTab(fp, msgTemp, MAXMSGTXTLIMIT);
@@ -661,14 +665,14 @@ int MazeList::ReadMazeListClassic(char *filename)
 				multiMsgNum = floor(msgLen*1.0f / ((TXTBUFFERLIMIT-1- bufEdge)*1.0f))+1;
 
 				GetUntilTab(fp, dlgType, TXTBUFFERLIMIT);
-				res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
-				if (strcmp(dlgType, "OnDialog") == 0 || strcmp(dlgType, "OnFramedDialog") == 0)
+				tstyle = ON_DIALOG_CLEAR_BG;
+				if (strcmp(dlgType, "ON_DIALOG") == 0 || strcmp(dlgType, "OnFramedDialog") == 0)
 				{
-					res = TEXTBOXSTYLE_ONDIALOG_CLEAR_BK;
+					tstyle = ON_DIALOG_CLEAR_BG;
 				}
 				else
 				{
-					res = TEXTBOXSTYLE_ONSCREEN_CLEAR_BK;
+					tstyle = ON_SCREEN_CLEAR_BG;
 				}
 				GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
 				long lifetime_ms = atol(temp2); //Time shown
@@ -691,7 +695,7 @@ int MazeList::ReadMazeListClassic(char *filename)
 					int sz = strlen(msgTemp);
 					memcpy(curTxt,&msgTemp[(i)*(TXTBUFFERLIMIT - 1- bufEdge)], TXTBUFFERLIMIT-1- bufEdge);
 					curTxt[TXTBUFFERLIMIT - 1- bufEdge] = 0;
-					this->AddText(curTxt,lifetime_ms,res);
+					this->AddText(curTxt,lifetime_ms,tstyle);
 					if (hasImg)
 					{
 						if (strlen(imgID) > 2)
