@@ -4,7 +4,7 @@
 MazeListItem::MazeListItem(void)
 {
 	type = Maze;
-	lifeTime=0;
+	lifeTime=0; //Time in MS to show
 	showStyle=0;
 	value[0]=NULL;
 	next=NULL;
@@ -26,10 +26,10 @@ void MazeListItem::AddMaze(char *val,bool isMazX)
 
 	next=NULL;
 }
-void MazeListItem::AddText(char * val, long lftm,int shStyle)
+void MazeListItem::AddText(char * val, long lifetime_ms,int shStyle)
 {
 	type = Text;
-	lifeTime=lftm;
+	lifeTime=lifetime_ms;
 	showStyle=shStyle;
 	strcpy_s(value, TXTMSGBUFFERLIMIT_MAZELISTITEM,val);
 	strcpy_s(BGfname, TXTMSGBUFFERLIMIT_MAZELISTITEM,"");

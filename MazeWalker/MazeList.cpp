@@ -187,7 +187,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 
 	bool hasImg = false;
 	bool hasAudio = false;
-	int lf = 0;
+	int lifetime_ms = 0;
 	int x = 0;
 	int y = 0;
 	
@@ -460,9 +460,9 @@ int MazeList::ReadMazeListXML(char* melFile)
 
 						pAttr = pNode->first_attribute("LifeTime");
 						if (pAttr)
-							lf = atoi(pAttr->value());
+							lifetime_ms = atoi(pAttr->value());
 						else
-							lf = 0;
+							lifetime_ms = 0;
 
 						pAttr = pNode->first_attribute("X");
 						if (pAttr)
@@ -526,7 +526,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 						int bufEdge = TXTBUFFERLIMIT / 10;
 						msgLen = strlen(msgTemp);
 
-						if (!msgLen> TXTBUFFERLIMIT)
+						if (msgLen> TXTBUFFERLIMIT)
 							sprintf(msgTemp, "Message too Long");
 
 						multiMsgNum = floor(msgLen * 1.0f / ((TXTBUFFERLIMIT - 1 - bufEdge) * 1.0f)) + 1;
@@ -536,7 +536,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 							int sz = strlen(msgTemp);
 							memcpy(curTxt, &msgTemp[(i) * (TXTBUFFERLIMIT - 1 - bufEdge)], TXTBUFFERLIMIT - 1 - bufEdge);
 							curTxt[TXTBUFFERLIMIT - 1 - bufEdge] = 0;
-							this->AddText(curTxt, lf, res);
+							this->AddText(curTxt, lifetime_ms, res);
 							if (hasImg)
 							{
 								if (strlen(imgID) > 2)
