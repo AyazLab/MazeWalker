@@ -56,12 +56,12 @@ void MazeList::AddMaze(char* val)
 
 }
 
-void MazeList::AddText(char* val,long lftm,int shStyle)
+void MazeList::AddText(char* val,long lifetime,int shStyle)
 {
 	MazeListItem *cur = GetLast();
 
 	cur->next = new MazeListItem();
-	cur->next->AddText(val,lftm,shStyle);
+	cur->next->AddText(val,lifetime,shStyle);
 }
 
 void MazeList::AddCommand(char* cmd, bool waitForComplete)
@@ -671,7 +671,7 @@ int MazeList::ReadMazeListClassic(char *filename)
 					res = TEXTBOXSTYLE_ONSCREEN_CLEAR_BK;
 				}
 				GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
-				long lf = atol(temp2); //Time shown
+				long lifetime_ms = atol(temp2); //Time shown
 				GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
 				bool hasImg = GetUntilTab(fp, temp2, TXTBUFFERLIMIT);
 
@@ -691,7 +691,7 @@ int MazeList::ReadMazeListClassic(char *filename)
 					int sz = strlen(msgTemp);
 					memcpy(curTxt,&msgTemp[(i)*(TXTBUFFERLIMIT - 1- bufEdge)], TXTBUFFERLIMIT-1- bufEdge);
 					curTxt[TXTBUFFERLIMIT - 1- bufEdge] = 0;
-					this->AddText(curTxt,lf,res);
+					this->AddText(curTxt,lifetime_ms,res);
 					if (hasImg)
 					{
 						if (strlen(imgID) > 2)
