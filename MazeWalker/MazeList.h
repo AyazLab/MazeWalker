@@ -11,7 +11,7 @@
 #define TEXTBOXSTYLE_FATAL_ERROR	4
 #define TEXTBOXSTYLE_ACTIVEREGION_ONSCREEN 5
 
-class MyList
+class MazeList
 {
 public:
 	MazeListItem *cListRoot;
@@ -27,10 +27,10 @@ public:
 	MazeListItem* GetFirst();
 	int GetLength();
 
-	MyList(void);
-	~MyList(void);
+	MazeList(void);
+	~MazeList(void);
 	int ReadMazeListClassic(char *filename);
-	int ReadFile(char *filename);
+	int ReadMazeList(char *filename);
 	int ReadMazeListXML(char* filename);
 	char mListDIR[800];
 };

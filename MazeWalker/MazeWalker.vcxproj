@@ -239,7 +239,7 @@
     <ClCompile Include="MazeListItem.cpp" />
     <ClCompile Include="mazX.cpp" />
     <ClCompile Include="MyLightList.cpp" />
-    <ClCompile Include="MyList.cpp" />
+    <ClCompile Include="MazeList.cpp" />
     <ClCompile Include="particle.cpp" />
     <ClCompile Include="QPC.cpp" />
     <ClCompile Include="ServerSocket.cpp" />
@@ -294,7 +294,7 @@
     <ClInclude Include="MazeListItem.h" />
     <ClInclude Include="mazX.h" />
     <ClInclude Include="MyLightList.h" />
-    <ClInclude Include="MyList.h" />
+    <ClInclude Include="MazeList.h" />
     <ClInclude Include="Oculus.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="QPC.h" />

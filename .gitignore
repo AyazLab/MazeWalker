@@ -6,14 +6,12 @@ MazeWalker/Debug/
 MazeWalker/Libs/freetype/objs/
 MazeWalker/Libs/glew/build/
 MazeWalker/Libs/glew/lib/Debug/
-MazeWalker/Bullet/lib/BulletCollision_vs2010.lib
-MazeWalker/Bullet/lib/BulletDynamics_vs2010.lib
-MazeWalker/Bullet/lib/LinearMath_vs2010.lib
 MazeWalker/Libs/freetype/objs/
 MazeWalker/Libs/glew/lib/Release/
-MazeWalker/Bullet/lib/LinearMath_vs2010.lib
-MazeWalker/Bullet/lib/BulletDynamics_vs2010.lib
-MazeWalker/Bullet/lib/BulletCollision_vs2010.lib
+MazeWalker/Bullet/lib/*.lib
+
+*.pdb
+
 *.ipch
 MazeMaker/MazeMaker
 MazeWalker/Release/tmp/
@@ -39,3 +37,4 @@ MazeWalker/Bullet/lib/LinearMath_vs2010_debug.pdb
 *.pdb
 MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
 MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
+*.pdb

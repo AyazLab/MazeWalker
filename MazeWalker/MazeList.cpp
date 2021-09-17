@@ -1,4 +1,4 @@
-#include ".\mylist.h"
+#include ".\MazeList.h"
 #include "Tools.h"
 #include <ctype.h>
 #include <cmath>
@@ -17,17 +17,17 @@ std::map<int, std::string> listAudioDict;
 std::map<int, std::string> listImageDict;
 
 
-MyList::MyList(void)
+MazeList::MazeList(void)
 {
 	cListRoot = new MazeListItem();
 }
 
-MyList::~MyList(void)
+MazeList::~MazeList(void)
 {
 	Clear();
 }
 
-void MyList::Clear(void)
+void MazeList::Clear(void)
 {
 	//clear the list...
 	MazeListItem *temp,*cur;
@@ -40,7 +40,7 @@ void MyList::Clear(void)
 	}
 }
 
-void MyList::AddMaze(char* val)
+void MazeList::AddMaze(char* val)
 {
 	MazeListItem *cur = GetLast();
 
@@ -56,7 +56,7 @@ void MyList::AddMaze(char* val)
 
 }
 
-void MyList::AddText(char* val,long lftm,int shStyle)
+void MazeList::AddText(char* val,long lftm,int shStyle)
 {
 	MazeListItem *cur = GetLast();
 
@@ -64,7 +64,7 @@ void MyList::AddText(char* val,long lftm,int shStyle)
 	cur->next->AddText(val,lftm,shStyle);
 }
 
-void MyList::AddCommand(char* cmd, bool waitForComplete)
+void MazeList::AddCommand(char* cmd, bool waitForComplete)
 {
 	MazeListItem* cur = GetLast();
 
@@ -72,14 +72,14 @@ void MyList::AddCommand(char* cmd, bool waitForComplete)
 	cur->next->AddCommand(cmd, waitForComplete);
 }
 
-void MyList::AddBG(char* val)
+void MazeList::AddBG(char* val)
 {
 	MazeListItem *cur = GetLast();
 
 	cur->AddBG(val);
 }
 
-MazeListItem* MyList::GetLast()
+MazeListItem* MazeList::GetLast()
 {
 	MazeListItem *ret=cListRoot;
 	while(ret->next!=NULL)
@@ -89,12 +89,12 @@ MazeListItem* MyList::GetLast()
 	return ret;
 }
 
-MazeListItem* MyList::GetFirst()
+MazeListItem* MazeList::GetFirst()
 {
 	return cListRoot->next;
 }
 
-int MyList::GetLength()
+int MazeList::GetLength()
 {
 	MazeListItem *ret=cListRoot;
 	int count=0;
@@ -120,7 +120,7 @@ int MyList::GetLength()
 
 
 
-int MyList::ReadFile(char *filename)
+int MazeList::ReadMazeList(char *filename)
 {
 	char* filename_lower = strtolower(filename);
 
@@ -162,7 +162,7 @@ int MyList::ReadFile(char *filename)
 	}
 }
 
-int MyList::ReadMazeListXML(char* melFile)
+int MazeList::ReadMazeListXML(char* melFile)
 {
 	char iDir[TXTBUFFERLIMIT], temp[TXTBUFFERLIMIT], temp2[TXTBUFFERLIMIT];
 	char melType[TXTBUFFERLIMIT];
@@ -577,7 +577,7 @@ int MyList::ReadMazeListXML(char* melFile)
 
 
 
-int MyList::ReadMazeListClassic(char *filename)
+int MazeList::ReadMazeListClassic(char *filename)
 {
 	char iDir[TXTBUFFERLIMIT],temp[TXTBUFFERLIMIT],temp2[TXTBUFFERLIMIT];
 	char melType[TXTBUFFERLIMIT];

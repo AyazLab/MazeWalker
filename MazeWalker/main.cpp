@@ -15,7 +15,7 @@
 #include "main.h"
 #include "resource.h"
 #include "time.h"
-#include "MyList.h"
+#include "MazeList.h"
 #include "Tools.h"
 #include "LightItem.h"
 #include "MyLightList.h"
@@ -203,7 +203,7 @@ volatile float targetBarScore=0;
 float userResponse=0;
 
 
-MyList curList;
+MazeList curMazeList;
 MyLightList curLightList;
 bool firstLightRun=true;
 AudioDictionary curAudioDict;
@@ -6046,7 +6046,7 @@ void DrawSkyBox()
     glPopMatrix();
 }
 
-//showStyle param defined in mylist.h
+//showStyle param defined in mazelist.h
 void GUIMessageBox (char* displayText, int showTime, int showStyle)
 {
 	GUIMessageBox (displayText, showTime, showStyle, 0);
@@ -8749,14 +8749,14 @@ LRESULT CALLBACK DlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 				if (true)// old API wait function !bWaitForAPIdevices||((deviceEnabled[0] && device[0].connected) || !deviceEnabled[0]) && ((deviceEnabled[1] && device[1].connected) || !deviceEnabled[1]) && ((deviceEnabled[2] && device[2].connected) || !deviceEnabled[2]))
 				
 				{
-					curList.Clear();
+					curMazeList.Clear();
 					filename[0]=0;
 					GetDlgItemText(hDlg,IDC_FILENAME,filename,TXTBUFFERLIMIT);
 
 					if (filename)
 					{
 
-						res = curList.ReadFile(filename);
+						res = curMazeList.ReadMazeList(filename);
 					}
 					if(res==-1)
 					{
@@ -12859,7 +12859,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance1,			// Instance
 		bListen=false;
 		bSendSync=false;
 		//curList.AddMaze(filetemname);
-		res=curList.ReadFile(filename);
+		res=curMazeList.ReadMazeList(filename);
 		if(res==-1)
 		{
 			MessageBox(NULL,"Can not open maze file","Error",MB_ICONERROR);
@@ -13026,7 +13026,7 @@ baud = 2400;
 
 
 
-	curMazeListItem = curList.GetFirst();
+	curMazeListItem = curMazeList.GetFirst();
 	//curTextureDict.Clear();
 
 
@@ -14037,8 +14037,8 @@ baud = 2400;
 			//SetCursorPos(Width,Height);
 
 			EventLog(1,80,  0, "TextMessage Start");
-			if(strlen(curList.mListDIR)>1)
-				SetCurrentDirectoryA(curList.mListDIR);
+			if(strlen(curMazeList.mListDIR)>1)
+				SetCurrentDirectoryA(curMazeList.mListDIR);
 			
 			//curTextureDict.ClearUnused();
 			

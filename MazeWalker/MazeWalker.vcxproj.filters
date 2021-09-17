@@ -57,7 +57,7 @@
     <ClCompile Include="MyLightList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyList.cpp">
+    <ClCompile Include="MazeList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="particle.cpp">
@@ -230,7 +230,7 @@
     <ClInclude Include="MyLightList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyList.h">
+    <ClInclude Include="MazeList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="particle.h">
