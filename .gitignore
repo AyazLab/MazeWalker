@@ -1,4 +1,3 @@
-
 MazeWalker/.vs/
 MazeWalker/Bullet/build3/
 MazeWalker/Bullet/lib/
@@ -11,7 +10,6 @@ MazeWalker/Libs/glew/lib/Release/
 MazeWalker/Bullet/lib/*.lib
 
 *.pdb
-
 *.ipch
 MazeMaker/MazeMaker
 MazeWalker/Release/tmp/
@@ -21,20 +19,8 @@ MazeWalker/Libs/glew/build/tmp
 MazeWalker/Libs/freetype/objs/
 MazeWalker/Bullet/lib/
 MazeWalker/Bullet/build3/tmp/
-*.ipch
 *.tlog
 MazeWalker/Debug/
 MazeWalker/.vs/
 *.obj
 *.tlog
-*.lastbuildstate
-*.pdb
-*.lastbuildstate
-
-MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
-MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
-MazeWalker/Bullet/lib/LinearMath_vs2010_debug.pdb
-*.pdb
-MazeWalker/Bullet/lib/BulletDynamics_vs2010_debug.pdb
-MazeWalker/Bullet/lib/BulletCollision_vs2010_debug.pdb
-*.pdb
