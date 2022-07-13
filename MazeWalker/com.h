@@ -5,7 +5,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include "QPC.h"
-#include "Libs/inpout32/inpout32.h"
+#include "Libs/inpout32/Win32/inpout32.h"
 
 int ComConnect(int iPort,DWORD baud,bool parity,int stopBits);
 void ComError(LPCTSTR text);

@@ -24,3 +24,7 @@ MazeWalker/Debug/
 MazeWalker/.vs/
 *.obj
 *.tlog
+MazeWalker/x64/Release/MazeWalker.vcxproj.FileListAbsolute.txt
+MazeWalker/x64/Debug/MazeWalker.vcxproj.FileListAbsolute.txt
+MazeWalker/x64/Release/MazeWalker.log
+MazeWalker/x64/Debug/MazeWalker.log

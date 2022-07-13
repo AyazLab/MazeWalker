@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MazeWalker", "MazeWalker.vcxproj", "{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -36,13 +36,15 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Debug|Win32.ActiveCfg = Debug|Win32
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Debug|Win32.Build.0 = Debug|Win32
-		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Debug|x64.ActiveCfg = Debug|Win32
+		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Debug|x64.ActiveCfg = Debug|x64
+		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Debug|x64.Build.0 = Debug|x64
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.NSIS|Win32.ActiveCfg = NSIS|Win32
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.NSIS|Win32.Build.0 = NSIS|Win32
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.NSIS|x64.ActiveCfg = NSIS|Win32
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Release|Win32.ActiveCfg = Release|Win32
 		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Release|Win32.Build.0 = Release|Win32
-		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Release|x64.ActiveCfg = Release|Win32
+		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Release|x64.ActiveCfg = Release|x64
+		{204B0C8A-B1DF-42CE-9B97-E32EA3D86D4C}.Release|x64.Build.0 = Release|x64
 		{EE392EFE-D6D9-2B49-A2D8-01C28ED31E41}.Debug|Win32.ActiveCfg = Debug|Win32
 		{EE392EFE-D6D9-2B49-A2D8-01C28ED31E41}.Debug|Win32.Build.0 = Debug|Win32
 		{EE392EFE-D6D9-2B49-A2D8-01C28ED31E41}.Debug|x64.ActiveCfg = Debug|x64
@@ -106,5 +108,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B1517C9-935E-465C-902E-E6186A56AC40}
 	EndGlobalSection
 EndGlobal

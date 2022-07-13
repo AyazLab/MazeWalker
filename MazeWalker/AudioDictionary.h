@@ -1,7 +1,7 @@
 #pragma once
 #include <windows.h>
-#include "fmod\\fmod.hpp"
-#include "fmod\\fmod_errors.h"
+#include "fmod\\inc\\fmod.hpp"
+#include "fmod\\inc\\fmod_errors.h"
 
 
 
