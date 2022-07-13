@@ -37,7 +37,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141_xp</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NSIS|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -95,22 +95,22 @@
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\lib\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='NSIS|Win32'">..\..\lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\x32\Release\BulletDynamics\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\$(PlatformName)\$(Configuration)\BulletDynamics\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='NSIS|Win32'">obj\x32\Release\BulletDynamics\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BulletDynamics_vs2010</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BulletDynamics_win32</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='NSIS|Win32'">BulletDynamics_vs2010</TargetName>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\lib\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='NSIS|x64'">..\..\lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">obj\x64\Release\BulletDynamics\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">obj\$(PlatformName)\$(Configuration)\BulletDynamics\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='NSIS|x64'">obj\x64\Release\BulletDynamics\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BulletDynamics_vs2010_x64_release</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BulletDynamics_x64</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='NSIS|x64'">BulletDynamics_vs2010_x64_release</TargetName>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\x32\Debug\BulletDynamics\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BulletDynamics_vs2010_debug</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\$(PlatformName)\$(Configuration)\BulletDynamics\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BulletDynamics_debug</TargetName>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">obj\x64\Debug\BulletDynamics\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BulletDynamics_vs2010_x64_debug</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">obj\$(PlatformName)\$(Configuration)\BulletDynamics\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BulletDynamics_x64_debug</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

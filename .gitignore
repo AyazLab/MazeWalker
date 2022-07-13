@@ -28,3 +28,11 @@ MazeWalker/x64/Release/MazeWalker.vcxproj.FileListAbsolute.txt
 MazeWalker/x64/Debug/MazeWalker.vcxproj.FileListAbsolute.txt
 MazeWalker/x64/Release/MazeWalker.log
 MazeWalker/x64/Debug/MazeWalker.log
+MazeWalker/x64/Debug/MazeWalker.exe
+MazeWalker/x64/Debug/MazeWalker.ilk
+MazeWalker/x64/Release/MazeWalker.Build.CppClean.log
+MazeWalker/x64/Release/MazeWalker.exe
+MazeWalker/x64/Release/MazeWalker.exp
+MazeWalker/x64/Release/MazeWalker.lib
+MazeWalker/x64/Release/MazeWalker.res
+*.obj
