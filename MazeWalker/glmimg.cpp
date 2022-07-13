@@ -87,7 +87,7 @@ GLuint glmLoadTexture(char *filename, GLboolean alpha, GLboolean repeat, GLboole
 	{
 			sprintf(err,"Could not Load Texture\n%s!\n%s is not a valid file type.",filename,extension);
 			GUIMessageBox(err, 0, TEXTBOXSTYLE_WARNING);
-			return tex;
+			return -1;
 	}
 	data = ttt.imageData;
 	width = ttt.width;

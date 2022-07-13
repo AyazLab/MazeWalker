@@ -4678,19 +4678,23 @@ int LoadTexture(char* fname, int mazeTexKey) //Load texture and MazeKey returns 
 			sprintf(fname2,"%s",&fname[8]);
 			matchedfname=getTextureFilename(&fname[8]); //find best match
 
+			char matched_fname[TXTBUFFERLIMIT];
+			
+
 			int gl_key = -1;
 						
 			if(matchedfname) //check
 			{
+				strcpy_s(matched_fname, TXTBUFFERLIMIT, matchedfname);
 
 				int temp_gl_key = -1;
 				//Check fname
-				temp_gl_key=curTextureDict.Get_glKey_from_path(matchedfname);
+				temp_gl_key=curTextureDict.Get_glKey_from_path(matched_fname);
 
 				if (temp_gl_key > 0)
 					gl_key = temp_gl_key;
 				else //if doens't exist, load texture
-					gl_key = glmLoadTexture(matchedfname);
+					gl_key = glmLoadTexture(matched_fname);
 			}
 						
 			if (gl_key<= 0) //Texture couldn't be loaded
