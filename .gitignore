@@ -36,3 +36,7 @@ MazeWalker/x64/Release/MazeWalker.exp
 MazeWalker/x64/Release/MazeWalker.lib
 MazeWalker/x64/Release/MazeWalker.res
 *.obj
+*.ilk
+*.exp
+*.recipe
+MazeWalker/x64/Debug/MazeWalker.exe
