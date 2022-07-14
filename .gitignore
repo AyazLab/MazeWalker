@@ -9,6 +9,7 @@ MazeWalker/Libs/freetype/objs/
 MazeWalker/Libs/glew/lib/Release/
 MazeWalker/Bullet/lib/*.lib
 
+*/objs/*
 *.pdb
 *.ipch
 MazeMaker/MazeMaker
