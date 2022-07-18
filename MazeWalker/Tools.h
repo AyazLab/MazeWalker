@@ -57,3 +57,5 @@ char* swapSlash(char* pathIn);
 
 char* getBestPathImg(char* input);
 char* getTextureFilename(char* input);
+
+

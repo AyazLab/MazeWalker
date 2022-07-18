@@ -1903,11 +1903,22 @@ int ReadMapXML(char* mazeXMLfile)
 						temp->collide = true;
 
 						temp->pointsGranted = 0;
+						temp->pointsGrantedSetPoints = false;
+
 						temp->p1PointThreshold = 0;
+						temp->p1PointOperator = mGreaterThanEqual;
+					
 						temp->p2PointThreshold = 0;
+						temp->p2PointOperator = mGreaterThanEqual;
+
 						temp->p2InteractRequired = false;
+
 						temp->p1TriggerTime = 0;
 						temp->p2TriggerTime = 0;
+
+						temp->p1TimeOperator = mGreaterThanEqual;
+						temp->p2TimeOperator = mGreaterThanEqual;
+
 						temp->p1ActiveRadius = 0;
 						temp->p2ActiveRadius = 0;
 
@@ -2302,6 +2313,23 @@ int ReadMapXML(char* mazeXMLfile)
 							if (pAttr)
 								temp->p1PointThreshold = atoi(pAttr->value());
 
+							pAttr = pSubNode->first_attribute("pointThresholdOperator");
+							if (pAttr)
+							{
+								if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+									temp->p1PointOperator = mLessThanEqual;
+								else if (strcmp(pAttr->value(), "LessThan") == 0)
+									temp->p1PointOperator = mLessThan;
+								else if (strcmp(pAttr->value(), "Equal") == 0)
+									temp->p1PointOperator = mEqual;
+								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+									temp->p1PointOperator = mGreaterThan;
+								else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+									temp->p1PointOperator = mGreaterThanEqual;
+								else if (strcmp(pAttr->value(), "NotEqual") == 0)
+									temp->p1PointOperator = mNotEqual;
+							}
+
 
 							pAttr = pSubNode->first_attribute("radius");
 							if (pAttr)
@@ -2310,6 +2338,23 @@ int ReadMapXML(char* mazeXMLfile)
 							pAttr = pSubNode->first_attribute("triggerTime");
 							if (pAttr)
 								temp->p1TriggerTime = 1000 * atof(pAttr->value());
+
+							pAttr = pSubNode->first_attribute("triggerTimeOperator");
+							if (pAttr)
+							{
+								if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+									temp->p1TimeOperator = mLessThanEqual;
+								else if (strcmp(pAttr->value(), "LessThan") == 0)
+									temp->p1TimeOperator = mLessThan;
+								else if (strcmp(pAttr->value(), "Equal") == 0)
+									temp->p1TimeOperator = mEqual;
+								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+									temp->p1TimeOperator = mGreaterThan;
+								else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+									temp->p1TimeOperator = mGreaterThanEqual;
+								else if (strcmp(pAttr->value(), "NotEqual") == 0)
+									temp->p1TimeOperator = mNotEqual;
+							}
 
 							pSubSubNode = pSubNode->first_node("Audio");
 							if (pSubSubNode)
@@ -2370,9 +2415,36 @@ int ReadMapXML(char* mazeXMLfile)
 							if (pAttr)
 								temp->p2PointThreshold = atoi(pAttr->value());
 
+							pAttr = pSubNode->first_attribute("pointThresholdOperator");
+							if (pAttr)
+							{
+								if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+									temp->p2PointOperator = mLessThanEqual;
+								else if (strcmp(pAttr->value(), "LessThan") == 0)
+									temp->p2PointOperator = mLessThan;
+								else if (strcmp(pAttr->value(), "Equal") == 0)
+									temp->p2PointOperator = mEqual;
+								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+									temp->p2PointOperator = mGreaterThan;
+								else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+									temp->p2PointOperator = mGreaterThanEqual;
+								else if (strcmp(pAttr->value(), "NotEqual") == 0)
+									temp->p2PointOperator = mNotEqual;
+							}
+
 							pAttr = pSubNode->first_attribute("pointsGranted");
 							if (pAttr)
 								temp->pointsGranted = atoi(pAttr->value());
+
+							pAttr = pSubNode->first_attribute("pointsGrantedMode");
+							if (pAttr)
+							{
+								if (strcmp(pAttr->value(), "SetTo") == 0)
+									temp->pointsGrantedSetPoints = true;
+								else if (strcmp(pAttr->value(), "Add") == 0)
+									temp->pointsGrantedSetPoints = false;
+								
+							}
 
 							pAttr = pSubNode->first_attribute("triggerAction");
 							if (pAttr)
@@ -2394,6 +2466,23 @@ int ReadMapXML(char* mazeXMLfile)
 							pAttr = pSubNode->first_attribute("triggerTime");
 							if (pAttr)
 								temp->p2TriggerTime = 1000 * atof(pAttr->value());
+
+							pAttr = pSubNode->first_attribute("triggerTimeOperator");
+							if (pAttr)
+							{
+								if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+									temp->p2TimeOperator = mLessThanEqual;
+								else if (strcmp(pAttr->value(), "LessThan") == 0)
+									temp->p2TimeOperator = mLessThan;
+								else if (strcmp(pAttr->value(), "Equal") == 0)
+									temp->p2TimeOperator = mEqual;
+								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+									temp->p2TimeOperator = mGreaterThan;
+								else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+									temp->p2TimeOperator = mGreaterThanEqual;
+								else if (strcmp(pAttr->value(), "NotEqual") == 0)
+									temp->p2TimeOperator = mNotEqual;
+							}
 
 							pAttr = pSubNode->first_attribute("actionTime");
 							if (pAttr)
@@ -2670,6 +2759,7 @@ int ReadMapXML(char* mazeXMLfile)
 					endRegion->returnValue = 0;
 					endRegion->mode = 0;
 					endRegion->pointThreshold = 0;
+					endRegion->pointThresholdOperator = mGreaterThanEqual;
 					endRegion->moveToPos = 0;
 					sprintf(endRegion->messageText, "");
 					
@@ -2739,6 +2829,23 @@ int ReadMapXML(char* mazeXMLfile)
 						pAttr = pSubNode->first_attribute("pointThreshold");
 						if (pAttr)
 							endRegion->pointThreshold = atoi(pAttr->value());
+
+						pAttr = pSubNode->first_attribute("pointThresholdOperator");
+						if (pAttr)
+						{
+							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+								endRegion->pointThresholdOperator = mLessThanEqual;
+							else if (strcmp(pAttr->value(), "LessThan") == 0)
+								endRegion->pointThresholdOperator = mLessThan;
+							else if (strcmp(pAttr->value(), "Equal") == 0)
+								endRegion->pointThresholdOperator = mEqual;
+							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+								endRegion->pointThresholdOperator = mGreaterThan;
+							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+								endRegion->pointThresholdOperator = mGreaterThanEqual;
+							else if (strcmp(pAttr->value(), "NotEqual") == 0)
+								endRegion->pointThresholdOperator = mNotEqual;
+						}
 
 						pAttr = pSubNode->first_attribute("moveToPos");
 						if (pAttr)
@@ -2877,9 +2984,43 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 							activeRegion->p1PointThreshold = atoi(pAttr->value());
 
+						pAttr = pSubNode->first_attribute("pointThresholdOperator");
+						if (pAttr)
+						{
+							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+								temp->p1PointOperator = mLessThanEqual;
+							else if (strcmp(pAttr->value(), "LessThan") == 0)
+								temp->p1PointOperator = mLessThan;
+							else if (strcmp(pAttr->value(), "Equal") == 0)
+								temp->p1PointOperator = mEqual;
+							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+								temp->p1PointOperator = mGreaterThan;
+							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+								temp->p1PointOperator = mGreaterThanEqual;
+							else if (strcmp(pAttr->value(), "NotEqual") == 0)
+								temp->p1PointOperator = mNotEqual;
+						}
+
 						pAttr = pSubNode->first_attribute("timeElapsedThreshold");
 						if (pAttr)
 							activeRegion->p1TriggerTime = 1000.0f* atoi(pAttr->value());
+
+						pAttr = pSubNode->first_attribute("timeElapsedThresholdOperator");
+						if (pAttr)
+						{
+							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+								temp->p1TimeOperator = mLessThanEqual;
+							else if (strcmp(pAttr->value(), "LessThan") == 0)
+								temp->p1TimeOperator = mLessThan;
+							else if (strcmp(pAttr->value(), "Equal") == 0)
+								temp->p1TimeOperator = mEqual;
+							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+								temp->p1TimeOperator = mGreaterThan;
+							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+								temp->p1TimeOperator = mGreaterThanEqual;
+							else if (strcmp(pAttr->value(), "NotEqual") == 0)
+								temp->p1TimeOperator = mNotEqual;
+						}
 
 
 						xml_node<> *pSubSubNode = pSubNode->first_node("Audio");
@@ -2924,9 +3065,36 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 							activeRegion->p2PointThreshold = atoi(pAttr->value());
 
+						pAttr = pSubNode->first_attribute("pointThresholdOperator");
+						if (pAttr)
+						{
+							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+								temp->p2PointOperator = mLessThanEqual;
+							else if (strcmp(pAttr->value(), "LessThan") == 0)
+								temp->p2PointOperator = mLessThan;
+							else if (strcmp(pAttr->value(), "Equal") == 0)
+								temp->p2PointOperator = mEqual;
+							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+								temp->p2PointOperator = mGreaterThan;
+							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+								temp->p2PointOperator = mGreaterThanEqual;
+							else if (strcmp(pAttr->value(), "NotEqual") == 0)
+								temp->p2PointOperator = mNotEqual;
+						}
+
 						pAttr = pSubNode->first_attribute("pointsGranted");
 						if (pAttr)
 							activeRegion->pointsGranted = atoi(pAttr->value());
+
+						pAttr = pSubNode->first_attribute("pointsGranted");
+						if (pAttr)
+						{
+							if (strcmp(pAttr->value(), "SetTo") == 0)
+								activeRegion->pointsGrantedSetPoints = true;
+							else if (strcmp(pAttr->value(), "Add") == 0)
+								activeRegion->pointsGrantedSetPoints = false;
+
+						}
 
 						pAttr = pSubNode->first_attribute("moveToPos");
 						if (pAttr)
@@ -2944,11 +3112,34 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 							activeRegion->p2InteractRequired = trueFalse(pAttr->value(), false);
 
+						pAttr = pSubNode->first_attribute("repeatableActivation");
+						if (pAttr)
+						{
+							activeRegion->activationRepeatable = trueFalse(pAttr->value(), false);
+						}
+
 						pAttr = pSubNode->first_attribute("highlightTimeElapsedThreshold");
 						if (pAttr)
 							activeRegion->p2TriggerTime = 1000.0f* atof(pAttr->value());
 
-						xml_node<> *pSubSubNode = pSubNode->first_node("Audio");
+						pAttr = pSubNode->first_attribute("highlightTimeElapsedThresholdOperator");
+						if (pAttr)
+						{
+							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+								temp->p2TimeOperator = mLessThanEqual;
+							else if (strcmp(pAttr->value(), "LessThan") == 0)
+								temp->p2TimeOperator = mLessThan;
+							else if (strcmp(pAttr->value(), "Equal") == 0)
+								temp->p2TimeOperator = mEqual;
+							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+								temp->p2TimeOperator = mGreaterThan;
+							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+								temp->p2TimeOperator = mGreaterThanEqual;
+							else if (strcmp(pAttr->value(), "NotEqual") == 0)
+								temp->p2TimeOperator = mNotEqual;
+						}
+
+						const xml_node<> *pSubSubNode = pSubNode->first_node("Audio");
 						if (pSubSubNode)
 						{
 							pAttr = pSubSubNode->first_attribute("id");
@@ -4418,6 +4609,13 @@ int ReadMap(char* theFile)
 
 					temp->p1TriggerTime=inp4*1000;
 
+					temp->p1TimeOperator = mGreaterThanEqual;
+					temp->p2TimeOperator = mGreaterThanEqual;
+
+					temp->p1PointOperator = mGreaterThanEqual;
+					temp->p2PointOperator = mGreaterThanEqual;
+
+
 					temp->highlightAudioID=inp5;
 					temp->highlightAudioLoop=(inp6>0);
 					temp->highlightAudioBehavior=inp7;
@@ -4522,7 +4720,11 @@ int ReadMap(char* theFile)
 				temp->highlightStyle = 0;
 				temp->p1PointThreshold = -1;
 				temp->p2PointThreshold = -1;
+				temp->p1PointOperator = mGreaterThanEqual;
+				temp->p2PointOperator = mGreaterThanEqual;
+
 				temp->pointsGranted = 0;
+				temp->pointsGrantedSetPoints = false;
 				
 				if(temp->highlightStyle>3&&temp->highlightStyle<7)
 				{
@@ -4898,7 +5100,8 @@ void MazeInit()
 		sprintf(objMap->startMessage, "");
 		objMap->pointMessageEnabled = false;
 		sprintf(objMap->pointMessage, "");
-		objMap->pointExitThreshold = -1;
+		objMap->pointExitThreshold = 9999;
+		objMap->pointExitThresholdOperator = mGreaterThan;
 		objMap->bEndPos = false;
 		objMap->bStartPos = false;
 		objMap->wallCount = 0;
@@ -6837,7 +7040,7 @@ int DrawHUD()
 	   {
 		   minVal = 0;
 		   maxVal = max(objMap->pointExitThreshold, 0);
-		   if (objMap->pointExitThreshold == 0)
+		   if (objMap->pointExitThreshold == 9999)
 			   maxVal = 10;
 		   if (objMap->pointExitThreshold < 0)
 			   maxVal = -1*objMap->pointExitThreshold;
@@ -7390,7 +7593,8 @@ void GameUpdate()
 				EndRegion* endRegion = objMap->endRegionHead;
 				while(endRegion)
 				{
-					if (curMazePoints >= endRegion->pointThreshold&&objCamera.mPos.x> endRegion->xmin && objCamera.mPos.x<endRegion->xmax && objCamera.mPos.z>endRegion->zmin && objCamera.mPos.z<endRegion->zmax&&objCamera.mPos.y<(endRegion->height / 2 + endRegion->offset) && objCamera.mPos.y>(-1 * endRegion->height / 2 + endRegion->offset))
+					if (thresholdCompare(curMazePoints,endRegion->pointThreshold,endRegion->pointThresholdOperator)&&
+						objCamera.mPos.x> endRegion->xmin && objCamera.mPos.x<endRegion->xmax && objCamera.mPos.z>endRegion->zmin && objCamera.mPos.z<endRegion->zmax&&objCamera.mPos.y<(endRegion->height / 2 + endRegion->offset) && objCamera.mPos.y>(-1 * endRegion->height / 2 + endRegion->offset))
 					{
 						if (endRegion->moveToPos == 0)
 						{
@@ -7447,10 +7651,10 @@ void GameUpdate()
 						if (!activeRegion->highlighted)
 						{
 							bool highlightObject = true;
-							if (GetQPC() - mazeStart < activeRegion->p1TriggerTime) //if time is specified then its required
+							if(!thresholdCompare(GetQPC() - mazeStart, activeRegion->p1TriggerTime,activeRegion->p1TimeOperator)) //if time is specified then its required
 								highlightObject = false;
 
-							if (curMazePoints < activeRegion->p1PointThreshold)
+							if (!thresholdCompare(curMazePoints, activeRegion->p1PointThreshold,activeRegion->p1PointOperator))
 								highlightObject = false;
 
 							if (activeRegion->p2InteractRequired)
@@ -7464,10 +7668,10 @@ void GameUpdate()
 						{
 							bool activateObject = true;
 
-							if (GetQPC() - activeRegion->highlightTime < activeRegion->p2TriggerTime) //if P2Trigertime is specified then it is required
+							if (!(thresholdCompare(GetQPC() - activeRegion->highlightTime, activeRegion->p2TriggerTime,activeRegion->p2TimeOperator))) //if P2Trigertime is specified then it is required
 								activateObject = false;
 
-							if (curMazePoints < activeRegion->p2PointThreshold)
+							if (!(thresholdCompare(curMazePoints,activeRegion->p2PointThreshold,activeRegion->p2PointOperator)))
 								activateObject = false;
 
 							if (!Player.interact&&activeRegion->p2InteractRequired)//barScore < BAR_THRESHOLD
@@ -7573,12 +7777,13 @@ void GameUpdate()
 				if (!temp2->activated)//&&!temp2->highlighted) //If not active/highlighted should we highlight?
 				{
 					bool highlightObject = true;
-					if (GetQPC() - mazeStart < temp2->p1TriggerTime) //if time is specified then its required
+					if (!(thresholdCompare(GetQPC()- mazeStart, temp2->p1TriggerTime,temp2->p1TimeOperator))) //if time is specified then its required
 						highlightObject = false;
 
 					if (temp2->proximityTrigger < 1 && temp2->p1ActiveRadius > 0) //if not in range and range is required
 						highlightObject = false;
-					if (curMazePoints < temp2->p1PointThreshold)
+					
+					if (!thresholdCompare(curMazePoints, temp2->p1PointThreshold,temp2->p1PointOperator))
 						highlightObject = false;
 
 					if (temp2->p2InteractRequired)
@@ -7592,13 +7797,13 @@ void GameUpdate()
 				{
 					bool activateObject = true;
 
-					if (GetQPC() - temp2->highlightTime<temp2->p2TriggerTime) //if P2Trigertime is specified then it is required
+					if (!(thresholdCompare(GetQPC() - temp2->highlightTime,temp2->p2TriggerTime,temp2->p2TimeOperator))) //if P2Trigertime is specified then it is required
 						activateObject = false;
 
 					if (temp2->proximityTrigger < 2 && temp2->p2ActiveRadius > 0) //if not in range and range is required
 						activateObject = false;
 
-					if (curMazePoints < temp2->p2PointThreshold)
+					if (!thresholdCompare(curMazePoints, temp2->p2PointThreshold,temp2->p2PointOperator))
 						activateObject = false;
 					
 					if (!Player.interact&&temp2->p2InteractRequired) //barScore<BAR_THRESHOLD
@@ -13424,10 +13629,13 @@ baud = 2400;
 									bMazeEndReached=true;
 								}
 							}
-							if (curMazePoints >= objMap->pointExitThreshold&&objMap->pointExitThreshold>0)
+
+							
+
+							if (thresholdCompare(curMazePoints,objMap->pointExitThreshold,objMap->pointExitThresholdOperator))
 							{
 								mazeReturnValue = curMazePoints;
-								printf(objMap->successMessage, objMap->pointMessage);
+								sprintf(objMap->successMessage,"%s", objMap->pointMessage);
 								bMazeLoop = false;
 								
 								bTimeLimitExceed = true;
@@ -14218,6 +14426,33 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 }
  void sendToTCP(tcpMessage t);
 
+
+ bool thresholdCompare(int val, int val2, thresholdOperator tOperator) {
+	 bool thresholdReached = false;
+	 switch (tOperator) {
+		 case mGreaterThanEqual:
+			 thresholdReached = val >= val2;
+			 break;
+		 case mGreaterThan:
+			 thresholdReached = val > val2;
+			 break;
+		 case mEqual:
+			 thresholdReached = val == val2;
+			 break;
+		 case mNotEqual:
+			 thresholdReached = val != val2;
+			 break;
+		 case mLessThan:
+			 thresholdReached = val < val2;
+			 break;
+		 case mLessThanEqual:
+			 thresholdReached = val <= val2;
+			 break;
+	 }
+
+	 return thresholdReached;
+
+ }
 
  MapModel* getDynModelByID(int ID)
  {

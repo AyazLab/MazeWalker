@@ -1317,10 +1317,21 @@ void ActiveRegion::Activate()
 			glMatrixMode(GL_MODELVIEW);
 		}
 
-		curMazePoints += pointsGranted;
+
+		if (pointsGrantedSetPoints) {
+			curMazePoints = pointsGranted;
+		}
+		else {
+			curMazePoints += pointsGranted;
+		}
 
 	
-		triggerAction = 0;
+		
+
+		if (activationRepeatable)
+			activated = false;
+		else
+			triggerAction = 0;
 	}
 
 }

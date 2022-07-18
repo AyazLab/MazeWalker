@@ -176,6 +176,8 @@ void SetLights();
 void DrawMouse();
 void DrawCrosshair();
 
+bool thresholdCompare(int val, int val2, thresholdOperator tOperator);
+
 char* ftoLower(const char* in);
 int BuildWhite();
 void MazeInit();

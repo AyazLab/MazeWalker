@@ -54,7 +54,13 @@ void MapModel::Activate()
 				destroy=true;
 				break;
 		}
-		curMazePoints += pointsGranted;
+
+        if (pointsGrantedSetPoints) {
+            curMazePoints = pointsGranted;
+        }
+        else {
+            curMazePoints += pointsGranted;
+        }
 
 		triggerCriteria=0; //prevents double activation and checks
 		triggerAction=0;

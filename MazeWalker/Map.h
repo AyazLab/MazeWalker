@@ -71,6 +71,17 @@ struct SPlanveVBO:SPlane {
 	//GLfloat* vertices;
 };
 
+enum thresholdOperator
+{
+	mGreaterThan = 2,
+	mGreaterThanEqual = 1,
+	mEqual = 0,
+	mLessThanEqual = -1,
+	mLessThan = -2,
+	mNotEqual = 100
+};
+
+
 struct EndRegion{
 	float zmin,zmax,xmin,xmax,height,offset;
 	char label[200];
@@ -82,13 +93,18 @@ struct EndRegion{
 	bool last;
 	int index; //identity of end region
 	int pointThreshold; //pointsRequired to Activete
+	thresholdOperator pointThresholdOperator = mGreaterThanEqual;
 	int moveToPos;//index of StartPosition to move to
 };
 
 struct ActiveRegion: EndRegion{
 	ActiveRegion *next;
 	char messageText[500];
-	int p1PointThreshold,p2PointThreshold; //pointsRequired to Activete
+	int p1PointThreshold,p2PointThreshold; //pointsRequired to Highlight & Activate
+
+	thresholdOperator p1PointOperator = mGreaterThanEqual;
+	thresholdOperator p2PointOperator = mGreaterThanEqual;
+
 	int moveToPos;//index of StartPosition to move to
 
 	DWORD highlightTime;
@@ -97,14 +113,21 @@ struct ActiveRegion: EndRegion{
 	bool highlighted;
 	bool p2InteractRequired;
 
+	bool activationRepeatable = false;
+
 	int triggerAction;	//Trigger action type stored as int  : 0=No action 1=Move/Scale/Rotate 2=Change Model 3=Destroy Model
 
-	int pointsGranted;
+	int pointsGranted =0;
+	bool pointsGrantedSetPoints = false; // if not set points, add points
+
 	int triggerAudioID;
 	int highlightAudioID;
 
 	float p1TriggerTime; //time until automatically highlighted
 	float p2TriggerTime; //time until automatically triggered from P1
+
+	thresholdOperator p1TimeOperator = mGreaterThanEqual;
+	thresholdOperator p2TimeOperator = mGreaterThanEqual;
 	
 	int triggerAudioLoop; //triggered audio is looped until end of maze
 	int triggerAudioBehavior; //not defined
@@ -173,6 +196,7 @@ public:
 	bool shaders;
 	bool shadersCompiled;
 	int pointExitThreshold;
+	thresholdOperator pointExitThresholdOperator;
 	bool pointMessageEnabled;
 	char pointMessage[500];
 	char timeoutMessage[500];

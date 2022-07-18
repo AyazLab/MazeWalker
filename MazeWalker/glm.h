@@ -59,6 +59,8 @@ struct Vector {
 			return(x==rhs.x&&y==rhs.y&&z==rhs.z);
 		}
 	};
+
+
 typedef struct _GLMtriangle {
   GLuint vindices[3];           /* array of triangle vertex indices */
   GLuint nindices[3];           /* array of triangle normal indices */
@@ -143,6 +145,9 @@ typedef struct GLMmodelNode
 }GLMmodelNode;
 
 #include <btBulletDynamicsCommon.h>
+#include "map.h"
+
+
 
 typedef struct MapModel
 {
@@ -177,7 +182,12 @@ typedef struct MapModel
 
 	int p1PointThreshold = 0;
 	int p2PointThreshold = 0;
+
+	thresholdOperator p1PointOperator;
+	thresholdOperator p2PointOperator;
+
 	int pointsGranted = 0;
+	bool pointsGrantedSetPoints = false; // if not set points, add points
 
 	DWORD highlightTime;
 	DWORD actionTimer,activatedTime; //length of time of action
@@ -202,8 +212,13 @@ typedef struct MapModel
 	bool isVisible;
 	int triggerAudioID;
 	int highlightAudioID;
-	float p2TriggerTime; //time until automatically triggered from P1
+	
 	float p1TriggerTime; //time until automatically highlighted
+	float p2TriggerTime; //time until automatically triggered from P1
+
+	thresholdOperator p1TimeOperator;
+	thresholdOperator p2TimeOperator;
+
 	int triggerAudioLoop; //triggered audio is looped until end of maze
 	int triggerAudioBehavior; //not defined
 	int highlightAudioLoop; //highlight audio is looped
