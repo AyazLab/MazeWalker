@@ -2988,17 +2988,17 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 						{
 							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
-								temp->p1PointOperator = mLessThanEqual;
+								activeRegion->p1PointOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
-								temp->p1PointOperator = mLessThan;
+								activeRegion->p1PointOperator = mLessThan;
 							else if (strcmp(pAttr->value(), "Equal") == 0)
-								temp->p1PointOperator = mEqual;
+								activeRegion->p1PointOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
-								temp->p1PointOperator = mGreaterThan;
+								activeRegion->p1PointOperator = mGreaterThan;
 							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
-								temp->p1PointOperator = mGreaterThanEqual;
+								activeRegion->p1PointOperator = mGreaterThanEqual;
 							else if (strcmp(pAttr->value(), "NotEqual") == 0)
-								temp->p1PointOperator = mNotEqual;
+								activeRegion->p1PointOperator = mNotEqual;
 						}
 
 						pAttr = pSubNode->first_attribute("timeElapsedThreshold");
@@ -3009,17 +3009,17 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 						{
 							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
-								temp->p1TimeOperator = mLessThanEqual;
+								activeRegion->p1TimeOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
-								temp->p1TimeOperator = mLessThan;
+								activeRegion->p1TimeOperator = mLessThan;
 							else if (strcmp(pAttr->value(), "Equal") == 0)
-								temp->p1TimeOperator = mEqual;
+								activeRegion->p1TimeOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
-								temp->p1TimeOperator = mGreaterThan;
+								activeRegion->p1TimeOperator = mGreaterThan;
 							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
-								temp->p1TimeOperator = mGreaterThanEqual;
+								activeRegion->p1TimeOperator = mGreaterThanEqual;
 							else if (strcmp(pAttr->value(), "NotEqual") == 0)
-								temp->p1TimeOperator = mNotEqual;
+								activeRegion->p1TimeOperator = mNotEqual;
 						}
 
 
@@ -3069,17 +3069,17 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 						{
 							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
-								temp->p2PointOperator = mLessThanEqual;
+								activeRegion->p2PointOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
-								temp->p2PointOperator = mLessThan;
+								activeRegion->p2PointOperator = mLessThan;
 							else if (strcmp(pAttr->value(), "Equal") == 0)
-								temp->p2PointOperator = mEqual;
+								activeRegion->p2PointOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
-								temp->p2PointOperator = mGreaterThan;
+								activeRegion->p2PointOperator = mGreaterThan;
 							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
-								temp->p2PointOperator = mGreaterThanEqual;
+								activeRegion->p2PointOperator = mGreaterThanEqual;
 							else if (strcmp(pAttr->value(), "NotEqual") == 0)
-								temp->p2PointOperator = mNotEqual;
+								activeRegion->p2PointOperator = mNotEqual;
 						}
 
 						pAttr = pSubNode->first_attribute("pointsGranted");
@@ -3126,17 +3126,17 @@ int ReadMapXML(char* mazeXMLfile)
 						if (pAttr)
 						{
 							if (strcmp(pAttr->value(), "LessThanEqual") == 0)
-								temp->p2TimeOperator = mLessThanEqual;
+								activeRegion->p2TimeOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
-								temp->p2TimeOperator = mLessThan;
+								activeRegion->p2TimeOperator = mLessThan;
 							else if (strcmp(pAttr->value(), "Equal") == 0)
-								temp->p2TimeOperator = mEqual;
+								activeRegion->p2TimeOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
-								temp->p2TimeOperator = mGreaterThan;
+								activeRegion->p2TimeOperator = mGreaterThan;
 							else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
-								temp->p2TimeOperator = mGreaterThanEqual;
+								activeRegion->p2TimeOperator = mGreaterThanEqual;
 							else if (strcmp(pAttr->value(), "NotEqual") == 0)
-								temp->p2TimeOperator = mNotEqual;
+								activeRegion->p2TimeOperator = mNotEqual;
 						}
 
 						const xml_node<> *pSubSubNode = pSubNode->first_node("Audio");
@@ -13632,7 +13632,7 @@ baud = 2400;
 
 							
 
-							if (thresholdCompare(curMazePoints,objMap->pointExitThreshold,objMap->pointExitThresholdOperator))
+							if (objMap->pointExitThreshold!=0&& objMap->pointExitThreshold!=9999&&thresholdCompare(curMazePoints,objMap->pointExitThreshold,objMap->pointExitThresholdOperator))
 							{
 								mazeReturnValue = curMazePoints;
 								sprintf(objMap->successMessage,"%s", objMap->pointMessage);
@@ -14205,7 +14205,7 @@ baud = 2400;
 						GUIMessageBox(objMap->successMessage,0,ON_DIALOG_WITH_BG);
 		
 				}
-				else if (objMap->pointExitThreshold>0&&curMazePoints>=objMap->pointExitThreshold)
+				else if (thresholdCompare(curMazePoints,objMap->pointExitThreshold,objMap->pointExitThresholdOperator))
 				{
 					if (objMap->pointMessageEnabled&&objMap->pointMessage[0] != NULL)
 						GUIMessageBox(objMap->pointMessage, 0, ON_DIALOG_WITH_BG);

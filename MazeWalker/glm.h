@@ -183,8 +183,8 @@ typedef struct MapModel
 	int p1PointThreshold = 0;
 	int p2PointThreshold = 0;
 
-	thresholdOperator p1PointOperator;
-	thresholdOperator p2PointOperator;
+	thresholdOperator p1PointOperator = mGreaterThanEqual;
+	thresholdOperator p2PointOperator = mGreaterThanEqual;
 
 	int pointsGranted = 0;
 	bool pointsGrantedSetPoints = false; // if not set points, add points
@@ -216,8 +216,8 @@ typedef struct MapModel
 	float p1TriggerTime; //time until automatically highlighted
 	float p2TriggerTime; //time until automatically triggered from P1
 
-	thresholdOperator p1TimeOperator;
-	thresholdOperator p2TimeOperator;
+	thresholdOperator p1TimeOperator = mGreaterThanEqual;
+	thresholdOperator p2TimeOperator = mGreaterThanEqual;
 
 	int triggerAudioLoop; //triggered audio is looped until end of maze
 	int triggerAudioBehavior; //not defined
