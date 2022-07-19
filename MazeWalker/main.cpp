@@ -13565,6 +13565,16 @@ baud = 2400;
 			
 			
 			mazeStart = GetQPC();
+			DWORD lastMazeTime = 0;
+
+
+			if (curMazeListItem) {
+				if (curMazeListItem->mazeOptions.continueTimeFrom)
+					mazeStart = GetQPC()+ lastMazeTime; //reset maze points
+				else 
+					mazeStart =GetQPC()-curMazeListItem->mazeOptions.startTime*1000; //Add (subtract) time to QPC timer
+			}
+
 			updateTime = mazeStart;
 			updateTimeKeys = mazeStart;
 			EventLog(1, 61, 0, "MazeStart");   //MazeInitialized
