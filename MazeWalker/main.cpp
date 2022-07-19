@@ -230,6 +230,7 @@ DWORD actualTime;
 DWORD clogStartTime;
 DWORD startTime;
 DWORD mazeStart;
+DWORD lastMazeTimeElapsed = 0;
 int mazeStartedAndRunning=0;  //0-not start, 1-running, 2-ended
 
 GLuint	base;				// Base Display List For The Font Set
@@ -13565,12 +13566,12 @@ baud = 2400;
 			
 			
 			mazeStart = GetQPC();
-			DWORD lastMazeTime = 0;
+			
 
 
 			if (curMazeListItem) {
 				if (curMazeListItem->mazeOptions.continueTimeFrom)
-					mazeStart = GetQPC()+ lastMazeTime; //reset maze points
+					mazeStart = GetQPC()+ lastMazeTimeElapsed; //reset maze points
 				else 
 					mazeStart =GetQPC()-curMazeListItem->mazeOptions.startTime*1000; //Add (subtract) time to QPC timer
 			}
@@ -14266,6 +14267,7 @@ baud = 2400;
 
 			if(bMazeEndReached==true&&!videoPlayBack)
 			{
+				lastMazeTimeElapsed = GetQPC()-mazeStart;
 				if(bTimeLimitExceed==false)
 				{
 					if(objMap->successMessage[0]!=NULL)
@@ -14368,6 +14370,7 @@ baud = 2400;
 				{
 					curAudioDict.Add(33000, soundPath);
 					curAudioDict.Play(33000, curMazeListItem->audioLoop);
+					EventLog(1, 801, 0, "Audio Start");
 					hasAudio = true;
 				}
 				else
@@ -14388,6 +14391,7 @@ baud = 2400;
 			
 			if (curMazeListItem->recordAudio) {
 				curAudioDict.RecordStart();
+				EventLog(1, 801, 0, "Recording Start");
 			}
 			
 			
@@ -14396,6 +14400,7 @@ baud = 2400;
 			SetFocus(hWnd);
 			if (curMazeListItem->recordAudio) {
 				curAudioDict.RecordStop();
+				EventLog(1, 801, 0, "Recording End");
 			}
 
 			
