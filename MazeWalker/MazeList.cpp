@@ -519,7 +519,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							tstyle = ON_DIALOG_CLEAR_BG;
 
-						pAttr = pNode->first_attribute("LifeTime");
+						pAttr = pNode->first_attribute("Duration");
 						if (pAttr)
 							lifetime_ms = atoi(pAttr->value());
 						else
