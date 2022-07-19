@@ -33,6 +33,8 @@ public:
 	bool audioPauseOnEnd = false;
 
 	char mzCommand[TXTMSGBUFFERLIMIT_MAZELISTITEM];
+	char mzCommandParams[TXTMSGBUFFERLIMIT_MAZELISTITEM];
+	bool mzCommandHide = false;
 	bool waitForExitCmd = false;
 
 	bool recordAudio = false;
@@ -61,7 +63,7 @@ public:
 	void AddRecordAudio();
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
 	void AddText(char * val, long lftm,textboxStyle shStyle);
-	void AddCommand(char* cmd,bool waitForExit);
+	void AddCommand(char* cmd, char* cmdParams, bool waitForExit, bool hideCmd);
 
 	MazeListItem(void);
 	~MazeListItem(void);

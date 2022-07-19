@@ -80,12 +80,12 @@ void MazeList::AddText(char* val,long lifetime,textboxStyle shStyle)
 	cur->next->AddText(val,lifetime,shStyle);
 }
 
-void MazeList::AddCommand(char* cmd, bool waitForComplete)
+void MazeList::AddCommand(char* cmd, char* cmdParams, bool waitForComplete, bool hideCmd)
 {
 	MazeListItem* cur = GetLast();
 
 	cur->next = new MazeListItem();
-	cur->next->AddCommand(cmd, waitForComplete);
+	cur->next->AddCommand(cmd,cmdParams, waitForComplete,hideCmd);
 }
 
 void MazeList::AddBG(char* val)
@@ -505,7 +505,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 
 					else if (0 == strcmp(pNode->name(), "Command"))
 					{
-						bool waitForComplete;
+						bool waitForComplete,hideCmd;
 
 						pAttr = pNode->first_attribute("WaitForComplete");
 						if (pAttr)
@@ -513,11 +513,25 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							waitForComplete = true;
 
-						char* command = pNode->value();
+						pAttr = pNode->first_attribute("HideWindow");
+						if (pAttr)
+							hideCmd = trueFalse(pAttr->value(), false);
+						else
+							hideCmd = false;
 
-						if (command)
+						char* command;
+
+						pAttr = pNode->first_attribute("Program");
+						if (pAttr)
+							command= pAttr->value();
 						{
-							this->AddCommand(command, waitForComplete);
+
+							char* commandParams = pNode->value();
+
+							if (command)
+							{
+								this->AddCommand(command, commandParams, waitForComplete, hideCmd);
+							}
 						}
 
 					}

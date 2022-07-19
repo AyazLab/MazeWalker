@@ -14292,12 +14292,33 @@ baud = 2400;
 			sprintf(curMazeFilename, "MazeList Cmd: %s",curMazeListItem->mzCommand);
 			char mzCmd[1024];
 			strcpy_s(mzCmd,1024,curMazeListItem->mzCommand);
+			char mzCmdParams[1024];
+			strcpy_s(mzCmdParams, 1024, curMazeListItem->mzCommandParams);
 			bool waitForComplete = curMazeListItem->waitForExitCmd;
 
-			EventLog(1, 80, 0, curMazeFilename);
-			ShellExecute(0, "open", mzCmd,NULL, 0, SW_SHOW);
-			if(!waitForComplete)
-				EventLog(1, 80, 0, "MazeList CmdEnd");
+			EventLog(1, 80, 0, mzCmd);
+
+			SHELLEXECUTEINFO ShExecInfo = { 0 };
+			ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+			ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+			ShExecInfo.hwnd = NULL;
+			ShExecInfo.lpVerb = NULL;
+			ShExecInfo.lpFile = mzCmd;
+			ShExecInfo.lpParameters = mzCmdParams;
+			ShExecInfo.lpDirectory = NULL;
+			if(curMazeListItem->mzCommandHide)
+				ShExecInfo.nShow = SW_HIDE;
+			else
+				ShExecInfo.nShow = SW_SHOW;
+
+			ShExecInfo.hInstApp = NULL;
+			ShellExecuteEx(&ShExecInfo);
+			if (waitForComplete) {
+				WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
+				CloseHandle(ShExecInfo.hProcess);
+			}
+			
+			EventLog(1, 80, 0, "MazeList CmdEnd");
 		 }
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{

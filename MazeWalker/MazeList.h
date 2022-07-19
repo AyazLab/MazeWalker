@@ -15,7 +15,7 @@ public:
 	void AddBG(char* val);
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
 	void AddRecordAudio();
-	void AddCommand(char* cmd, bool waitForComplete);
+	void AddCommand(char* cmd, char* cmdParams, bool waitForComplete, bool hideCmd);
 
 	void Clear();
 

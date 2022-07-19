@@ -87,11 +87,13 @@ void MazeListItem::AddRecordAudio()
 
 }
 
-void MazeListItem::AddCommand(char* cmd, bool waitForExit)
+void MazeListItem::AddCommand(char* cmd, char* cmdParams, bool waitForExit,bool hideCmd)
 {
 	type = Command;
-	strcpy_s(mzCommand,cmd);
+	strcpy_s(mzCommand, TXTMSGBUFFERLIMIT_MAZELISTITEM,cmd);
+	strcpy_s(mzCommandParams, TXTMSGBUFFERLIMIT_MAZELISTITEM, cmdParams);
 	waitForExitCmd = waitForExit;
+	mzCommandHide = hideCmd;
 	next = NULL;
 }
 
