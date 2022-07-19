@@ -152,6 +152,7 @@ struct StartPosition{
 	bool isDeafultStartPos;
 	bool last;
 	int index;//index for start position (not used)
+	char label[200];
 };
 
 

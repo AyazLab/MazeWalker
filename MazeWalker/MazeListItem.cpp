@@ -18,6 +18,8 @@ void MazeListItem::AddMaze(char *val,bool isMazX)
 	type = Maze;
 	lifeTime=0;
 	showStyle=ON_DIALOG_CLEAR_BG;
+
+
 	if (strlen(val) > 150)
 		int i = 1;
 
@@ -25,6 +27,25 @@ void MazeListItem::AddMaze(char *val,bool isMazX)
 	value[TXTMSGBUFFERLIMIT_MAZELISTITEM-1] = 0;
 
 	next=NULL;
+}
+
+void MazeListItem::AddMaze(char* val, bool isMazX, MazeOptions m)
+{
+	this->isMazX = isMazX;
+	type = Maze;
+	lifeTime = 0;
+	showStyle = ON_DIALOG_CLEAR_BG;
+
+	this->mazeOptions = m;
+
+
+	if (strlen(val) > 150)
+		int i = 1;
+
+	sprintf(value, "%s", val);
+	value[TXTMSGBUFFERLIMIT_MAZELISTITEM - 1] = 0;
+
+	next = NULL;
 }
 void MazeListItem::AddText(char * val, long lifetime_ms,textboxStyle shStyle)
 {

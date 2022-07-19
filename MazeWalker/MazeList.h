@@ -10,6 +10,7 @@ public:
 	MazeListItem *cListRoot;
 
 	void AddMaze(char *val);
+	void AddMaze(char* val, MazeListItem::MazeOptions m);
 	void AddText(char * val, long lftm,textboxStyle shStyle);
 	void AddBG(char* val);
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);

@@ -42,6 +42,22 @@ void MazeList::Clear(void)
 
 void MazeList::AddMaze(char* val)
 {
+	MazeListItem* cur = GetLast();
+
+	bool isMazX = false;
+	if (strlen(val) > 4)
+	{
+		isMazX = ('x' == tolower(val[strlen(val) - 1]));
+
+	}
+
+	cur->next = new MazeListItem();
+	cur->next->AddMaze(val, isMazX);
+
+}
+
+void MazeList::AddMaze(char* val, MazeListItem::MazeOptions m )
+{
 	MazeListItem *cur = GetLast();
 
 	bool isMazX = false;
@@ -52,7 +68,7 @@ void MazeList::AddMaze(char* val)
 	}
 
 	cur->next = new MazeListItem();
-	cur->next->AddMaze(val,isMazX);
+	cur->next->AddMaze(val,isMazX,m);
 
 }
 
@@ -434,47 +450,57 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							continue;
 
-						/*pAttr = pNode->first_attribute("StartPosition");
+						MazeListItem::MazeOptions m;
+
+
+
+						pAttr = pNode->first_attribute("StartPosition");
 						if (pAttr)
-							waitForComplete = strcmpi(pAttr->value(), "");
+							strcpy_s(m.startPosition, 800, pAttr->value());
 						else
-							waitForComplete = false;
+							strcpy_s(m.startPosition, 800, "");
+
+						pAttr = pNode->first_attribute("StartMessage");
+						if (pAttr)
+							strcpy_s(m.startMessage, 800, pAttr->value());
+						else
+							strcpy_s(m.startMessage, 800, "");
 
 						pAttr = pNode->first_attribute("InitialPoints");
 						if (pAttr)
-							waitForComplete = atoi(pAttr->value());
+							m.initialPoints = atoi(pAttr->value());
 						else
-							waitForComplete = 0;
+							m.initialPoints = 0;
 
 						pAttr = pNode->first_attribute("InitialPointsMode");
 						if (pAttr)
-							waitForComplete = atoi(pAttr->value());
+							m.setInitialPoints = strcmpi(pAttr->value(), "Add")!=0;
 						else
-							waitForComplete = 0;
+							m.setInitialPoints = true;
 
-						pAttr = pNode->first_attribute("InitialPoints");
-						if (pAttr)
-							waitForComplete = atoi(pAttr->value());
-						else
-							waitForComplete = 0;
 
 						pAttr = pNode->first_attribute("StartTime");
 						if (pAttr)
-							waitForComplete = atoi(pAttr->value());
+							m.startTime = atoi(pAttr->value());
 						else
-							waitForComplete = 0;
+							m.startTime = 0;
+
+						pAttr = pNode->first_attribute("Timeout");
+						if (pAttr)
+							m.timeoutOverride = atoi(pAttr->value());
+						else
+							m.timeoutOverride = 0;
 
 						
 						pAttr = pNode->first_attribute("InitialTimeMode");
 						if (pAttr)
-							waitForComplete = atoi(pAttr->value());
+							m.continueTimeFrom = trueFalse(pAttr->value(), false);
 						else
-							waitForComplete = 0; */
-						
+							m.continueTimeFrom = false;
 
 						//char* command = pNode->value();
 
-						this->AddMaze(temp);
+						this->AddMaze(temp,m);
 					}
 
 					else if (0 == strcmp(pNode->name(), "Command"))
@@ -483,9 +509,9 @@ int MazeList::ReadMazeListXML(char* melFile)
 
 						pAttr = pNode->first_attribute("WaitForComplete");
 						if (pAttr)
-							waitForComplete = strcmpi(pAttr->value(),"true");
+							waitForComplete = trueFalse(pAttr->value(), true);
 						else
-							waitForComplete = false;
+							waitForComplete = true;
 
 						char* command = pNode->value();
 

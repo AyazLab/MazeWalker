@@ -2637,8 +2637,10 @@ int ReadMapXML(char* mazeXMLfile)
 					
 
 					pAttr = pNode->first_attribute("label");
-					if (pAttr)
+					if (pAttr) {
 						sprintf(label, "%s", pAttr->value());
+
+					}
 
 					startPos=(StartPosition*)malloc(sizeof(StartPosition));
 
@@ -2662,6 +2664,7 @@ int ReadMapXML(char* mazeXMLfile)
 					startPos->vertAngle = 0;
 					startPos->inputValue = -1;
 					startPos->inputValue = 0; //initializing value
+					strcpy_s(startPos->label, 200, label);
 
 					bool startPosError = false;
 
@@ -5050,7 +5053,7 @@ void MazeInit()
 	Player.gravityEnabled=false;
 	Player.collisionEnabled=false;
 
-	curMazePoints = 0; //reset maze points
+
 
 	clearModels();
 	BuildWhite();
@@ -5123,6 +5126,8 @@ void MazeInit()
 		model34_scale = 1;
 		model34_rot = tVector3(0, 0, 0);
 	}
+
+	
 	
 	
 }
@@ -13306,6 +13311,50 @@ baud = 2400;
 
 			bStatusMazeLoading = false;
 
+			if (curMazeListItem) {
+				if (curMazeListItem->mazeOptions.setInitialPoints)
+					curMazePoints = curMazeListItem->mazeOptions.initialPoints; //reset maze points
+				else
+					curMazePoints = curMazePoints + curMazeListItem->mazeOptions.initialPoints; //add or continue maze points
+
+				if (curMazeListItem->mazeOptions.timeoutOverride > 0) {
+					objMap->maxMazeTime = curMazeListItem->mazeOptions.timeoutOverride * 1000.0f;
+
+				}
+
+				if (strlen(curMazeListItem->mazeOptions.startMessage) > 0)
+				{
+					objMap->startMessageEnabled = true;
+					strcpy_s(objMap->startMessage, 800, curMazeListItem->mazeOptions.startMessage);
+				}
+
+				if (strlen(curMazeListItem->mazeOptions.startPosition) > 0) {
+
+					StartPosition* sPos = objMap->startPosHead;
+
+					while (sPos != NULL) {
+
+						if (strlen(sPos->label)>0&&strcmpi(sPos->label, curMazeListItem->mazeOptions.startPosition) ==0) {
+							objMap->startPosDefault = sPos;
+
+							objCamera.mPos.x = sPos->x;
+							objCamera.mPos.y = sPos->y;
+							objCamera.mPos.z = sPos->z;
+							objCamera.Position_Camera(objCamera.mPos.x, objCamera.mPos.y, objCamera.mPos.z, 0, 0, 0, 0, 1, 0);
+							objCamera.InitialRotate(sPos->angle * PI / 180, xLoc + Width / 2, yLoc + Height / 2, sPos->vertAngle);
+							AlignCamera();
+							break;
+						}
+						sPos = sPos->next;
+					}
+					
+				}
+
+			}
+			else {
+				curMazePoints = 0;
+			}
+
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -13512,6 +13561,7 @@ baud = 2400;
 				GUIMessageBox(objMap->startMessage, 0, ON_DIALOG_CLEAR_BG);
 				
 			}
+
 			
 			
 			mazeStart = GetQPC();

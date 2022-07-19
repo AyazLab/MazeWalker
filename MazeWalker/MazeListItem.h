@@ -36,11 +36,27 @@ public:
 	bool waitForExitCmd = false;
 
 	bool recordAudio = false;
+
+	typedef struct
+	{
+		int timeoutOverride = -999;
+
+		char startPosition[TXTMSGBUFFERLIMIT_MAZELISTITEM] = "";
+		char startMessage[TXTMSGBUFFERLIMIT_MAZELISTITEM] = "";
+
+		int initialPoints = -999;
+		bool setInitialPoints = true;
+
+		int startTime = 0;
+		bool continueTimeFrom = false;
+	} MazeOptions;
 	
+	MazeOptions mazeOptions;
 
 	MazeListItem* next;
 
 	void AddMaze(char *val, bool isMazX);
+	void AddMaze(char* val, bool isMazX, MazeOptions m);
 	void AddBG(char* val);
 	void AddRecordAudio();
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
