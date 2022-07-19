@@ -14277,6 +14277,7 @@ baud = 2400;
 			else 
 					texID = 0;
 
+			bool hasAudio = false;
 			if (strlen(curMazeListItem->audioFilename) > 8)
 			{
 				char* soundPath;
@@ -14285,6 +14286,8 @@ baud = 2400;
 				if (soundPath)
 				{
 					curAudioDict.Add(33000, soundPath);
+					curAudioDict.Play(33000, curMazeListItem->audioLoop);
+					hasAudio = true;
 				}
 				else
 				{
@@ -14294,7 +14297,8 @@ baud = 2400;
 					//MessageBoxA(NULL, txt, 0, 0);
 				}
 				
-				curAudioDict.Play(33000);
+				
+				
 				//LoadTexture(temp->BGfname, 300);
 			}
 			
@@ -14307,11 +14311,17 @@ baud = 2400;
 			
 			
 			GUIMessageBox(curMazeListItem->value, lifeTime, curMazeListItem->showStyle, texID);
+
 			SetFocus(hWnd);
 			if (curMazeListItem->recordAudio) {
 				curAudioDict.RecordStop();
 			}
-			curAudioDict.Stop(0);
+
+			
+			if (hasAudio && curMazeListItem->audioPauseOnEnd)
+				curAudioDict.Pause(33000, true);
+			else if (hasAudio && curMazeListItem->audioStopOnEnd)
+				curAudioDict.Stop(33000);
 			
 
 			EventLog(1, 81, 0, "TextMessage End");

@@ -28,18 +28,22 @@ public:
 	bool isMazX = false;
 
 	char audioFilename[TXTMSGBUFFERLIMIT_MAZELISTITEM];
+	bool audioLoop = false;
+	bool audioStopOnEnd = true;
+	bool audioPauseOnEnd = false;
 
 	char mzCommand[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 	bool waitForExitCmd = false;
 
 	bool recordAudio = false;
+	
 
 	MazeListItem* next;
 
 	void AddMaze(char *val, bool isMazX);
 	void AddBG(char* val);
 	void AddRecordAudio();
-	void AddAudio(char* val);
+	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
 	void AddText(char * val, long lftm,textboxStyle shStyle);
 	void AddCommand(char* cmd,bool waitForExit);
 

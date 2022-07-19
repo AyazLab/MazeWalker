@@ -47,11 +47,15 @@ void MazeListItem::AddBG(char *fname)
 
 }
 
-void MazeListItem::AddAudio(char* fname)
+void MazeListItem::AddAudio(char* fname, bool loopAudio, bool stopOnEnd, bool pauseOnEnd)
 {
 	if (strlen(fname) > 3)
 	{
 		sprintf_s(audioFilename,800, "%s", fname);
+
+		audioLoop = loopAudio;
+		audioStopOnEnd = stopOnEnd;
+		audioPauseOnEnd = pauseOnEnd;
 	}
 
 }

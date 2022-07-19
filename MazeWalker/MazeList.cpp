@@ -79,11 +79,11 @@ void MazeList::AddBG(char* val)
 	cur->AddBG(val);
 }
 
-void MazeList::AddAudio(char* val)
+void MazeList::AddAudio(char* val,bool loopAudio, bool stopOnEnd, bool pauseOnEnd)
 {
 	MazeListItem* cur = GetLast();
 
-	cur->AddAudio(val);
+	cur->AddAudio(val, loopAudio, stopOnEnd, pauseOnEnd);
 }
 
 void MazeList::AddRecordAudio()
@@ -550,11 +550,27 @@ int MazeList::ReadMazeListXML(char* melFile)
 							imgID = -1;
 						}
 
+						bool loopAudio = false;
+						bool stopAudioOnEnd = true; 
+						bool pauseAudioOnEnd = false; //pauseMode
+
 						pAttr = pNode->first_attribute("AudioID");
 						if (pAttr)
 						{
 							hasAudio = true;
 							audioID = atoi(pAttr->value());
+
+							pAttr = pNode->first_attribute("Loop");
+							if (pAttr)
+								loopAudio=trueFalse(pAttr->value(), false);
+
+							pAttr = pNode->first_attribute("EndBehavior");
+							if (pAttr) {
+								if (strcmp(pAttr->value(), "ON_DIALOG") == 0)
+									stopAudioOnEnd = false;
+								else if (strcmp(pAttr->value(), "ON_DIALOG") == 0)
+									pauseAudioOnEnd = true;
+							}
 						}
 						else
 						{
@@ -617,7 +633,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 								{
 									if (audioID>= 0){
 										strcpy_s(assetFname, 800, listAudioDict[audioID].c_str());
-										this->AddAudio(assetFname);
+										this->AddAudio(assetFname, loopAudio,stopAudioOnEnd, pauseAudioOnEnd);
 									}
 								}
 
