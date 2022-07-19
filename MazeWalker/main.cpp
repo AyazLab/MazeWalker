@@ -13313,10 +13313,15 @@ baud = 2400;
 			bStatusMazeLoading = false;
 
 			if (curMazeListItem) {
-				if (curMazeListItem->mazeOptions.setInitialPoints)
-					curMazePoints = curMazeListItem->mazeOptions.initialPoints; //reset maze points
-				else
-					curMazePoints = curMazePoints + curMazeListItem->mazeOptions.initialPoints; //add or continue maze points
+				if(curMazeListItem->mazeOptions.initialPoints!=-999){
+					if (curMazeListItem->mazeOptions.setInitialPoints)
+						curMazePoints = curMazeListItem->mazeOptions.initialPoints; //reset maze points
+					else
+						curMazePoints = curMazePoints + curMazeListItem->mazeOptions.initialPoints; //add or continue maze points
+					}
+				else {
+					curMazePoints = 0;
+				}
 
 				if (curMazeListItem->mazeOptions.timeoutOverride > 0) {
 					objMap->maxMazeTime = curMazeListItem->mazeOptions.timeoutOverride * 1000.0f;
