@@ -33,6 +33,8 @@ void MazeListItem::AddText(char * val, long lifetime_ms,textboxStyle shStyle)
 	showStyle=shStyle;
 	strcpy_s(value, TXTMSGBUFFERLIMIT_MAZELISTITEM,val);
 	strcpy_s(BGfname, TXTMSGBUFFERLIMIT_MAZELISTITEM,"");
+	strcpy_s(audioFilename, TXTMSGBUFFERLIMIT_MAZELISTITEM, "");
+
 	next=NULL;
 }
 
@@ -40,8 +42,23 @@ void MazeListItem::AddBG(char *fname)
 {
 	if(strlen(fname)>3)
 	{
-		sprintf(BGfname,"texture\\%s",fname);
+		sprintf_s(BGfname,800,"texture\\%s",fname);
 	}
+
+}
+
+void MazeListItem::AddAudio(char* fname)
+{
+	if (strlen(fname) > 3)
+	{
+		sprintf_s(audioFilename,800, "%s", fname);
+	}
+
+}
+
+void MazeListItem::AddRecordAudio()
+{
+	recordAudio = true;
 
 }
 

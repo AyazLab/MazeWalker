@@ -79,6 +79,20 @@ void MazeList::AddBG(char* val)
 	cur->AddBG(val);
 }
 
+void MazeList::AddAudio(char* val)
+{
+	MazeListItem* cur = GetLast();
+
+	cur->AddAudio(val);
+}
+
+void MazeList::AddRecordAudio()
+{
+	MazeListItem* cur = GetLast();
+
+	cur->AddRecordAudio();
+}
+
 MazeListItem* MazeList::GetLast()
 {
 	MazeListItem *ret=cListRoot;
@@ -167,8 +181,8 @@ int MazeList::ReadMazeListXML(char* melFile)
 	char iDir[TXTBUFFERLIMIT], temp[TXTBUFFERLIMIT], temp2[TXTBUFFERLIMIT];
 	char melType[TXTBUFFERLIMIT];
 	char dlgType[TXTBUFFERLIMIT];
-	char imgID[TXTBUFFERLIMIT];
-	char audioID[TXTBUFFERLIMIT];
+	int imgID=-1;
+	int audioID=-1;
 	char curTxt[TXTBUFFERLIMIT];
 
 	char errorTxt[TXTBUFFERLIMIT];
@@ -192,6 +206,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 	int y = 0;
 	
 	bool isMultipleChoice = false;
+	bool isRecordAudio = false;
 
 	//maze list file...
 	if (!CheckFileExists(melFile))
@@ -353,7 +368,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 						break;
 					if (0 == strcmp(pNode->name(), "Image"))
 					{
-						pAttr = pNode->first_attribute("ID");
+						pAttr = pNode->first_attribute("ImageID");
 						if (pAttr)
 							mazeID = atoi(pAttr->value());
 						else
@@ -381,6 +396,8 @@ int MazeList::ReadMazeListXML(char* melFile)
 			xml_attribute<>* pAttrFile;
 
 			textboxStyle tstyle;
+
+			char assetFname[800];
 
 			if (pListItemsNode)
 			{
@@ -417,6 +434,46 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							continue;
 
+						/*pAttr = pNode->first_attribute("StartPosition");
+						if (pAttr)
+							waitForComplete = strcmpi(pAttr->value(), "");
+						else
+							waitForComplete = false;
+
+						pAttr = pNode->first_attribute("InitialPoints");
+						if (pAttr)
+							waitForComplete = atoi(pAttr->value());
+						else
+							waitForComplete = 0;
+
+						pAttr = pNode->first_attribute("InitialPointsMode");
+						if (pAttr)
+							waitForComplete = atoi(pAttr->value());
+						else
+							waitForComplete = 0;
+
+						pAttr = pNode->first_attribute("InitialPoints");
+						if (pAttr)
+							waitForComplete = atoi(pAttr->value());
+						else
+							waitForComplete = 0;
+
+						pAttr = pNode->first_attribute("StartTime");
+						if (pAttr)
+							waitForComplete = atoi(pAttr->value());
+						else
+							waitForComplete = 0;
+
+						
+						pAttr = pNode->first_attribute("InitialTimeMode");
+						if (pAttr)
+							waitForComplete = atoi(pAttr->value());
+						else
+							waitForComplete = 0; */
+						
+
+						//char* command = pNode->value();
+
 						this->AddMaze(temp);
 					}
 
@@ -439,9 +496,11 @@ int MazeList::ReadMazeListXML(char* melFile)
 
 					}
 
-					else if ((0 == strcmp(pNode->name(), "Image")|| (0 == strcmp(pNode->name(), "Text"))|| (0 == strcmp(pNode->name(), "MultipleChoice"))))
+					else if ((0 == strcmp(pNode->name(), "Image"))|| (0 == strcmp(pNode->name(), "Text"))
+						|| (0 == strcmp(pNode->name(), "MultipleChoice")) || (0== strcmp(pNode->name(),"RecordAudio")))
 					{
 						isMultipleChoice = (0 == strcmp(pNode->name(), "MultipleChoice"));
+						isRecordAudio = (0 == strcmp(pNode->name(), "RecordAudio"));
 
 						pAttr = pNode->first_attribute("TextDisplayType");
 						
@@ -478,29 +537,32 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							y = 0;
 
-						pAttr = pNode->first_attribute("Image");
+						pAttr = pNode->first_attribute("ImageID");
 						if (pAttr)
 						{
 							hasImg = true;
-							strcpy_s(imgID, TXTBUFFERLIMIT, pAttr->value());
+							imgID = atoi(pAttr->value());
+							//strcpy_s(imgID, TXTBUFFERLIMIT, pAttr->value());
 						}
 						else
 						{
 							hasImg = false;
-							strcpy_s(imgID, TXTBUFFERLIMIT, "");
+							imgID = -1;
 						}
 
-						pAttr = pNode->first_attribute("Audio");
+						pAttr = pNode->first_attribute("AudioID");
 						if (pAttr)
 						{
 							hasAudio = true;
-							strcpy_s(audioID, TXTBUFFERLIMIT, pAttr->value());
+							audioID = atoi(pAttr->value());
 						}
 						else
 						{
 							hasAudio = false;
-							strcpy_s(audioID, TXTBUFFERLIMIT, "");
+							audioID = -1;
 						}
+
+
 
 						if (isMultipleChoice)
 						{
@@ -521,6 +583,8 @@ int MazeList::ReadMazeListXML(char* melFile)
 									sprintf_s(msgTemp, MAXMSGTXTLIMIT, "%s\a%s", msgTemp, pChoiceNode->value());
 								}
 							}
+
+
 						}
 						else
 							strcpy_s(msgTemp, MAXMSGTXTLIMIT, pNode->value());
@@ -541,8 +605,26 @@ int MazeList::ReadMazeListXML(char* melFile)
 							this->AddText(curTxt, lifetime_ms, tstyle);
 							if (hasImg)
 							{
-								if (strlen(imgID) > 2)
-									this->AddBG(imgID);
+								if (imgID >= 0)
+								{
+									strcpy_s(assetFname, 800, listImageDict[imgID].c_str());
+									this->AddBG(assetFname);
+								}
+							}
+
+							if (i == 0) {
+								if (hasAudio)
+								{
+									if (audioID>= 0){
+										strcpy_s(assetFname, 800, listAudioDict[audioID].c_str());
+										this->AddAudio(assetFname);
+									}
+								}
+
+							}
+
+							if (isRecordAudio) {
+								this->AddRecordAudio();
 							}
 
 						}
@@ -559,7 +641,8 @@ int MazeList::ReadMazeListXML(char* melFile)
 		catch (const rapidxml::parse_error& e)
 		{
 			char* err = new char[256];
-			sprintf(err, "Corrupted MazeXML File:\n%s\n\n%s", e.what());
+			sprintf(err, "Corrupted MazeXML File:\n%s", e.what());
+			
 			//GUIMessageBox(err, 0, WARNING);
 
 			return 0;

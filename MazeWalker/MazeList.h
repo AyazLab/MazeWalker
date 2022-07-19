@@ -12,6 +12,8 @@ public:
 	void AddMaze(char *val);
 	void AddText(char * val, long lftm,textboxStyle shStyle);
 	void AddBG(char* val);
+	void AddAudio(char* val);
+	void AddRecordAudio();
 	void AddCommand(char* cmd, bool waitForComplete);
 
 	void Clear();

@@ -213,6 +213,7 @@ long lifeTime=0;
 
 char filename[TXTBUFFERLIMIT+1];
 char logfile[TXTBUFFERLIMIT];
+char audologfileDir[TXTBUFFERLIMIT];
 char walker[100]="";
 
 char curMazeFilename[TXTBUFFERLIMIT];
@@ -8967,9 +8968,14 @@ LRESULT CALLBACK DlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 					filename[0]=0;
 					GetDlgItemText(hDlg,IDC_FILENAME,filename,TXTBUFFERLIMIT);
 
+					SHGetFolderPath(hWnd, CSIDL_PERSONAL, NULL, 0, audologfileDir);
+					sprintf(audologfileDir, "%s\\MazeSuite\\LogFiles", audologfileDir);
+					CreateDirectory(audologfileDir, NULL);
+
+					curAudioDict.SetRecordDirPath(audologfileDir);
+
 					if (filename)
 					{
-
 						res = curMazeList.ReadMazeList(filename);
 					}
 					if(res==-1)
@@ -9173,25 +9179,26 @@ LRESULT CALLBACK DlgProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 						logfile[0]=0;
 					}
 
-
+					
 
 					if(autoLog&&strlen(logfile)<2)
 					{
 						GetDlgItemText(hDlg,IDC_EDIT1,walker,100);
 						
-						SHGetFolderPath(hWnd,CSIDL_PERSONAL,NULL,0,logfile);
+						
 						time_t rawtime;
 						time ( &rawtime );
 						struct tm * timeinfo;
 						timeinfo = localtime ( &rawtime );
-						sprintf(logfile,"%s\\MazeSuite\\LogFiles",logfile);
-						CreateDirectory(logfile,NULL);
-						sprintf(logfile,"%s\\autoLog_%i_%i_%i_%i_%i_%i_%s.txt",logfile,timeinfo->tm_year-100,timeinfo->tm_mon+1,timeinfo->tm_mday,timeinfo->tm_hour,timeinfo->tm_min,timeinfo->tm_sec,walker);
+						
+						sprintf(logfile,"%s\\autoLog_%i_%i_%i_%i_%i_%i_%s.txt", audologfileDir,timeinfo->tm_year-100,timeinfo->tm_mon+1,timeinfo->tm_mday,timeinfo->tm_hour,timeinfo->tm_min,timeinfo->tm_sec,walker);
 						if((strlen(logfile)>2)&&!InitLog(logfile))
 						{
 							MessageBox(0,"Can not create automatic log file!. Make sure the folder is accessible and you read/write permissions.","Error",MB_ICONERROR);
 						}
 					}
+
+					
 
 					if(!autoLog&&logfile[0]!=0)
 					{
@@ -14269,16 +14276,47 @@ baud = 2400;
 			}
 			else 
 					texID = 0;
+
+			if (strlen(curMazeListItem->audioFilename) > 8)
+			{
+				char* soundPath;
+				soundPath = getBestPath(curMazeListItem->audioFilename, "audio");
+
+				if (soundPath)
+				{
+					curAudioDict.Add(33000, soundPath);
+				}
+				else
+				{
+					char txt[250];
+					sprintf(txt, "Audio '%s' not found!\n", curMazeListItem->audioFilename);
+					GUIMessageBox(txt, 0, WARNING);
+					//MessageBoxA(NULL, txt, 0, 0);
+				}
+				
+				curAudioDict.Play(33000);
+				//LoadTexture(temp->BGfname, 300);
+			}
+			
 			
 			//LoadTexture("texture\\123.jpg", 300);
 			
-
+			if (curMazeListItem->recordAudio) {
+				curAudioDict.RecordStart();
+			}
 			
-
+			
 			GUIMessageBox(curMazeListItem->value, lifeTime, curMazeListItem->showStyle, texID);
 			SetFocus(hWnd);
+			if (curMazeListItem->recordAudio) {
+				curAudioDict.RecordStop();
+			}
+			curAudioDict.Stop(0);
+			
+
 			EventLog(1, 81, 0, "TextMessage End");
 			bStatusMazeMessage = false;
+			
 			//MessageBox(parent,temp->value,"Message",0);
 		}
 

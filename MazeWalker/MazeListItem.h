@@ -32,10 +32,14 @@ public:
 	char mzCommand[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 	bool waitForExitCmd = false;
 
+	bool recordAudio = false;
+
 	MazeListItem* next;
 
 	void AddMaze(char *val, bool isMazX);
 	void AddBG(char* val);
+	void AddRecordAudio();
+	void AddAudio(char* val);
 	void AddText(char * val, long lftm,textboxStyle shStyle);
 	void AddCommand(char* cmd,bool waitForExit);
 
