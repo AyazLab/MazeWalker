@@ -32,3 +32,4 @@ MazeWalker/win32/*
 *.exp
 *.recipe
 MazeWalker/x64/Debug/MazeWalker.exe
+MazeWalker/MazeWalker.aps
