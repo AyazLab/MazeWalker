@@ -943,6 +943,24 @@ int ReadMapXML(char* mazeXMLfile)
 					if (pAttr)
 						objMap->pointExitThreshold = atof(pAttr->value());
 
+					pAttr = pNode->first_attribute("exitThresholdOperator");
+					if (pAttr)
+					{
+						if (strcmp(pAttr->value(), "LessThanEqual") == 0)
+							objMap->pointExitThresholdOperator = mLessThanEqual;
+						else if (strcmp(pAttr->value(), "LessThan") == 0)
+							objMap->pointExitThresholdOperator = mLessThan;
+						else if (strcmp(pAttr->value(), "EqualTo") == 0)
+							objMap->pointExitThresholdOperator = mEqual;
+						else if (strcmp(pAttr->value(), "GreaterThan") == 0)
+							objMap->pointExitThresholdOperator = mGreaterThan;
+						else if (strcmp(pAttr->value(), "GreaterThanEqual") == 0)
+							objMap->pointExitThresholdOperator = mGreaterThanEqual;
+						else if (strcmp(pAttr->value(), "NotEqual") == 0)
+							objMap->pointExitThresholdOperator = mNotEqual;
+					}
+					
+
 					pAttr = pNode->first_attribute("messageText");
 					if (pAttr)
 					{
