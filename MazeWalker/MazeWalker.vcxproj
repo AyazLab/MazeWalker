@@ -180,6 +180,9 @@
       <EnableDpiAwareness>true</EnableDpiAwareness>
     </Manifest>
     <ProjectReference />
+    <PostBuildEvent>
+      <Command>echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\..\MazeMaker\MazeMaker\bin\$(Configuration)\$(TargetFileName)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -214,6 +217,9 @@
       <EnableDpiAwareness>true</EnableDpiAwareness>
     </Manifest>
     <ProjectReference />
+    <PostBuildEvent>
+      <Command>echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\..\MazeMaker\MazeMaker\bin\$(Configuration)\$(TargetFileName)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -281,7 +287,7 @@
       <EnableDpiAwareness>true</EnableDpiAwareness>
     </Manifest>
     <PostBuildEvent>
-      <Command>echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\MazeMaker\MazeMaker\bin\Release\$(TargetFileName)"</Command>
+      <Command>echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\..\MazeMaker\MazeMaker\bin\$(Configuration)\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NSIS|Win32'">
