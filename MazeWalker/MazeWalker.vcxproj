@@ -287,7 +287,8 @@
       <EnableDpiAwareness>true</EnableDpiAwareness>
     </Manifest>
     <PostBuildEvent>
-      <Command>echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\..\MazeMaker\MazeMaker\bin\$(Configuration)\$(TargetFileName)"</Command>
+      <Command>echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\..\MazeMaker\MazeMaker\bin\$(Configuration)\$(TargetFileName)"
+echo f | xcopy /y "$(TargetPath)" "$(ProjectDir)..\..\MazeSuite\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NSIS|Win32'">

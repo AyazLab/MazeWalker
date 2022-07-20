@@ -13341,6 +13341,14 @@ baud = 2400;
 					curMazePoints = 0;
 				}
 
+				if (curMazeListItem->mazeOptions.exitPointsThreshold != -999 && curMazeListItem->mazeOptions.exitPointsThreshold!=0) {
+					if (curMazeListItem->mazeOptions.setExitPoints)
+						objMap->pointExitThreshold = curMazeListItem->mazeOptions.exitPointsThreshold; //set maze points exit threshold (if not 0)
+					else
+						objMap->pointExitThreshold = objMap->pointExitThreshold  + curMazeListItem->mazeOptions.exitPointsThreshold;//add or exit threshold points to original exit criteria
+				}
+				
+
 				if (curMazeListItem->mazeOptions.timeoutOverride > 0) {
 					objMap->maxMazeTime = curMazeListItem->mazeOptions.timeoutOverride * 1000.0f;
 

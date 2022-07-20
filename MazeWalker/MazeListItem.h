@@ -49,6 +49,9 @@ public:
 		int initialPoints = -999;
 		bool setInitialPoints = true;
 
+		int exitPointsThreshold = -999;
+		bool setExitPoints = true;
+
 		int startTime = 0;
 		bool continueTimeFrom = false;
 	} MazeOptions;

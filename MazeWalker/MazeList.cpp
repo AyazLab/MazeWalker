@@ -478,6 +478,18 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							m.setInitialPoints = true;
 
+						pAttr = pNode->first_attribute("ExitPointsThreshold");
+						if (pAttr)
+							m.exitPointsThreshold = atoi(pAttr->value());
+						else
+							m.exitPointsThreshold = 0;
+
+						pAttr = pNode->first_attribute("ExitPointsThresholdMode");
+						if (pAttr)
+							m.setExitPoints = strcmpi(pAttr->value(), "Add") != 0;
+						else
+							m.setExitPoints = true;
+
 
 						pAttr = pNode->first_attribute("StartTime");
 						if (pAttr)
