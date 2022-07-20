@@ -5106,7 +5106,7 @@ void MazeInit()
 		objMap->pointMessageEnabled = false;
 		sprintf(objMap->pointMessage, "");
 		objMap->pointExitThreshold = 9999;
-		objMap->pointExitThresholdOperator = mGreaterThan;
+		objMap->pointExitThresholdOperator = mGreaterThanEqual;
 		objMap->bEndPos = false;
 		objMap->bStartPos = false;
 		objMap->wallCount = 0;
