@@ -9,6 +9,8 @@ MazeWalker/Libs/freetype/objs/
 MazeWalker/Libs/glew/lib/Release/
 MazeWalker/Bullet/lib/*.lib
 
+MazeWalker/enc_temp_folder/
+
 */objs/*
 *.pdb
 *.ipch

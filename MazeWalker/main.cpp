@@ -2322,7 +2322,7 @@ int ReadMapXML(char* mazeXMLfile)
 									temp->p1PointOperator = mLessThanEqual;
 								else if (strcmp(pAttr->value(), "LessThan") == 0)
 									temp->p1PointOperator = mLessThan;
-								else if (strcmp(pAttr->value(), "Equal") == 0)
+								else if (strcmp(pAttr->value(), "EqualTo") == 0)
 									temp->p1PointOperator = mEqual;
 								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 									temp->p1PointOperator = mGreaterThan;
@@ -2348,7 +2348,7 @@ int ReadMapXML(char* mazeXMLfile)
 									temp->p1TimeOperator = mLessThanEqual;
 								else if (strcmp(pAttr->value(), "LessThan") == 0)
 									temp->p1TimeOperator = mLessThan;
-								else if (strcmp(pAttr->value(), "Equal") == 0)
+								else if (strcmp(pAttr->value(), "EqualTo") == 0)
 									temp->p1TimeOperator = mEqual;
 								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 									temp->p1TimeOperator = mGreaterThan;
@@ -2424,7 +2424,7 @@ int ReadMapXML(char* mazeXMLfile)
 									temp->p2PointOperator = mLessThanEqual;
 								else if (strcmp(pAttr->value(), "LessThan") == 0)
 									temp->p2PointOperator = mLessThan;
-								else if (strcmp(pAttr->value(), "Equal") == 0)
+								else if (strcmp(pAttr->value(), "EqualTo") == 0)
 									temp->p2PointOperator = mEqual;
 								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 									temp->p2PointOperator = mGreaterThan;
@@ -2476,7 +2476,7 @@ int ReadMapXML(char* mazeXMLfile)
 									temp->p2TimeOperator = mLessThanEqual;
 								else if (strcmp(pAttr->value(), "LessThan") == 0)
 									temp->p2TimeOperator = mLessThan;
-								else if (strcmp(pAttr->value(), "Equal") == 0)
+								else if (strcmp(pAttr->value(), "EqualTo") == 0)
 									temp->p2TimeOperator = mEqual;
 								else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 									temp->p2TimeOperator = mGreaterThan;
@@ -2842,7 +2842,7 @@ int ReadMapXML(char* mazeXMLfile)
 								endRegion->pointThresholdOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
 								endRegion->pointThresholdOperator = mLessThan;
-							else if (strcmp(pAttr->value(), "Equal") == 0)
+							else if (strcmp(pAttr->value(), "EqualTo") == 0)
 								endRegion->pointThresholdOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 								endRegion->pointThresholdOperator = mGreaterThan;
@@ -2996,7 +2996,7 @@ int ReadMapXML(char* mazeXMLfile)
 								activeRegion->p1PointOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
 								activeRegion->p1PointOperator = mLessThan;
-							else if (strcmp(pAttr->value(), "Equal") == 0)
+							else if (strcmp(pAttr->value(), "EqualTo") == 0)
 								activeRegion->p1PointOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 								activeRegion->p1PointOperator = mGreaterThan;
@@ -3017,7 +3017,7 @@ int ReadMapXML(char* mazeXMLfile)
 								activeRegion->p1TimeOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
 								activeRegion->p1TimeOperator = mLessThan;
-							else if (strcmp(pAttr->value(), "Equal") == 0)
+							else if (strcmp(pAttr->value(), "EqualTo") == 0)
 								activeRegion->p1TimeOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 								activeRegion->p1TimeOperator = mGreaterThan;
@@ -3077,7 +3077,7 @@ int ReadMapXML(char* mazeXMLfile)
 								activeRegion->p2PointOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
 								activeRegion->p2PointOperator = mLessThan;
-							else if (strcmp(pAttr->value(), "Equal") == 0)
+							else if (strcmp(pAttr->value(), "EqualTo") == 0)
 								activeRegion->p2PointOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 								activeRegion->p2PointOperator = mGreaterThan;
@@ -3134,7 +3134,7 @@ int ReadMapXML(char* mazeXMLfile)
 								activeRegion->p2TimeOperator = mLessThanEqual;
 							else if (strcmp(pAttr->value(), "LessThan") == 0)
 								activeRegion->p2TimeOperator = mLessThan;
-							else if (strcmp(pAttr->value(), "Equal") == 0)
+							else if (strcmp(pAttr->value(), "EqualTo") == 0)
 								activeRegion->p2TimeOperator = mEqual;
 							else if (strcmp(pAttr->value(), "GreaterThan") == 0)
 								activeRegion->p2TimeOperator = mGreaterThan;
