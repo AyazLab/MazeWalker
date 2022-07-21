@@ -506,7 +506,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 						
 						pAttr = pNode->first_attribute("InitialTimeMode");
 						if (pAttr)
-							m.continueTimeFrom = !(strcmpi(pAttr->value(),"SetTo")==0);
+							m.continueTimeFrom = !(strcmpi(pAttr->value(),"StartAt")==0);
 						else
 							m.continueTimeFrom = false;
 
