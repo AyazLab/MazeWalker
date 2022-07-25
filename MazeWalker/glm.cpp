@@ -829,6 +829,7 @@ static GLvoid glmSecondPass(GLMmodel* model, FILE* file, mycallback *call)
 	int autoGroup=0;
 	bool newGroup=true;
 	int retValue=0;
+    bool relativeIndex = false;
 
     while(fscanf(file, "%s", buf) != EOF) {
 		
@@ -903,11 +904,24 @@ static GLvoid glmSecondPass(GLMmodel* model, FILE* file, mycallback *call)
 				T(numtriangles).vecini[1]=-1;
 				T(numtriangles).vecini[2]=-1;
                 fscanf(file, "%s", buf);
+
+                if (numtriangles == 0)
+                {
+                    if (buf[0] == '-') {
+                        relativeIndex = true;
+                    }
+
+                }
                 /* can be one of %d, %d//%d, %d/%d, %d/%d/%d %d//%d */
-                if (strstr(buf, "//")) {
+                if (strstr(buf, "//")) { //v and n only
                     /* v//n */
 					group->usetexture=false;
                     retValue = sscanf_s(buf, "%d//%d", &v, &n);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        n += numnormals;
+                    }
                     assert(retValue==2);
 					T(numtriangles).vindices[0] = v;
 					if (n== 181228)
@@ -916,14 +930,29 @@ static GLvoid glmSecondPass(GLMmodel* model, FILE* file, mycallback *call)
 					}
                     T(numtriangles).nindices[0] = n;
                     fscanf(file, "%d//%d", &v, &n);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        n += numnormals;
+                    }
                     T(numtriangles).vindices[1] = v;
                     T(numtriangles).nindices[1] = n;
                     fscanf(file, "%d//%d", &v, &n);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        n += numnormals;
+                    }
                     T(numtriangles).vindices[2] = v;
                     T(numtriangles).nindices[2] = n;
                     group->triangles[group->numtriangles++] = numtriangles;
                     numtriangles++;
-                    while(fscanf(file, "%d//%d", &v, &n) > 0) {						
+                    while(fscanf(file, "%d//%d", &v, &n) > 0) {		
+                        if (relativeIndex)
+                        {
+                            v += numvertices;
+                            n += numnormals;
+                        }
                         T(numtriangles).vindices[0] = T(numtriangles-1).vindices[0];
                         T(numtriangles).nindices[0] = T(numtriangles-1).nindices[0];
                         T(numtriangles).vindices[1] = T(numtriangles-1).vindices[2];
@@ -936,20 +965,44 @@ static GLvoid glmSecondPass(GLMmodel* model, FILE* file, mycallback *call)
                 } else if (sscanf(buf, "%d/%d/%d", &v, &t, &n) == 3) {
                     /* v/t/n */
 					
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        n += numnormals;
+                        t += numtexcoords;
+                    }
                     T(numtriangles).vindices[0] = v; 
                     T(numtriangles).tindices[0] = t;
                     T(numtriangles).nindices[0] = n;
                     retValue=fscanf(file, "%d/%d/%d", &v, &t, &n);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        n += numnormals;
+                        t += numtexcoords;
+                    }
                     T(numtriangles).vindices[1] = v;
                     T(numtriangles).tindices[1] = t;
                     T(numtriangles).nindices[1] = n;
                     retValue=fscanf(file, "%d/%d/%d", &v, &t, &n);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        n += numnormals;
+                        t += numtexcoords;
+                    }
                     T(numtriangles).vindices[2] = v;
                     T(numtriangles).tindices[2] = t;
                     T(numtriangles).nindices[2] = n;
                     group->triangles[group->numtriangles++] = numtriangles;
                     numtriangles++;
                     while(fscanf(file, "%d/%d/%d", &v, &t, &n) > 0) {
+                        if (relativeIndex)
+                        {
+                            v += numvertices;
+                            n += numnormals;
+                            t += numtexcoords;
+                        }
 						//if (n== 181228)					
                         T(numtriangles).vindices[0] = T(numtriangles-1).vindices[0];
                         T(numtriangles).tindices[0] = T(numtriangles-1).tindices[0];
@@ -964,18 +1017,38 @@ static GLvoid glmSecondPass(GLMmodel* model, FILE* file, mycallback *call)
                         numtriangles++;
                     }
                 } else if (sscanf_s(buf, "%d/%d", &v, &t) == 2) {
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        t += numtexcoords;
+                    }
                     /* v/t */					
                     T(numtriangles).vindices[0] = v;
                     T(numtriangles).tindices[0] = t;
                     fscanf(file, "%d/%d", &v, &t);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        t += numtexcoords;
+                    }
                     T(numtriangles).vindices[1] = v;
                     T(numtriangles).tindices[1] = t;
                     fscanf(file, "%d/%d", &v, &t);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                        t += numtexcoords;
+                    }
                     T(numtriangles).vindices[2] = v;
                     T(numtriangles).tindices[2] = t;
                     group->triangles[group->numtriangles++] = numtriangles;
                     numtriangles++;
-                    while(fscanf(file, "%d/%d", &v, &t) > 0) {						
+                    while(fscanf(file, "%d/%d", &v, &t) > 0) {		
+                        if (relativeIndex)
+                        {
+                            v += numvertices;
+                            t += numtexcoords;
+                        }
 					
                         T(numtriangles).vindices[0] = T(numtriangles-1).vindices[0];
                         T(numtriangles).tindices[0] = T(numtriangles-1).tindices[0];
@@ -990,14 +1063,30 @@ static GLvoid glmSecondPass(GLMmodel* model, FILE* file, mycallback *call)
                     /* v */
 					//if (n== 181228)				
                     sscanf(buf, "%d", &v);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                    }
                     T(numtriangles).vindices[0] = v;
                     fscanf(file, "%d", &v);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                    }
                     T(numtriangles).vindices[1] = v;
                     fscanf(file, "%d", &v);
+                    if (relativeIndex)
+                    {
+                        v += numvertices;
+                    }
                     T(numtriangles).vindices[2] = v;
                     group->triangles[group->numtriangles++] = numtriangles;
                     numtriangles++;
                     while(fscanf(file, "%d", &v) > 0) {
+                        if (relativeIndex)
+                        {
+                            v += numvertices;
+                        }
                         T(numtriangles).vindices[0] = T(numtriangles-1).vindices[0];
                         T(numtriangles).vindices[1] = T(numtriangles-1).vindices[2];
                         T(numtriangles).vindices[2] = v;
