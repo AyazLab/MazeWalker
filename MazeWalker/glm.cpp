@@ -514,7 +514,7 @@ glmReadMTL(GLMmodel* model, char* name, mycallback *call)
             model->materials[nummaterials].name = _strdup(buf);
             break;
         case 'N':
-            if (buf[1]!='s') break; // 3DS pune 'i' aici pentru indici de refractie si se incurca
+            if (buf[1]!='s') break; // shininess for Ns
 			fscanf(MTLfile, "%f", &model->materials[nummaterials].shininess);
             /* wavefront shininess is from [0, 1000], so scale for OpenGL */
             model->materials[nummaterials].shininess /= 1000.0;
@@ -526,8 +526,13 @@ glmReadMTL(GLMmodel* model, char* name, mycallback *call)
 				model->materials[nummaterials].opacity=1;
 			if (model->materials[nummaterials].opacity<0)
 				model->materials[nummaterials].opacity=0;
-			if(model->materials[nummaterials].opacity<1)
-				model->transparent=true;
+            if (model->materials[nummaterials].opacity < 1) {
+                model->transparent = true;
+                //Assign to alpha value for difuse 
+                model->materials[nummaterials].diffuse[3] = model->materials[nummaterials].opacity;
+                model->materials[nummaterials].specular[3] = model->materials[nummaterials].opacity;
+                model->materials[nummaterials].ambient[3] = model->materials[nummaterials].opacity;
+            }
             break;
         case 'K':
             switch(buf[1]) {
@@ -2082,6 +2087,9 @@ GLvoid glmReducedDraw(GLMmodel* model,float scale,float glowFactor,int colorInde
     assert(model->vertices);
 
     glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_NORMALIZE);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
 
     IDTexture = -1;
 	bool twice=false;
@@ -2144,12 +2152,12 @@ GLvoid glmReducedDraw(GLMmodel* model,float scale,float glowFactor,int colorInde
 				material->specular[colorIndex]+=glowFactor;
 			}
 			
-			glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material->ambient);
-			glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material->diffuse);
-			glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material->specular);
-			glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, material->shininess);
-			glMaterialfv(GL_FRONT_AND_BACK,GL_EMISSION,  material->emmissive);
-			glColor4f(material->diffuse[0],material->diffuse[1],material->diffuse[2],material->opacity);
+			glMaterialfv(GL_FRONT, GL_AMBIENT, material->ambient);
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, material->diffuse);
+			glMaterialfv(GL_FRONT, GL_SPECULAR, material->specular);
+			glMaterialf(GL_FRONT, GL_SHININESS, material->shininess);
+			glMaterialfv(GL_FRONT,GL_EMISSION,  material->emmissive);
+			//glColor4f(material->diffuse[0],material->diffuse[1],material->diffuse[2],material->opacity);
 		}
 		else
 
@@ -2224,6 +2232,7 @@ GLvoid glmReducedDraw(GLMmodel* model,float scale,float glowFactor,int colorInde
 	glEnable(GL_COLOR_MATERIAL);
 	glDisable(GL_RESCALE_NORMAL);
 	glEnable(GL_BLEND);
+    glDisable(GL_CULL_FACE);
 
 }
 
