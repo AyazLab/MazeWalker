@@ -442,6 +442,8 @@ void Map::Draw()
 				glColor3f(1,1,1);
 
  				glBindTexture(GL_TEXTURE_2D, curTextureDict.Get_glKey(temp->texture) );
+				glEnable(GL_BLEND);
+				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 				if(useAniso)
 					glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT,8 );
 				else
