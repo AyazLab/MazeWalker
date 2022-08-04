@@ -69,10 +69,11 @@ int LoadPNG( GLuint &texid,char * filename)
 
 	glGenTextures(1, &texid);
     glBindTexture(GL_TEXTURE_2D, texid);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
+
 	gluBuild2DMipmaps( GL_TEXTURE_2D, type, lWidthPixels, lHeightPixels, type, GL_UNSIGNED_BYTE, textureImage );
 	//glTexImage2D(GL_TEXTURE_2D, 0, pixelsize,lWidthPixels, lHeightPixels, 0,type, GL_UNSIGNED_BYTE, textureImage);   
 
@@ -336,6 +337,8 @@ int LoadJPG( GLuint &texid,char * filename)						// Load Image And Convert To A 
 	glBindTexture(GL_TEXTURE_2D, texid);								// Bind To The Texture ID
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	
 	
 	gluBuild2DMipmaps( GL_TEXTURE_2D, GL_RGBA, lWidthPixels, lHeightPixels, GL_RGBA, GL_UNSIGNED_BYTE, pBits );
