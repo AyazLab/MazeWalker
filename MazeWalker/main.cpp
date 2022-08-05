@@ -14365,6 +14365,7 @@ baud = 2400;
 		 }
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{
+			curTextureDict.Clear();
 			sprintf(curMazeFilename, "MazeList Text");
 
 			bStatusMazeMessage = true;
@@ -14384,6 +14385,7 @@ baud = 2400;
 			GLuint texID = 0;
 			if (strlen(curMazeListItem->BGfname) > 9)
 			{
+				
 				LoadTexture(curMazeListItem->BGfname, 33000);
 				texID = curTextureDict.Get_glKey(33000);
 				//LoadTexture(temp->BGfname, 300);
