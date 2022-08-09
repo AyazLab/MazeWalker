@@ -5072,6 +5072,7 @@ void MazeInit()
 	Player.offset=Player.defaultCameraOffset;
 	Player.jumping=false;
 	Player.goingUp=false;
+	Player.interact = false;
 	Player.gravityEnabled=!bDisableGravity;
 	Player.collisionEnabled=true;
 	Player.jumpSpeed=0;
@@ -13626,8 +13627,6 @@ baud = 2400;
 			updateTimeKeys = mazeStart;
 			EventLog(1, 61, 0, "MazeStart");   //MazeInitialized
 
-			ControlLibrary[Interact] = false;
-			
 
 			AlignCamera();
 			char temp[TXTBUFFERLIMIT];
