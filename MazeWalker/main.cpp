@@ -478,22 +478,35 @@ public:
 		running.moveCount=0;
 		crouching.instantMove=0;
 		crouching.moveCount=0;
+
 		strafingLeft.instantMove=0;
 		strafingLeft.moveCount=0;
 		strafingRight.instantMove=0;
 		strafingRight.moveCount=0;
+
 		lookingLeft.instantMove=0;
 		lookingLeft.moveCount=0;
 		lookingRight.instantMove=0;
 		lookingRight.moveCount=0;
+
 		lookingUp.instantMove=0;
 		lookingUp.moveCount=0;
 		lookingDown.instantMove=0;
 		lookingDown.moveCount=0;
+
 		movingForward.instantMove=0;
 		movingForward.moveCount=0;
 		movingBackwards.instantMove=0;
 		movingBackwards.moveCount=0;
+
+		interact = false;
+		jumping = false;
+
+
+		justJumped.moveCount = 0;
+		justJumped.instantMove = 0;
+
+
 	};
 };
 
@@ -3501,6 +3514,7 @@ int ReadMap(char* theFile)
 		sprintf(message, "Corrupted or old maze file.\nTry opening and saving with MazeMaker\n%s", theFile);
 		GUIMessageBox(message, 0, WARNING);
 		return 0;
+
 	}
 
 
@@ -6518,6 +6532,7 @@ void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLui
 		res = -1; //skip non-fatal error messages
 
 	keys[ControlLibrary[Jump]]=false;
+	keys[ControlLibrary[Interact]] = false;
 
 	
 
@@ -13610,6 +13625,8 @@ baud = 2400;
 			updateTime = mazeStart;
 			updateTimeKeys = mazeStart;
 			EventLog(1, 61, 0, "MazeStart");   //MazeInitialized
+
+			ControlLibrary[Interact] = false;
 			
 
 			AlignCamera();
