@@ -88,11 +88,11 @@ void MazeList::AddCommand(char* cmd, char* cmdParams, bool waitForComplete, bool
 	cur->next->AddCommand(cmd,cmdParams, waitForComplete,hideCmd);
 }
 
-void MazeList::AddBG(char* val, int index)
+void MazeList::AddBG(char* val, int index, textboxImageStyle bgStyle)
 {
 	MazeListItem *cur = GetLast();
 
-	cur->AddBG(val, index);
+	cur->AddBG(val, index, bgStyle);
 }
 
 void MazeList::AddAudio(char* val,bool loopAudio, bool stopOnEnd, bool pauseOnEnd)
@@ -571,6 +571,33 @@ int MazeList::ReadMazeListXML(char* melFile)
 						else
 							tstyle = ON_DIALOG_CLEAR_BG;
 
+						textboxImageStyle bgStyle;
+
+						pAttr = pNode->first_attribute("ImageDisplayType");
+
+						if (pAttr)
+						{
+							strcpy_s(dlgType, TXTBUFFERLIMIT, pAttr->value());
+							if (strcmp(dlgType, "Fit") == 0)
+							{
+								bgStyle = IMAGE_FIT;
+							}
+							else if(strcmp(dlgType, "Stretch") == 0)
+							{
+								bgStyle = IMAGE_STRETCH;
+							}
+							else if (strcmp(dlgType, "Center") == 0)
+							{
+								bgStyle = IMAGE_CENTER;
+							}
+							else if (strcmp(dlgType, "Tile") == 0)
+							{
+								bgStyle = IMAGE_TILE;
+							}
+						}
+						else
+							bgStyle = IMAGE_FIT;
+
 						pAttr = pNode->first_attribute("Duration");
 						if (pAttr)
 							lifetime_ms = atoi(pAttr->value());
@@ -676,7 +703,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 								if (imgID >= 0)
 								{
 									strcpy_s(assetFname, 800, listImageDict[imgID].c_str());
-									this->AddBG(assetFname, imgID);
+									this->AddBG(assetFname, imgID,bgStyle);
 								}
 							}
 
@@ -850,7 +877,7 @@ int MazeList::ReadMazeListClassic(char *filename)
 					if (hasImg)
 					{
 						if (strlen(imgID) > 2)
-							this->AddBG(imgID,0);
+							this->AddBG(imgID,0,IMAGE_STRETCH);
 					}
 
 				}

@@ -74,8 +74,9 @@ int LoadPNG( GLuint &texid,char * filename)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 
-	gluBuild2DMipmaps( GL_TEXTURE_2D, type, lWidthPixels, lHeightPixels, type, GL_UNSIGNED_BYTE, textureImage );
-	//glTexImage2D(GL_TEXTURE_2D, 0, pixelsize,lWidthPixels, lHeightPixels, 0,type, GL_UNSIGNED_BYTE, textureImage);   
+	glTexImage2D(GL_TEXTURE_2D, 0, type, lWidthPixels, lHeightPixels, 0, type, GL_UNSIGNED_BYTE, textureImage);	// (Modify This If You Want Mipmaps)
+	glGenerateMipmap(GL_TEXTURE_2D);
+	
 
 	return true;
 }
@@ -274,18 +275,29 @@ int LoadJPG( GLuint &texid,char * filename)						// Load Image And Convert To A 
 	pPicture->get_Height(&lHeight);										// Get IPicture Height (Convert To Pixels)
 	lHeightPixels	= MulDiv(lHeight, GetDeviceCaps(hdcTemp, LOGPIXELSY), 2540);
 
-	if (glMaxTexDim > 2048)
-		glMaxTexDim = 2048;
+	if (glMaxTexDim > 3840)
+		glMaxTexDim = 3840;
+
+	if (lWidthPixels > lHeightPixels) {
+		if (lWidthPixels > glMaxTexDim) {
+			lHeightPixels = lHeightPixels * glMaxTexDim / lWidthPixels;
+			lWidthPixels = glMaxTexDim;
+		}
+	}
+	else
+	{
+		if (lHeightPixels > glMaxTexDim) {
+			lWidthPixels = lWidthPixels * glMaxTexDim / lHeightPixels;
+			lHeightPixels = glMaxTexDim;
+		}
+	}
 
 	// Resize Image To Closest Power Of Two
-	if (lWidthPixels <= glMaxTexDim) // Is Image Width Less Than Or Equal To Cards Limit
-		lWidthPixels = 1 << (int)floor((log((double)lWidthPixels)/log(2.0f)) + 0.5f); 
-	else  // Otherwise  Set Width To "Max Power Of Two" That The Card Can Handle
+	if (lWidthPixels > glMaxTexDim) // Is Image Width Less Than Or Equal To Cards Limit
 		lWidthPixels = glMaxTexDim;
  
-	if (lHeightPixels <= glMaxTexDim) // Is Image Height Less Than Cards Limit
-		lHeightPixels = 1 << (int)floor((log((double)lHeightPixels)/log(2.0f)) + 0.5f);
-	else  // Otherwise  Set Height To "Max Power Of Two" That The Card Can Handle
+	if (lHeightPixels > glMaxTexDim) // Is Image Height Less Than Cards Limit
+	
 		lHeightPixels = glMaxTexDim;
 	
 	
@@ -341,9 +353,12 @@ int LoadJPG( GLuint &texid,char * filename)						// Load Image And Convert To A 
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	
 	
-	gluBuild2DMipmaps( GL_TEXTURE_2D, GL_RGBA, lWidthPixels, lHeightPixels, GL_RGBA, GL_UNSIGNED_BYTE, pBits );
-	int x= glGetError();
-	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, lWidthPixels, lHeightPixels, 0, GL_RGBA, GL_UNSIGNED_BYTE, pBits);	// (Modify This If You Want Mipmaps)
+	//gluBuild2DMipmaps( GL_TEXTURE_2D, GL_RGBA, lWidthPixels, lHeightPixels, GL_RGBA, GL_UNSIGNED_BYTE, pBits );
+	
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, lWidthPixels, lHeightPixels, 0, GL_RGBA, GL_UNSIGNED_BYTE, pBits);	// (Modify This If You Want Mipmaps)
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	int x = glGetError();
 	
 	DeleteObject(hbmpTemp);												// Delete The Object
 	DeleteDC(hdcTemp);													// Delete The Device Context

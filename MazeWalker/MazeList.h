@@ -12,7 +12,7 @@ public:
 	void AddMaze(char *val);
 	void AddMaze(char* val, MazeListItem::MazeOptions m);
 	void AddText(char * val, long lftm,textboxStyle shStyle);
-	void AddBG(char* val, int index);
+	void AddBG(char* val, int index, textboxImageStyle bgStyle);
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
 	void AddRecordAudio();
 	void AddCommand(char* cmd, char* cmdParams, bool waitForComplete, bool hideCmd);

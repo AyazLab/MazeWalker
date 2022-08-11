@@ -31,6 +31,7 @@ public:
 	long lifeTime;
 	char BGfname[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 	int bgIndex = -1;
+	textboxImageStyle bgStyle = IMAGE_STRETCH;
 	bool isMazX = false;
 
 	char audioFilename[TXTMSGBUFFERLIMIT_MAZELISTITEM];
@@ -70,7 +71,7 @@ public:
 	void AddMaze(char *val, bool isMazX);
 	void AddMaze(char* val, bool isMazX, MazeOptions m);
 	void AddBG(char* val);
-	void AddBG(char* val, int index);
+	void AddBG(char* val, int index,textboxImageStyle imageStyle);
 	void AddRecordAudio();
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
 	void AddText(char * val, long lftm,textboxStyle shStyle);

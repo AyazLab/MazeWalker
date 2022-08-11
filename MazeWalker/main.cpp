@@ -4893,6 +4893,8 @@ char* ftoLower(const char* in)
 
 bool preloadUnused = true; //discard "unused"
 
+
+
 int LoadTexture(char* fname, int mazeTexKey) //Load texture and MazeKey returns GL texture for 
 {
 		char  fname2[600];
@@ -6301,8 +6303,13 @@ void GUIMessageBox(char* displayText, int showTime, int showStyleInt)
 
 void GUIMessageBox (char* displayText, int showTime, textboxStyle showStyle)
 {
-	GUIMessageBox (displayText, showTime, showStyle, 0);
+	GUIMessageBox (displayText, showTime, showStyle, 0,IMAGE_STRETCH);
 } 
+
+void GUIMessageBox (char* displayText, int showTime, textboxStyle showStyle, GLuint texID)
+{
+	GUIMessageBox(displayText, showTime, showStyle, texID, IMAGE_STRETCH);
+}
 
 
 
@@ -6523,7 +6530,7 @@ public:char* GetText()
 
 
 
-void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLuint texID)
+void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLuint texID, textboxImageStyle bgStyle)
 {
 	int i,res=0,numOfLines=0;
 
@@ -6878,20 +6885,110 @@ void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLui
 		glColor3f(1, 1, 1);
 		glEnable(GL_TEXTURE_2D);
 
-		if(texID!=0)
+
+		GLint textureWidth, textureHeight;
+		float textureAspectRatio;
+		float screenAspectRatio = (float)Width / (float)Height;
+		float xTile;
+		float yTile;
+
+
+		if (texID != 0)
+		{
 			glBindTexture(GL_TEXTURE_2D, texID);
-		else if(!oculusEnabled)
+
+			if (bgStyle != IMAGE_STRETCH)
+			{
+				
+				glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_WIDTH, &textureWidth);
+				glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_HEIGHT, &textureHeight);
+				textureAspectRatio = (float)textureWidth/ (float)textureHeight;
+
+				xTile = (float)Width / (float)textureWidth;
+				yTile = (float)Height / (float)textureHeight;
+
+				float borderColor[] = { 0.0f, 0.0f, 0.0f, 1.0f };
+				glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+			}
+
+
+		}
+		else if (!oculusEnabled) {
 			glBindTexture(GL_TEXTURE_2D, screenCapID);
-		else
+			bgStyle = IMAGE_STRETCH;
+		}
+		else {
 			glBindTexture(GL_TEXTURE_2D, screenCapID);
+			bgStyle = IMAGE_STRETCH;
+		}
+
 		
+		
+		if (bgStyle == IMAGE_STRETCH) {
+
+			glBegin(GL_QUADS); //Background Box
+			glTexCoord2d(0, 0); glVertex2f(0, 0);
+			glTexCoord2d(1, 0); glVertex2f(Width, 0);
+			glTexCoord2d(1, 1); glVertex2f(Width, Height);
+			glTexCoord2d(0, 1); glVertex2f(0, Height);
+			glEnd();
+		}
+		else if (bgStyle == IMAGE_FIT)
+		{
+
+
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+			float horizDist = (textureAspectRatio / screenAspectRatio) / 2.0f;
+			float vertDist = (screenAspectRatio / textureAspectRatio) / 2.0f;
+
+			if (vertDist <  horizDist) // favor vertical fit
+			{
+				
+				
+				glBegin(GL_QUADS); //Background Box
+				glTexCoord2d(0, 0.5f - horizDist); glVertex2f(0, 0);
+				glTexCoord2d(1, 0.5f - horizDist); glVertex2f(Width, 0);
+				glTexCoord2d(1, 0.5f + horizDist); glVertex2f(Width, Height);
+				glTexCoord2d(0, 0.5f + horizDist); glVertex2f(0, Height);
+				glEnd();
+			}
+			else { // favor vertical fit
+				
+				glBegin(GL_QUADS); //Background Box
+				glTexCoord2d(0.5f - vertDist,0); glVertex2f(0, 0);
+				glTexCoord2d(0.5f + vertDist, 0); glVertex2f(Width, 0);
+				glTexCoord2d(0.5f + vertDist, 1); glVertex2f(Width, Height);
+				glTexCoord2d(0.5f - vertDist, 1); glVertex2f(0, Height);
+				glEnd();
+			}
+		}
+		else if (bgStyle == IMAGE_CENTER)
+		{
 			
-		glBegin(GL_QUADS); //Background Box
-			glTexCoord2d(0,0); glVertex2f(0, 0);
-			glTexCoord2d(1,0); glVertex2f(Width, 0);
-			glTexCoord2d(1,1); glVertex2f(Width, Height);
-			glTexCoord2d(0,1); glVertex2f(0, Height);
-		glEnd();
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+
+			glBegin(GL_QUADS); //Background Box
+			glTexCoord2d(0.5f-xTile/2.0f, 0.5f - yTile / 2.0f); glVertex2f(0, 0);
+			glTexCoord2d(0.5f + xTile / 2.0f, 0.5f - yTile / 2.0f); glVertex2f(Width, 0);
+			glTexCoord2d(0.5f + xTile / 2.0f, 0.5f + yTile / 2.0f); glVertex2f(Width, Height);
+			glTexCoord2d(0.5f - xTile / 2.0f, 0.5f + yTile / 2.0f); glVertex2f(0, Height);
+			glEnd();
+		}
+		else if (bgStyle == IMAGE_TILE)
+		{
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+			
+
+			glBegin(GL_QUADS); //Background Box
+			glTexCoord2d(0, 0); glVertex2f(0, 0);
+			glTexCoord2d(xTile, 0); glVertex2f(Width, 0);
+			glTexCoord2d(xTile, yTile); glVertex2f(Width, Height);
+			glTexCoord2d(0, yTile); glVertex2f(0, Height);
+			glEnd();
+		}
 
 		glDisable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, NULL);
@@ -14400,6 +14497,7 @@ baud = 2400;
 			
 			curTextureDict.SetWhite(whiteID);
 			GLuint texID = 0;
+			textboxImageStyle imgStyle = IMAGE_FIT;
 			if (strlen(curMazeListItem->BGfname) > 9)
 			{
 				if (curMazeListItem->bgIndex <= 0) {
@@ -14407,10 +14505,11 @@ baud = 2400;
 				}
 				LoadTexture(curMazeListItem->BGfname, 33000+curMazeListItem->bgIndex);
 				texID = curTextureDict.Get_glKey(33000+ curMazeListItem->bgIndex);
+				imgStyle = curMazeListItem->bgStyle;
 				//LoadTexture(temp->BGfname, 300);
 			}
 			else 
-					texID = 0;
+				texID = 0;
 
 			bool hasAudio = false;
 			if (strlen(curMazeListItem->audioFilename) > 8)
@@ -14450,7 +14549,7 @@ baud = 2400;
 				EventLog(1, 80, 1, curMazeListItem->value);
 			}
 			
-			GUIMessageBox(curMazeListItem->value, lifeTime, curMazeListItem->showStyle, texID);
+			GUIMessageBox(curMazeListItem->value, lifeTime, curMazeListItem->showStyle, texID, imgStyle);
 
 			SetFocus(hWnd);
 			if (curMazeListItem->recordAudio) {

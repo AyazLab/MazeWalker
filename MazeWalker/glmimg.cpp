@@ -19,6 +19,7 @@ GLuint glmLoadTexture(char *filename)
 {
 	return glmLoadTexture(filename, GL_TRUE, GL_TRUE,GL_TRUE,GL_TRUE,NULL,NULL);
 }
+
 GLuint glmLoadTexture(char *filename, GLboolean alpha, GLboolean repeat, GLboolean filtering, GLboolean mipmaps, GLfloat *texcoordwidth, GLfloat *texcoordheight)
 {
     GLuint tex;
