@@ -61,9 +61,19 @@ void MazeListItem::AddText(char * val, long lifetime_ms,textboxStyle shStyle)
 
 void MazeListItem::AddBG(char *fname)
 {
-	if(strlen(fname)>3)
+	MazeListItem::AddBG(fname, 33000);
+}
+
+void MazeListItem::AddBG(char* fname, int index)
+{
+	
+	if (strlen(fname) > 3)
 	{
-		sprintf_s(BGfname,800,"texture\\%s",fname);
+		bgIndex = index;
+		sprintf_s(BGfname, 800, "texture\\%s", fname);
+	}
+	else {
+		index = -1;
 	}
 
 }

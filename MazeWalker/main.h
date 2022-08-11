@@ -143,6 +143,8 @@ void BuildShaders();
  void GUIMessageBox (char* displayText,int showTime,int showStyleInt);
  void GUIMessageBox(char* displayText, int showTime, textboxStyle showStyle);
  void GUIMessageBox (char* displayText,int showTime, textboxStyle showStyle, GLuint texID);
+ void GUIMessageBox(char* displayText, int showTime, textboxStyle showStyle, GLuint texID, textboxImageStyle backgroundStyle);
+
  void DrawLoadingScreen(int width, int height);
  void loadIniSettings();
  void clearModels();

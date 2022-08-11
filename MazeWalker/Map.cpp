@@ -15,7 +15,7 @@
 
 extern TextureDictionary curTextureDict;
 //extern GLuint	textureL[MAX_TEXTURES];			// Storage Textures
-extern FILE *plog;
+
 extern DWORD startTime;
 extern bool shader;
 extern GLuint shaderProg;

@@ -1,5 +1,6 @@
 #include "Log.h"
 #include "stdio.h"
+#include "time.h"
 
 FILE *plog=NULL;
 volatile bool LogLock=false;
@@ -13,7 +14,27 @@ extern int iLptDelay;
 extern void sendToAll(int code, int val);
 
 
+void WriteHeader(char* walker, char* mazeListItem) {
+	struct tm* newtime;
+	time_t aclock;
 
+	char msg[800];
+	time(&aclock);   // Get time in seconds
+	newtime = localtime(&aclock);   // Convert time to struct tm form
+	sprintf_s(msg,800, "\nWalker\t:\t%s\nMaze\t:\t%s\nTime\t:\t%s\n\nTime(ms)\tMazeTime(ms)\tPos X\tPos Z\tPosY\tView X\tView Z\tView Y\tMazeScore\n", walker, mazeListItem, asctime(newtime));
+	AddToLog(msg);
+}
+
+void LogPosition(float xPos, float yPos, float zPos, float xView, float yView, float zView, int mazeScore) {
+	char msg[800];
+	DWORD tickCount = GetQPC() - startTime;
+	int mazeTime = 0;
+	if (mazeStartedAndRunning == 1)
+		mazeTime = GetQPC() - mazeStart;
+
+	sprintf_s(msg,800, "%d\t%d\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\t%i\n", tickCount, mazeTime, xPos, zPos, yPos, xView, zView, yView, mazeScore);
+	AddToLog(msg);
+}
 
 void EventLog(int type,int val, int state,char* message)
 {
@@ -83,6 +104,7 @@ void EventLog(int type,int val, int state,char* message)
 		int mazeTime = 0;
 		if(mazeStartedAndRunning==1)
 			mazeTime = GetQPC()-mazeStart;		
+
 		sprintf(msg,"%d\t%d\tEvent\t%d\t%d\t%d\n",GetQPC()-startTime,mazeTime,type,val,state);
 		AddToLog(msg);
 	}
@@ -106,7 +128,7 @@ void EventLog(int type, int val)
 	EventLog(type, val, 0, "");
 }
 
-int InitLog(char file[])
+int InitLog(char* file)
 {
 	plog=NULL;
 	plog=fopen(file,"w");
@@ -123,7 +145,7 @@ int LogStatus()
 	else return 0;
 }
 
-void AddToLog(char line[])
+void AddToLog(char* line)
 {
 	while(LogLock)
 	{

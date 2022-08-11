@@ -7645,6 +7645,7 @@ void GameUpdate()
 							{
 								char msg[800];
 								sprintf(msg, "-1\tMaze is completed: Return Value %i\n", endRegion->returnValue);
+								
 								AddToLog(msg);
 							}
 							EventLog(3,100+endRegion->returnValue,0,"Return Value");
@@ -13127,7 +13128,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance1,			// Instance
 		}
 		else if(res==-2)
 		{
-			MessageBox(NULL,"Incorrect file format","Error",MB_ICONERROR);
+			MessageBox(NULL,"I\ncorrect file format","Error",MB_ICONERROR);
 		}
 		if(LogStatus())
 		{
@@ -13596,11 +13597,8 @@ baud = 2400;
 
 			if (LogStatus())
 			{
-				char msg[800];
-				time(&aclock);   // Get time in seconds
-				newtime = localtime(&aclock);   // Convert time to struct tm form
-				sprintf(msg, "\nWalker\t:\t%s\nMaze\t:\t%s\nTime\t:\t%s\n\nTime(ms)\tMazeTime(ms)\tPos X\tPos Z\tPosY\tView X\tView Z\tView Y\n", walker, curMazeListItem->value, asctime(newtime));
-				AddToLog(msg);
+				WriteHeader(walker, curMazeListItem->value);
+				
 			}
 
 			if (strlen(objMap->startMessage) > 0 && objMap->startMessageEnabled)
@@ -14384,7 +14382,7 @@ baud = 2400;
 		 }
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{
-			curTextureDict.Clear();
+			//curTextureDict.Clear();
 			sprintf(curMazeFilename, "MazeList Text");
 
 			bStatusMazeMessage = true;
@@ -14404,9 +14402,11 @@ baud = 2400;
 			GLuint texID = 0;
 			if (strlen(curMazeListItem->BGfname) > 9)
 			{
-				
-				LoadTexture(curMazeListItem->BGfname, 33000);
-				texID = curTextureDict.Get_glKey(33000);
+				if (curMazeListItem->bgIndex <= 0) {
+					curTextureDict.Clear();
+				}
+				LoadTexture(curMazeListItem->BGfname, 33000+curMazeListItem->bgIndex);
+				texID = curTextureDict.Get_glKey(33000+ curMazeListItem->bgIndex);
 				//LoadTexture(temp->BGfname, 300);
 			}
 			else 
@@ -14856,33 +14856,36 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 					 char* tcpMsg = new char[256];
 					 tcpMsg = m.getStringFromArr();
 					 char msg[800];
-					 sprintf(msg, "%d\t%d\ttcpMessage\t%d\t%d\t%s\n", GetQPC() - startTime, GetQPC() - mazeStart, m.command, m.iArg, tcpMsg);
-					 AddToLog(msg);
+					 sprintf(msg, "tcpMessage\t%s",tcpMsg);
+					 EventLog(0, m.command, m.iArg, msg);
 				 }
 			 }
 			 else if (m.command == -101)  //Log message and show to user
 			 {
 				 char* tcpMsg = new char[256];
 				 tcpMsg = m.getStringFromArr();
-				 char msg[200];
+				 char msg[800];
 				 sprintf(devMsg, "%s", tcpMsg);
-				 sprintf(msg, "%d\t%d\ttcpAlert\t%d\t%d\t%s\n", GetQPC() - startTime, GetQPC() - mazeStart, m.command, m.iArg, tcpMsg);
 				 devMsgStatus = 1;
 				 devMsgTime = m.iArg;
 				 if (LogStatus())
-					 AddToLog(msg);
+				 {
+					 sprintf(msg, "tcpAlert\t%s", tcpMsg);
+					 EventLog(0, m.command, m.iArg, msg);
+				 }
+					
 			 }
 			 else if (m.command == -102 && !interactivePlayback)
 			 {
 				 char* tcpMsg = new char[256];
 				 tcpMsg = m.getStringFromArr();
-				 char msg[200];
+				 char msg[800];
 				 sprintf(devMsg, "%s", tcpMsg);
-				 sprintf(msg, "%d\t%d\tUserResponse\t%d\t%d\t%s\n", GetQPC() - startTime, GetQPC() - mazeStart, m.command, m.iArg, tcpMsg);
+				 sprintf(msg, "UserResponse\t%s", tcpMsg);
 				 devMsgStatus = 2;
 				 devMsgTime = m.iArg;
 				 if (LogStatus())
-					 AddToLog(msg);
+					 EventLog(0, m.command, m.iArg, msg);
 
 				 pausePlayback = true;
 				 pauseTime = GetQPC() - startTime;
@@ -15065,9 +15068,9 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 targetBarScore = m.iArg;
 				 if (LogStatus())
 				 {
-					 char msg[800];
-					 sprintf(msg, "%d\t%d\tEvent\t%d\t%d\t%f\n", GetQPC() - startTime, GetQPC() - mazeStart, 20, 0, targetBarScore);
-					 AddToLog(msg);
+					 
+					 
+					 EventLog(0, 20, targetBarScore,"setBarScore:Buffered");
 				 }
 			 }
 			 else if (m.command == 2) //instantaneous Set Score
@@ -15076,9 +15079,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 targetBarScore = barScore;
 				 if (LogStatus())
 				 {
-					 char msg[800];
-					 sprintf(msg, "%d\t%d\tEvent\t%d\t%d\t%f\n", GetQPC() - startTime, GetQPC() - mazeStart, 20, 0, barScore);
-					 AddToLog(msg);
+					 EventLog(0, 20, barScore,"setBarScore");
 				 }
 			 }
 			 else if (m.command == 3) //interact with objects (formerly temporary instantaneous set score)
@@ -15086,9 +15087,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 Player.interact = true;
 				 if (LogStatus())
 				 {
-					 char msg[800];
-					 sprintf(msg, "%d\t%d\tEvent\t%d\t%d\t%d\n", GetQPC() - startTime, GetQPC() - mazeStart, 20, 0, 101);
-					 AddToLog(msg);
+					 EventLog(0, 21, 101,"InteractAPI");
 				 }
 			 }
 			 else if (m.command == -10)
@@ -15096,9 +15095,7 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 				 int val = m.iArg;
 				 if (LogStatus())
 				 {
-					 char msg[800];
-					 sprintf(msg, "%d\t%d\ttcpValue\t%d\t%d\t%d\n", GetQPC() - startTime, GetQPC() - mazeStart, 80, 0, val);
-					 AddToLog(msg);
+					 EventLog(0, 22, val, "tcpValue");
 				 }
 			 }
 			 else if (m.command == 5) //Get X Pos
@@ -15368,25 +15365,6 @@ int CheckCollision(float* x,float dx,float *vx, float* z,float dz,float *vz,floa
 	 }
 	return 0;
 }
-
-//DWORD WINAPI comListenThread( LPVOID lpParam)
-//{
-//	/*int comValue=0;
-//	while(bListen)
-//	{		
-//		comValue=bufferVar;
-//		bufferVar=0;
-//		if(comValue!=0 && plog!=NULL)
-//			fprintf(plog,"%d\tEvent\t%d\t%d\t%d\r\n",GetQPC()-startTime,30,0,comValue);
-//		returned=comValue;
-//		if(waitForCue&&comValue==10)
-//			mark=true;
-//		Sleep(10);		
-//	}
-//	ComClose();*/
-//	return 0;
-//}
-
 
 
 

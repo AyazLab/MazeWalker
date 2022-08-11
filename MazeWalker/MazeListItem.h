@@ -16,6 +16,11 @@ enum textboxStyle
 	ON_DIALOG_CLEAR_BG, ON_SCREEN_CLEAR_BG, ON_DIALOG_WITH_BG, WARNING, FATAL_ERROR, ACTIVEREGION_ON_SCREEN
 };
 
+enum textboxImageStyle
+{
+	IMAGE_STRETCH, IMAGE_FIT, IMAGE_TILE, IMAGE_CENTER
+};
+
 class MazeListItem
 {
 public:
@@ -25,12 +30,14 @@ public:
 	textboxStyle showStyle= ON_DIALOG_CLEAR_BG;
 	long lifeTime;
 	char BGfname[TXTMSGBUFFERLIMIT_MAZELISTITEM];
+	int bgIndex = -1;
 	bool isMazX = false;
 
 	char audioFilename[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 	bool audioLoop = false;
 	bool audioStopOnEnd = true;
 	bool audioPauseOnEnd = false;
+	//int audioIndex = -1;
 
 	char mzCommand[TXTMSGBUFFERLIMIT_MAZELISTITEM];
 	char mzCommandParams[TXTMSGBUFFERLIMIT_MAZELISTITEM];
@@ -63,6 +70,7 @@ public:
 	void AddMaze(char *val, bool isMazX);
 	void AddMaze(char* val, bool isMazX, MazeOptions m);
 	void AddBG(char* val);
+	void AddBG(char* val, int index);
 	void AddRecordAudio();
 	void AddAudio(char* val, bool loopAudio, bool stopOnEnd, bool pauseOnEnd);
 	void AddText(char * val, long lftm,textboxStyle shStyle);

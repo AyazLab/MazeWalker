@@ -88,11 +88,11 @@ void MazeList::AddCommand(char* cmd, char* cmdParams, bool waitForComplete, bool
 	cur->next->AddCommand(cmd,cmdParams, waitForComplete,hideCmd);
 }
 
-void MazeList::AddBG(char* val)
+void MazeList::AddBG(char* val, int index)
 {
 	MazeListItem *cur = GetLast();
 
-	cur->AddBG(val);
+	cur->AddBG(val, index);
 }
 
 void MazeList::AddAudio(char* val,bool loopAudio, bool stopOnEnd, bool pauseOnEnd)
@@ -676,7 +676,7 @@ int MazeList::ReadMazeListXML(char* melFile)
 								if (imgID >= 0)
 								{
 									strcpy_s(assetFname, 800, listImageDict[imgID].c_str());
-									this->AddBG(assetFname);
+									this->AddBG(assetFname, imgID);
 								}
 							}
 
@@ -850,7 +850,7 @@ int MazeList::ReadMazeListClassic(char *filename)
 					if (hasImg)
 					{
 						if (strlen(imgID) > 2)
-							this->AddBG(imgID);
+							this->AddBG(imgID,0);
 					}
 
 				}

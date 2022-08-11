@@ -7,6 +7,7 @@
 extern FILE *plog;
 extern DWORD startTime;
 extern DWORD mazeStart;
+extern volatile int curMazePoints;
 
 extern int Width, Height;
 extern bool bTopDown;
@@ -468,9 +469,7 @@ void CCamera::DoLog()
 		DWORD tickCount=GetQPC()-startTime;
 		if(prevTickCount!=tickCount)
 		{
-			char msg[800];
-			sprintf(msg,"%d\t%d\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\n",tickCount,GetQPC()-mazeStart,mPos.x,mPos.z,mPos.y,mView.x,mView.z,mView.y);
-			AddToLog(msg);
+			LogPosition(mPos.x, mPos.y, mPos.z, mView.x, mView.y, mView.z, curMazePoints);
 			prevTickCount=tickCount;
 		}
 		
