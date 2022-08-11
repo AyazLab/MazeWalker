@@ -14446,6 +14446,9 @@ baud = 2400;
 				EventLog(1, 801, 0, "Recording Start");
 			}
 			
+			if (strlen(curMazeListItem->value) > 0) {
+				EventLog(1, 80, 1, curMazeListItem->value);
+			}
 			
 			GUIMessageBox(curMazeListItem->value, lifeTime, curMazeListItem->showStyle, texID);
 
@@ -14462,7 +14465,7 @@ baud = 2400;
 				curAudioDict.Stop(33000);
 			
 
-			EventLog(1, 81, 0, "TextMessage End");
+			EventLog(1, 81, lifeTime, "TextMessage End");
 			bStatusMazeMessage = false;
 			
 			//MessageBox(parent,temp->value,"Message",0);
