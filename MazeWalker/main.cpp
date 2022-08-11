@@ -13286,7 +13286,7 @@ baud = 2400;
 	
 
 
-
+	int curMazeListItemNumber = 0;
 	curMazeListItem = curMazeList.GetFirst();
 	//curTextureDict.Clear();
 
@@ -14355,7 +14355,10 @@ baud = 2400;
 			strcpy_s(mzCmdParams, 1024, curMazeListItem->mzCommandParams);
 			bool waitForComplete = curMazeListItem->waitForExitCmd;
 
-			EventLog(1, 80, 0, mzCmd);
+			EventLog(1, 80, 0, "MazeList CmdStart");
+			EventLog(1, 80, 1, mzCmd);
+			EventLog(1, 80, 2, mzCmdParams);
+			
 
 			SHELLEXECUTEINFO ShExecInfo = { 0 };
 			ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
@@ -14377,7 +14380,7 @@ baud = 2400;
 				CloseHandle(ShExecInfo.hProcess);
 			}
 			
-			EventLog(1, 80, 0, "MazeList CmdEnd");
+			EventLog(1, 80, 3, "MazeList CmdEnd");
 		 }
 		else if(curMazeListItem && curMazeListItem->type==Text)
 		{
@@ -14468,6 +14471,8 @@ baud = 2400;
 		if (bRestartMaze==false) //repeat maze prevents loading next maze
 		{
 			curMazeListItem = curMazeListItem->next;
+			curMazeListItemNumber = curMazeListItemNumber + 1;
+			EventLog(1, 999, curMazeListItemNumber, "MazeList NextItem");
 			
 		}
 		else // Maze Restarted
