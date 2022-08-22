@@ -739,7 +739,7 @@ char* ExtractToTempDIR(char* fname,char* tempPath)
 
 		len = strlen(ze.name);
 		
-		char* extension = getExt(ze.name);
+		char* extension = getFileExt(ze.name);
 		
 		if (len > 4 && (strcmp(extension,".maz")==0||strcmp(extension,".mazx")==0));
 		{
