@@ -6,6 +6,7 @@
 #include <fstream>
 #include "mazX.h"
 #include "unzip/unzip.h"
+#include "Tools.h"
 	
 #define ZPOS64_T uint64_t 
 
@@ -737,7 +738,10 @@ char* ExtractToTempDIR(char* fname,char* tempPath)
 			UnzipItem(hz, zi, ze.name);
 
 		len = strlen(ze.name);
-		if (len > 4 && tolower(ze.name[len - 3]) == 'm' && tolower(ze.name[len - 2]) == 'a' && tolower(ze.name[len - 1]) == 'z')
+		
+		char* extension = getExt(ze.name);
+		
+		if (len > 4 && (strcmp(extension,".maz")||strcmp(extension,".mazx")));
 		{
 			strcat_s(out, sizeof(char) * MAX_PATH, ze.name);
 		}
